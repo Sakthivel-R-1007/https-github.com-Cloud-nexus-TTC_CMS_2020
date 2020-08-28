@@ -1,0 +1,311 @@
+﻿
+@{
+    ViewBag.Title = "Cycling Town | Tampines Town Council";
+    ViewBag.BodyClass = "OURTOWN";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model OurTownBanner
+@section meta{
+    <meta property="og:url" content="@appPath/OurTown/CyclingTown" />
+    <meta property="og:title" content="Cycling Town | Tampines Town Council" />
+    <meta property="og:description" content="" />
+    @if (Model != null && Model.ImageGUID != null)
+    {
+        <meta property="og:image" content="@appPath/Resources/images/OurTownBanner/@Model.ImageGUID.@Model.ImageExtension" />
+    }
+}
+<div class="mainContents">
+    <div class="ourTown">
+        <!--Page Banner-->
+        <div class="pageBanner">
+            @if (Model != null && Model.ImageGUID != null)
+            {
+                <img src="@appPath/Resources/images/OurTownBanner/@Model.ImageGUID.@Model.ImageExtension" alt="">
+            }
+        </div>
+        <!--Breadcrumb-->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="@appPath/">Home</a><span></span><a href="#">Our Town</a><span></span>Cycling Town
+            </div>
+        </div>
+
+        <!--Our Town (Cycling Town)-->
+        <div class="pageContents cyclingTown">
+            <h1>Cycling Town</h1>
+            <p>Cycling is an environmentally friendly and a healthy mode of transport and Tampines, being a compact town is an ideal choice for a model cycling town. Taking Tampines MRT station as a focal point, the furthest block is only 2 kilometres away. With facilities, schools and shops in close proximity, more and more residents are choosing to cycle as their preferred mode of transport to travel about in Tampines.</p>
+
+            <div class="commonSubMenu">
+                <ul>
+                    <li><a href="#" class="active btn01" rel="ct01" onclick="return false;">Making Tampines a Cycling Town</a></li>
+                    <li><a href="#" class="btn02" rel="ct02" onclick="return false;">Safe Cycling Tips </a></li>
+                    <li><a href="@appPath/Contents/src/Town_Council_By-Laws.pdf" class="btn03" rel="ct03" target="_blank">Town Council By-Laws</a></li>
+                    <li><a href="#" class="btn04" rel="ct04" onclick="return false;">Announcement &amp; Updates</a></li>
+                    <li><a href="#" class="btn05" rel="ct05" onclick="return false;">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="commonSubMenuMobile">
+                <div class="btnStatus">Making Tampines a Cycling Town</div>
+                <ul>
+                    <li><a href="#" rel="ct01" onclick="return false;">Making Tampines a Cycling Town</a></li>
+                    <li><a href="#" rel="ct02" onclick="return false;">Safe Cycling Tips</a></li>
+                    <li><a href="@appPath/Contents/src/Town_Council_By-Laws.pdf" target="_blank">Town Council By-Laws</a></li>
+                    <li><a href="#" rel="ct04" onclick="return false;">Announcement &amp; Updates</a></li>
+                    <li><a href="#" rel="ct05" onclick="return false;">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="cyclingTownContent" id="ct01">
+                <p>"The cycling on footways trial"<sup>&trade;</sup> was a tripartite effort initiated in Tampines by its Grassroots Organisations, the Town Council, Traffic Police (TP) and the Land Transport Authority. It was conducted in response to the increasing trend of residents cycling on the footways, although it is illegal. It started on 27 May 2007 and ended on 31 Jan 2009.<p>
+
+                <p>The tripartite decision to legalize sharing of footways came after careful thought, and after assessing the feedback received from residents. The tripartite committee concluded that while there is general acceptance of the trial in Tampines Town, cycling on footways is feasible and sustainable only if all three key features identified "infrastructure, education, and enforcement" are implemented together.<p>
+
+                    <div class="padding5"></div>
+
+                    <h2>Efforts by the Tripartite Partners</h2>
+
+                <p>Here are some improvement measures taken by the tripartite partners:</p>
+
+                <p><strong>Land Transport Authority</strong></p>
+                <p>Widened the Pedestrian Crossings at 10 locations</p>
+                <p>Installed "Cyclist Dismount" Signs at 7 Locations</p>
+                <p>Lengthened "Green-man" Time at 3 locations</p>
+                <p>A total of 1.2km of footpath covering 3 main locations in Tampines was widened to 2.0 m.</p>
+                <p>Provided 247 nos. of sheltered bicycle parking facilities near the Tampines MRT station in Aug 2009 as part of a pilot project.</p>
+                <p>In addition to the 2.3km dedicated tracks provided by the Town Council, LTA will be building 6.9km of dedicated tracks in Tampines by 2012.</p>
+                <p><strong>Traffic Police</strong></p>
+                <p>Production of educational, publicity materials. These include brochures, posters and banners. "Safe Cycling Video"<sup>&trade;</sup> in English with subtitles in Thai, Bengali and Chinese was also produced. Emphasis was placed on education of the cyclist in two main groups, ie, the younger ones and the foreign workers.</p>
+                <p>Conducted talks and exhibition to 14 schools in Tampines GRC.</p>
+                <p>Outreach to foreign dormitories with large number of foreign cyclists within the area.</p>
+                <p>Conducted two enforcement blitzes with cycling wardens on 23 Nov 08 and 7 Dec 08. Purpose is to educate and enforce against errant cyclists.</p>
+                <p><strong>Tampines Town Council</strong></p>
+                <p>Constructed a bicycle track behind bus-stop at Blk 302 Tampines Avenue 2.</p>
+                <p>Constructed two stretches of bicycle lane, 2.3km long as a pilot project.</p>
+                <p>Worked closely with LTA to follow up on the implementation of the 6.9 km dedicated bicycle tracks.</p>
+                <p>Working on the by-laws to regulate safe cycling on footways.</p>
+                <p>Engaging Auxiliary Police Officers to conduct patrols with cycling wardens, and carry out enforcement against reckless cyclists.</p>
+                <p>Provided 8,790 bicycle parking facilities in the estates.</p>
+                <p>Set up and administer the Online Bicycle Identification System (BIDS)</p>
+
+                <p><strong>Tampines Grassroots Organisations</strong></p>
+                <p>A total of 120 cycling wardens were recruited. The cycling wardens were deployed to educate cyclists and pedestrians on safe sharing of footways.</p>
+                <p>"Encouraged Residents"<sup>&trade;</sup> Committees to form cycling clubs and use the cycling club as a platform to educate all cyclists on the importance of personal safety, having the basic gadgets, the importance of giving way to pedestrians when cycling in groups and to emphasize that the pedestrians still have the right of way.</p>
+            </div>
+
+            <div class="cyclingTownContent" id="ct02">
+                <h2>Check your bicycles before your ride. Ensure it is in good working condition.</h2>
+
+                <p><img src="@appPath/Contents/images/ourtown/cycling-town/img-01.png" alt=""></p>
+
+                <hr />
+
+                <h2>Responsible Cycling</h2>
+
+                <p><img src="@appPath/Contents/images/ourtown/cycling-town/img-02.png" alt=""></p>
+
+                <hr />
+
+                <h2>Cycling Offenses</h2>
+                <h2><span>FINE up to $5000/-</span></h2>
+
+                <p><img src="@appPath/Contents/images/ourtown/cycling-town/img-03.png" alt=""></p>
+            </div>
+
+            <div class="cyclingTownContent" id="ct03">
+                <div class="padding30"></div>
+
+            </div>
+
+            <div class="cyclingTownContent" id="ct04">
+                <ul class="announcementUpdates">
+                    <li>
+                        <div class="imgContainer"><img src="@appPath/Contents/images/ourtown/cycling-town/announcement/img-03.jpg" alt=""></div>
+                        <div class="texts">
+                            <p class="date">23 May 2016</p>
+                            <p><strong>Tampines first to launch high security labels for bicycles</strong></p>
+                            <p>Tampines is the first town in SIngapore to launch high security labels for bicycles as part of Its efforts to become a model cycling town. The tamper proof labels contain security features and offer cyclists a unique identifier for their bicycles. Bicycle owners are encouraged to register their bicycle security labels in the online Bicycle Identification System (BIDS) administered by Tampines Town Council.</p>
+                            <p><a href="src/announcement/Bicycle-Labels.pdf" target="_blank" class="readMoreBtn">Read Press Release</a></p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="imgContainer"><img src="@appPath/Contents/images/ourtown/cycling-town/announcement/img-02.jpg" alt=""></div>
+                        <div class="texts">
+                            <p class="date">09 Feb 2016</p>
+                            <p><strong>Improvements made for cycling on footpaths</strong></p>
+                            <p>Letter from Ms Soh Chor Yin, General Manager/Secretary, Tampines Town Council in TODAY newspaper.</p>
+                            <p><a href="@appPath/Contents/src/announcement/Letter-from-Ms-Soh-Chor-Yin.pdf" target="_blank" class="readMoreBtn">Read Article</a></p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="imgContainer"><img src="@appPath/Contents/images/ourtown/cycling-town/announcement/img-01.jpg" alt=""></div>
+                        <div class="texts">
+                            <p class="date">21 May 2012</p>
+                            <p><strong>A Community Safety and Security Programme (Anti - Bicycle Theft Project)</strong></p>
+                            <p>Tampines estate was introduced as the first cycling town in Singapore where cyclists are allowed to ride their bicycles on footpath. With the increase in the number of cyclists and bicycles, Changi NPC and Tampines NPC and Tampines Town Council came up with this initiative to curb bicycle thefts.</p>
+                            <p><a href="src/announcement/Anti-Bicycle-Theft-Project-CSSP.pdf" target="_blank" class="readMoreBtn">Read Article</a></p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="imgContainer"><img src="@appPath/Contents/images/ourtown/cycling-town/announcement/img-04.jpg" alt=""></div>
+                        <div class="texts">
+                            <p class="date">22 Jan 2011</p>
+                            <p><strong>Future Cycling Networks</strong></p>
+                            <p>Under the Tampines Masterplan 2011 - 2015, the cycling network in Tampines wil be enhanced with more cycling paths.</p>
+                            <p><a href="@appPath/Contents/src/announcement/TampinesFutureCyclingNetwork.pdf" target="_blank" class="readMoreBtn">View Future Cycling Network</a></p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="imgContainer"><img src="@appPath/Contents/images/ourtown/cycling-town/announcement/img-05.jpg" alt=""></div>
+                        <div class="texts">
+                            <p class="date">25 Apr 2010</p>
+                            <p><strong>Less abandoned bicycles found in Tampines</strong></p>
+                            <p>In the bid of becoming a model cycling town, Tampines Town Council conducted a ground survey in July 2008 and found1, 560 derelict bicycles in Tampines.</p>
+
+                            <p>To look into the problem of abandoned bicycles, a Derelict Bicycle Removal programme was introduced by Tampines Town Council last year and has since helped reduce the number of abandoned bicycles.</p>
+                            <p><a href="@appPath/Contents/src/announcement/Less-Abandoned-Bicycles-in-Tampines.pdf" target="_blank" class="readMoreBtn">Read Media Release</a></p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="imgContainer"><img src="@appPath/Contents/images/ourtown/cycling-town/announcement/img-06.jpg" alt=""></div>
+                        <div class="texts">
+                            <p class="date">10 Mar 2010</p>
+                            <p><strong>Tampines Town officially became Singapore's first model cycling town</strong></p>
+                            <p>Cycling on footways is legalized in Tampines Town from 1 March 2010 onwards. It is the only town where cycling is allowed on footways and auxiliary police officers, together with the volunteer cycling wardens are conducting regular patrols at different hours of the day.</p>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="imgContainer"><img src="@appPath/Contents/images/ourtown/cycling-town/announcement/img-07.jpg" alt=""></div>
+                        <div class="texts">
+                            <p class="date">13 Dec 2009</p>
+                            <p><strong>Town Council bylaws on bicycle use to come into operation</strong></p>
+                            <p>The Tampines Town Council bylaws on bicycle use have been gazetted and will come into operation on 1 March 2010. Click <a href="src/announcement/By-laws-on-bicycle-use.pdf" target="_blank">here</a> for a copy of the bylaws.</p>
+
+                            <p>The new cycling by-laws will allow the Town Council to take enforcement action against reckless cyclists as a last resort. The Police will continue to investigate those cases where injury is caused, under the existing laws. Tampines will be the only town where the footways are shared by both the cyclists and the pedestrians. Click <a href="src/announcement/By-laws-on-bicycle-use.pdf" target="_blank">here</a> for a copy of the media release and click <a href="src/announcement/Speech-Cycling-on-Footways.pdf" target="_blank">here</a> for a copy of Mr Masagos' speech.</p>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="cyclingTownContent" id="ct05">
+                <p>You may contact us at the following:</p>
+
+                <div class="normalTable">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td>Tampines NPC</td>
+                            <td>1800 587 1999</td>
+                        </tr>
+                        <tr>
+                            <td>Changi NPC</td>
+                            <td>1800 587 2999</td>
+                        </tr>
+                        <tr>
+                            <td>Tampines Town Council</td>
+                            <td>6781 2222</td>
+                        </tr>
+                        <tr>
+                            <td>Traffic Police</td>
+                            <td>6547 0000</td>
+                        </tr>
+                        <tr>
+                            <td>Land Transport Authority</td>
+                            <td>1800 225 5582</td>
+                        </tr>
+                        <tr>
+                            <td>Tampines East Community Club</td>
+                            <td>6786 3227</td>
+                        </tr>
+                        <tr>
+                            <td>Tampines West Community Club</td>
+                            <td>6783 7910</td>
+                        </tr>
+                        <tr>
+                            <td>Tampines Changkat Community Club</td>
+                            <td>6781 1806</td>
+                        </tr>
+                        <tr>
+                            <td>Tampines Central Community Club</td>
+                            <td>6785 8292</td>
+                        </tr>
+                        <tr>
+                            <td>Tampines North Community Club</td>
+                            <td>6783 2900</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="padding20"></div>
+        </div>
+
+    </div><!--End Our Town-->
+</div><!-- End Main Contents -->
+
+<script>
+    $(".cyclingTownContent").hide();
+    $(".cyclingTownContent:first").show();
+    $(".commonSubMenu a").click(function () {
+        $(".cyclingTownContent").hide();
+        var currentTab = $(this).attr("rel");
+        $("#" + currentTab).fadeIn();
+        $(".commonSubMenu a").removeClass("active");
+        $(this).addClass("active");
+
+        if (currentTab == "ct01") {
+            $(".commonSubMenuMobile .btnStatus").text("Making Tampines a Cycling Town");
+        }
+        else if (currentTab == "ct02") {
+            $(".commonSubMenuMobile .btnStatus").text("Safe Cycling Tips ");
+        }
+        else if (currentTab == "ct03") {
+            $(".commonSubMenuMobile .btnStatus").text("Town Council By-Laws");
+        }
+        else if (currentTab == "ct04") {
+            $(".commonSubMenuMobile .btnStatus").text("Announcement & Updates");
+        }
+        else if (currentTab == "ct05") {
+            $(".commonSubMenuMobile .btnStatus").text("Contact Us");
+        }
+    });
+
+    $(".commonSubMenuMobile .btnStatus").click(function () {
+        $(".commonSubMenuMobile ul").slideToggle(200);
+    });
+
+    $(".commonSubMenuMobile a").click(function () {
+        $(".cyclingTownContent").hide();
+        var currentTab = $(this).attr("rel");
+        $("#" + currentTab).fadeIn();
+        $(".commonSubMenuMobile ul").hide(0);
+        $(".commonSubMenu a").removeClass("active");
+
+        if (currentTab == "ct01") {
+            $(".commonSubMenuMobile .btnStatus").text("Making Tampines a Cycling Town");
+            $(".commonSubMenu .btn01").addClass("active");
+        }
+        else if (currentTab == "ct02") {
+            $(".commonSubMenuMobile .btnStatus").text("Safe Cycling Tips ");
+            $(".commonSubMenu .btn02").addClass("active");
+        }
+        else if (currentTab == "ct03") {
+            $(".commonSubMenuMobile .btnStatus").text("Town Council By-Laws");
+            $(".commonSubMenu .btn03").addClass("active");
+        }
+        else if (currentTab == "ct04") {
+            $(".commonSubMenuMobile .btnStatus").text("Announcement & Updates");
+            $(".commonSubMenu .btn04").addClass("active");
+        }
+        else if (currentTab == "ct05") {
+            $(".commonSubMenuMobile .btnStatus").text("Contact Us");
+            $(".commonSubMenu .btn05").addClass("active");
+        }
+    });
+</script>

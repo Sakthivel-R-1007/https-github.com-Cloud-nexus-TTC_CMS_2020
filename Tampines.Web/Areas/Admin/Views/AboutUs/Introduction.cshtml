@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Tampines Town Council | CMS";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+@model AboutUsIntroduction
+
+
+<div class="maincontents">
+    @using (Html.BeginForm("Introduction", "AboutUs", FormMethod.Post, new { enctype = "multipart/form-data", id = "AboutUsIntroductionForm" }))
+    {
+        @Html.AntiForgeryToken()
+        <h1>About Us</h1>
+        <h2>Introduction</h2>
+        <div class="padding5"></div>
+        <div class="ckeditor">
+            @Html.TextAreaFor(m => m.Content, new { @class = "ckeditor", @name = "Content", placeholder = "" })
+            @Html.ValidationMessageFor(m => m.Content)
+            @Html.HiddenFor(m=>m.GUID)
+        </div>
+        <div class="clear padding10"></div>
+        <div class="floatRight">
+            <input type="button" id="previewBtn" class="submitBtn whiteBg" value="Preview">&nbsp;
+            <input type="button" id="publishToLiveBtn" class="submitBtn whiteBg" value="Publish">
+        </div>
+        <div class="clear padding10"></div>
+    }
+</div>
+
+@section scripts{
+
+
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.js"></script>
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.additional-methods.js"></script>
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.alphanum.js"></script>
+    <script src="@appPath/Contents/Admin/js/Custom/admin-aboutUs-introduction-update.js"></script>
+
+    <script src="@appPath/Contents/ckeditor/ckeditor.js"></script>
+
+}
+

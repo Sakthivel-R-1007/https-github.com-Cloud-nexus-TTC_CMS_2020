@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+@model IList<OurMps>
+@if (Model != null && Model.Count > 0)
+{
+    int rowCount = 0;
+    <ul id="sortable">
+        @foreach (OurMps SB in Model)
+        {
+
+            <li id="@("Set_"+rowCount)" data-id="@SB.GUID" value="@SB.GUID" class="SortingContact">
+                <span>@SB.Name</span>
+
+            </li>
+            rowCount++;
+        }
+    </ul>
+    <div class="padding10"></div>
+    <a class="submitBtn floatRight" id="OurMpssortingsubmitBtn" href="javascript:void(0)">Publish</a>
+    <div class="clear padding10"></div>
+    <div id="dynamicontent" class="cmxform">
+        <input id="0" type="hidden" name=sort[0].GUID value="0" />
+        <input id="0" type="hidden" name=sort[0].ReOrder value="0" />
+
+    </div>
+}
+
+
+
+

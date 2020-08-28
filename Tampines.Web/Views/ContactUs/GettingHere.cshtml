@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Getting Here | Tampines Town Council";
+    ViewBag.BodyClass = "CONTACTUS";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@section meta{
+    <meta property="og:url" content="https://www.tampines.org.sg/getting-here.html" />
+    <meta property="og:title" content="Getting Here | Tampines Town Council" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="https://www.tampines.org.sg/images/contactus/banner-img.jpg" />
+}
+<div class="mainContents">
+    <div class="contactUs">
+        <!--Page Banner-->
+        <div class="pageBanner">
+            <img src="@appPath/Contents/images/contactus/banner-img.jpg" alt="">
+        </div>
+        <!--Breadcrumb-->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="@appPath/">Home</a><span></span><a href="javascript:void(0)">Contact Us</a><span></span>Getting Here
+            </div>
+        </div>
+
+        <!--Contact Us (Getting Here)-->
+        <div class="pageContents gettingHere">
+            <h1>Getting Here</h1>
+
+            <div class="googleMap">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d997.1798159698221!2d103.94490826262607!3d1.344872280981824!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x754ce3b569796e0!2sTampines+Town+Council!5e0!3m2!1sen!2ssg!4v1435575699441" width="700" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            <div class="gettingHereDetail">
+                <h2>Tampines Town Council</h2>
+                <p>136 Tampines Street 11, Singapore 521136</p>
+                <p>Tel: 6781 2222</p><br />
+
+                <p><strong>Operating Hours</strong></p>
+                <p>
+                    <u>Our Office</u><br />
+                    Mon to Fri : 8.00am to 5.00pm<br />
+                    Sat, Sun & Public Holidays : Closed
+                </p>
+
+                <p>
+                    <u>Payment & Fees</u><br />
+                    Mon to Fri : 8.00am to 4.30pm<br />
+                    Sat, Sun & Public Holidays : Closed
+                </p><br />
+
+                <p><strong>Bus Service*</strong></p>
+
+                <p>
+                    <em>Along Tampines Avenue 2</em><br />
+                    SBS Transit - 8, 17, 18, 28, 39, 518
+                </p><br />
+
+                <p>
+                    <em>Along Tampines Street 11</em><br />
+                    SBS Transit - 292
+                </p>
+
+            </div>
+
+            <div class="clear padding30"></div>
+        </div>
+
+    </div><!--End Contact Us-->
+</div><!-- End Main Contents -->

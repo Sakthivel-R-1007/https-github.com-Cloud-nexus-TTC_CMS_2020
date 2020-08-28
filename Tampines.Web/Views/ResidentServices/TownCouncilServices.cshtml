@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "Town Council Services | Tampines Town Council";
+    ViewBag.BodyClass = "SERVICES";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@section meta{
+    <meta property="og:url" content="@appPath/ResidentServices/TownCouncilServices" />
+    <meta property="og:title" content="Town Council Services | Tampines Town Council" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="https://www.tampines.org.sg/images/residentservices/banner-img-tcs.jpg" />
+}
+<div class="mainContents">
+    <div class="residentServices">
+        <!--Page Banner-->
+        <div class="pageBanner">
+            <img src="@appPath/Contents/images/residentservices/banner-img-tcs.jpg" alt="">
+        </div>
+        <!--Breadcrumb-->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="@appPath/">Home</a><span></span><a href="#">Resident Services</a><span></span>Town Council Services
+            </div>
+        </div>
+
+        <!--Resident Services (Town Council Services)-->
+        <div class="pageContents townCouncilServ">
+            <h1>Town Council Services</h1>
+            <p>The main services provided by the town council to common areas are</p>
+
+            <h2>Conservancy and Cleaning Services</h2>
+            <ul>
+                <li>Cleaning works</li>
+                <li>Pest Control</li>
+            </ul>
+
+            <h2>Estate Maintenance</h2>
+
+            <ul>
+                <li>Lighting and fixtures</li>
+                <li>Multi-storey carparks (as managing agent)</li>
+                <li>Re-wiring</li>
+                <li>Water pipes/tanks/pumps</li>
+                <li>Switch rooms</li>
+                <li>Electrical and Mechanical installations</li>
+                <li>Repairs & Redecoration (Re-roofing, repainting)</li>
+            </ul>
+
+            <h2>Estate Improvement Works</h2>
+
+            <ul>
+                <li>Neighbourhood Renewal Programme (NRP) such as covered linkways, playgrounds, residents' corners, fitness corners, drop-off porches</li>
+            </ul>
+
+            <h2>Essential Maintenance</h2>
+
+            <ul>
+                <li>Lifts, lift rescue services</li>
+                <li>Sanitation</li>
+                <li>Electrical and water supply</li>
+                <li>Defective public lightings, fixtures and fittings</li>
+            </ul>
+
+            <h2>Enforcement</h2>
+
+            <ul>
+                <li>Control on the use and occupation of common property (issue Temporary Occupation Licence TOL)</li>
+                <li>Uphold Town Council By-laws</li>
+            </ul>
+
+            <h2>Use of common areas</h2>
+
+            <ul>
+                <li>Booking of void decks, open spaces for events</li>
+            </ul>
+
+            <h2>Landscaping and Horticulture</h2>
+
+            <div class="padding20"></div>
+        </div>
+
+    </div><!--End Resident Services-->
+</div><!-- End Main Contents -->

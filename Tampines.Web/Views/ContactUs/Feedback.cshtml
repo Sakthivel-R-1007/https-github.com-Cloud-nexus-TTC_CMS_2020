@@ -1,0 +1,1332 @@
+﻿
+
+@{
+    ViewBag.Title = "Feedback  | Tampines Town Council";
+    ViewBag.BodyClass = "CONTACTUS";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@section meta{
+    <meta property="og:url" content="https://www.tampines.org.sg/feedback-thankyou.html" />
+    <meta property="og:title" content="Feedback | Tampines Town Council" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="https://www.tampines.org.sg/images/contactus/banner-img-feedback.jpg" />
+}
+
+
+<div class="mainContents">
+    <div class="contactUs">
+        <!--Page Banner-->
+        <div class="pageBanner">
+            <img src="@appPath/Contents/images/contactus/banner-img-feedback.jpg" alt="">
+        </div>
+        <!--Breadcrumb-->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="@appPath/">Home</a><span></span><a href="javascript:void(0)">Contact Us</a><span></span>Feedback
+            </div>
+        </div>
+
+        <!--Feedback-->
+        <div class="pageContents feedbackForm">
+            <h1>Feedback</h1>
+            <p>
+                Please use the form below to submit your feedback, comments or suggestions.<br />
+                We will get back to you within three working days.
+            </p>
+
+            <form action="feedback-thankyou.html">
+                <div class="commonForm">
+                    <span class="fieldName">Please select a function:</span>
+                    <span>
+                        <div class="padding5"></div>
+                        <input type="radio" id="feedback" name="feedbackType" checked>
+                        <label for="feedback">Feedback</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" id="bulkyItem" name="feedbackType">
+                        <label for="bulkyItem">Bulky Item Removal</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" id="others" name="feedbackType">
+                        <label for="others">Others</label>
+                    </span>
+
+                    <span class="fieldName">Full Name as per NRIC: *</span>
+                    <span>
+                        <div class="nameInNric">
+                            <ul>
+                                <li>
+                                    <select name="drpSalutation" id="drpSalutation">
+                                        <option value="Mr">Mr</option>
+                                        <option value="Ms">Ms</option>
+                                        <option value="Mrs">Mrs</option>
+                                        <option value="Dr">Dr</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <input name="txtName" type="text" id="txtName" />
+                                </li>
+                            </ul>
+                            <span id="reqName" class="error" style="display:none;">Do not leave this field empty.</span>
+                        </div>
+                    </span>
+
+                    <span class="fieldName">NRIC/FIN: *</span>
+                    <span>
+                        <input name="txtNRIC" type="text" maxlength="4" id="txtNRIC" placeholder="Enter last 4 digits of your NRIC (e.g. 567A)" />
+                        <span id="reqName" class="error" style="display:none;">Do not leave this field empty.</span>
+                    </span>
+
+                    <span class="fieldName">Email: *</span>
+                    <span>
+                        <input name="txtEmail" type="text" id="txtEmail" />
+                        <span id="reqEmail" class="error" style="display:none;">Do not leave this field empty.</span>
+                        <span id="regEmailValid" class="error" style="display:none;">Invalid Email.</span>
+                    </span>
+
+                    <span class="fieldName">Contact No.: *</span>
+                    <span>
+                        <input name="txtContactNo" type="text" id="txtContactNo" />
+                        <span id="reqContactNo" class="error" style="display:none;">Do not leave this field empty.</span>
+                    </span>
+
+                    <span class="fieldName">Block: *</span>
+                    <span class="blkNum">
+                        <select name="drpBlock" id="drpBlock">
+                            <option value="" disabled selected>-- Select --</option>
+                            <option value="Block 101">Block 101</option>
+                            <option value="Block 102">Block 102</option>
+                            <option value="Block 103">Block 103</option>
+                            <option value="Block 104">Block 104</option>
+                            <option value="Block 105">Block 105</option>
+                            <option value="Block 106">Block 106</option>
+                            <option value="Block 107">Block 107</option>
+                            <option value="Block 108">Block 108</option>
+                            <option value="Block 109">Block 109</option>
+                            <option value="Block 110">Block 110</option>
+                            <option value="Block 111">Block 111</option>
+                            <option value="Block 112">Block 112</option>
+                            <option value="Block 113">Block 113</option>
+                            <option value="Block 114">Block 114</option>
+                            <option value="Block 117">Block 117</option>
+                            <option value="Block 124">Block 124</option>
+                            <option value="Block 125">Block 125</option>
+                            <option value="Block 126">Block 126</option>
+                            <option value="Block 127">Block 127</option>
+                            <option value="Block 136">Block 136</option>
+                            <option value="Block 136A">Block 136A</option>
+                            <option value="Block 137">Block 137</option>
+                            <option value="Block 137A">Block 137A</option>
+                            <option value="Block 137B">Block 137B</option>
+                            <option value="Block 137C">Block 137C</option>
+                            <option value="Block 137D">Block 137D</option>
+                            <option value="Block 138">Block 138</option>
+                            <option value="Block 139">Block 139</option>
+                            <option value="Block 140">Block 140</option>
+                            <option value="Block 141">Block 141</option>
+                            <option value="Block 142">Block 142</option>
+                            <option value="Block 143">Block 143</option>
+                            <option value="Block 144">Block 144</option>
+                            <option value="Block 145">Block 145</option>
+                            <option value="Block 146">Block 146</option>
+                            <option value="Block 147">Block 147</option>
+                            <option value="Block 148">Block 148</option>
+                            <option value="Block 149">Block 149</option>
+                            <option value="Block 150">Block 150</option>
+                            <option value="Block 151">Block 151</option>
+                            <option value="Block 156">Block 156</option>
+                            <option value="Block 157">Block 157</option>
+                            <option value="Block 158">Block 158</option>
+                            <option value="Block 159">Block 159</option>
+                            <option value="Block 160">Block 160</option>
+                            <option value="Block 161">Block 161</option>
+                            <option value="Block 162">Block 162</option>
+                            <option value="Block 163">Block 163</option>
+                            <option value="Block 164">Block 164</option>
+                            <option value="Block 165">Block 165</option>
+                            <option value="Block 166">Block 166</option>
+                            <option value="Block 201">Block 201</option>
+                            <option value="Block 201A">Block 201A</option>
+                            <option value="Block 201B">Block 201B</option>
+                            <option value="Block 201C">Block 201C</option>
+                            <option value="Block 201D">Block 201D</option>
+                            <option value="Block 201E">Block 201E</option>
+                            <option value="Block 201G">Block 201G</option>
+                            <option value="Block 202">Block 202</option>
+                            <option value="Block 203">Block 203</option>
+                            <option value="Block 204">Block 204</option>
+                            <option value="Block 205">Block 205</option>
+                            <option value="Block 206">Block 206</option>
+                            <option value="Block 207">Block 207</option>
+                            <option value="Block 208">Block 208</option>
+                            <option value="Block 208A">Block 208A</option>
+                            <option value="Block 209">Block 209</option>
+                            <option value="Block 210">Block 210</option>
+                            <option value="Block 211">Block 211</option>
+                            <option value="Block 212">Block 212</option>
+                            <option value="Block 213">Block 213</option>
+                            <option value="Block 214">Block 214</option>
+                            <option value="Block 215">Block 215</option>
+                            <option value="Block 216">Block 216</option>
+                            <option value="Block 217">Block 217</option>
+                            <option value="Block 218">Block 218</option>
+                            <option value="Block 219">Block 219</option>
+                            <option value="Block 220">Block 220</option>
+                            <option value="Block 221">Block 221</option>
+                            <option value="Block 222">Block 222</option>
+                            <option value="Block 223">Block 223</option>
+                            <option value="Block 224">Block 224</option>
+                            <option value="Block 225">Block 225</option>
+                            <option value="Block 226">Block 226</option>
+                            <option value="Block 227">Block 227</option>
+                            <option value="Block 228">Block 228</option>
+                            <option value="Block 229">Block 229</option>
+                            <option value="Block 230">Block 230</option>
+                            <option value="Block 230A">Block 230A</option>
+                            <option value="Block 230B">Block 230B</option>
+                            <option value="Block 230C">Block 230C</option>
+                            <option value="Block 230D">Block 230D</option>
+                            <option value="Block 230E">Block 230E</option>
+                            <option value="Block 230F">Block 230F</option>
+                            <option value="Block 230G">Block 230G</option>
+                            <option value="Block 230H">Block 230H</option>
+                            <option value="Block 230J">Block 230J</option>
+                            <option value="Block 231">Block 231</option>
+                            <option value="Block 232">Block 232</option>
+                            <option value="Block 233">Block 233</option>
+                            <option value="Block 234">Block 234</option>
+                            <option value="Block 235">Block 235</option>
+                            <option value="Block 236">Block 236</option>
+                            <option value="Block 237">Block 237</option>
+                            <option value="Block 238">Block 238</option>
+                            <option value="Block 239">Block 239</option>
+                            <option value="Block 240">Block 240</option>
+                            <option value="Block 241">Block 241</option>
+                            <option value="Block 242">Block 242</option>
+                            <option value="Block 243">Block 243</option>
+                            <option value="Block 244">Block 244</option>
+                            <option value="Block 245">Block 245</option>
+                            <option value="Block 246">Block 246</option>
+                            <option value="Block 247">Block 247</option>
+                            <option value="Block 248">Block 248</option>
+                            <option value="Block 249">Block 249</option>
+                            <option value="Block 250">Block 250</option>
+                            <option value="Block 251">Block 251</option>
+                            <option value="Block 252">Block 252</option>
+                            <option value="Block 253">Block 253</option>
+                            <option value="Block 254">Block 254</option>
+                            <option value="Block 255">Block 255</option>
+                            <option value="Block 256">Block 256</option>
+                            <option value="Block 257">Block 257</option>
+                            <option value="Block 258">Block 258</option>
+                            <option value="Block 259">Block 259</option>
+                            <option value="Block 260">Block 260</option>
+                            <option value="Block 261">Block 261</option>
+                            <option value="Block 262">Block 262</option>
+                            <option value="Block 263">Block 263</option>
+                            <option value="Block 264">Block 264</option>
+                            <option value="Block 265">Block 265</option>
+                            <option value="Block 266">Block 266</option>
+                            <option value="Block 267">Block 267</option>
+                            <option value="Block 268">Block 268</option>
+                            <option value="Block 269">Block 269</option>
+                            <option value="Block 270">Block 270</option>
+                            <option value="Block 271">Block 271</option>
+                            <option value="Block 272">Block 272</option>
+                            <option value="Block 273">Block 273</option>
+                            <option value="Block 274">Block 274</option>
+                            <option value="Block 275">Block 275</option>
+                            <option value="Block 276">Block 276</option>
+                            <option value="Block 277">Block 277</option>
+                            <option value="Block 278">Block 278</option>
+                            <option value="Block 279">Block 279</option>
+                            <option value="Block 280">Block 280</option>
+                            <option value="Block 281">Block 281</option>
+                            <option value="Block 281A">Block 281A</option>
+                            <option value="Block 282">Block 282</option>
+                            <option value="Block 283">Block 283</option>
+                            <option value="Block 284">Block 284</option>
+                            <option value="Block 285">Block 285</option>
+                            <option value="Block 286">Block 286</option>
+                            <option value="Block 287">Block 287</option>
+                            <option value="Block 288">Block 288</option>
+                            <option value="Block 289">Block 289</option>
+                            <option value="Block 290">Block 290</option>
+                            <option value="Block 291">Block 291</option>
+                            <option value="Block 292">Block 292</option>
+                            <option value="Block 293">Block 293</option>
+                            <option value="Block 294">Block 294</option>
+                            <option value="Block 295">Block 295</option>
+                            <option value="Block 296">Block 296</option>
+                            <option value="Block 297">Block 297</option>
+                            <option value="Block 298">Block 298</option>
+                            <option value="Block 299A">Block 299A</option>
+                            <option value="Block 299B">Block 299B</option>
+                            <option value="Block 301">Block 301</option>
+                            <option value="Block 302">Block 302</option>
+                            <option value="Block 303">Block 303</option>
+                            <option value="Block 304">Block 304</option>
+                            <option value="Block 305">Block 305</option>
+                            <option value="Block 306">Block 306</option>
+                            <option value="Block 307">Block 307</option>
+                            <option value="Block 307A">Block 307A</option>
+                            <option value="Block 308">Block 308</option>
+                            <option value="Block 309">Block 309</option>
+                            <option value="Block 310">Block 310</option>
+                            <option value="Block 311">Block 311</option>
+                            <option value="Block 311A">Block 311A</option>
+                            <option value="Block 312">Block 312</option>
+                            <option value="Block 313">Block 313</option>
+                            <option value="Block 314">Block 314</option>
+                            <option value="Block 315">Block 315</option>
+                            <option value="Block 316">Block 316</option>
+                            <option value="Block 317">Block 317</option>
+                            <option value="Block 318">Block 318</option>
+                            <option value="Block 319">Block 319</option>
+                            <option value="Block 320">Block 320</option>
+                            <option value="Block 321">Block 321</option>
+                            <option value="Block 322">Block 322</option>
+                            <option value="Block 323">Block 323</option>
+                            <option value="Block 324">Block 324</option>
+                            <option value="Block 325">Block 325</option>
+                            <option value="Block 326">Block 326</option>
+                            <option value="Block 327">Block 327</option>
+                            <option value="Block 328">Block 328</option>
+                            <option value="Block 329">Block 329</option>
+                            <option value="Block 330">Block 330</option>
+                            <option value="Block 330A">Block 330A</option>
+                            <option value="Block 331">Block 331</option>
+                            <option value="Block 331A">Block 331A</option>
+                            <option value="Block 332">Block 332</option>
+                            <option value="Block 333">Block 333</option>
+                            <option value="Block 334">Block 334</option>
+                            <option value="Block 335">Block 335</option>
+                            <option value="Block 336">Block 336</option>
+                            <option value="Block 337">Block 337</option>
+                            <option value="Block 338">Block 338</option>
+                            <option value="Block 339">Block 339</option>
+                            <option value="Block 340">Block 340</option>
+                            <option value="Block 340A">Block 340A</option>
+                            <option value="Block 341">Block 341</option>
+                            <option value="Block 342">Block 342</option>
+                            <option value="Block 343">Block 343</option>
+                            <option value="Block 345">Block 345</option>
+                            <option value="Block 346">Block 346</option>
+                            <option value="Block 347">Block 347</option>
+                            <option value="Block 348">Block 348</option>
+                            <option value="Block 349">Block 349</option>
+                            <option value="Block 350">Block 350</option>
+                            <option value="Block 351">Block 351</option>
+                            <option value="Block 351A">Block 351A</option>
+                            <option value="Block 352">Block 352</option>
+                            <option value="Block 353">Block 353</option>
+                            <option value="Block 354">Block 354</option>
+                            <option value="Block 354A">Block 354A</option>
+                            <option value="Block 355">Block 355</option>
+                            <option value="Block 356">Block 356</option>
+                            <option value="Block 357">Block 357</option>
+                            <option value="Block 358">Block 358</option>
+                            <option value="Block 359">Block 359</option>
+                            <option value="Block 359A">Block 359A</option>
+                            <option value="Block 360">Block 360</option>
+                            <option value="Block 361">Block 361</option>
+                            <option value="Block 361A">Block 361A</option>
+                            <option value="Block 362">Block 362</option>
+                            <option value="Block 363">Block 363</option>
+                            <option value="Block 364">Block 364</option>
+                            <option value="Block 364A">Block 364A</option>
+                            <option value="Block 365">Block 365</option>
+                            <option value="Block 366">Block 366</option>
+                            <option value="Block 366A">Block 366A</option>
+                            <option value="Block 367">Block 367</option>
+                            <option value="Block 367A">Block 367A</option>
+                            <option value="Block 368">Block 368</option>
+                            <option value="Block 369">Block 369</option>
+                            <option value="Block 370">Block 370</option>
+                            <option value="Block 371">Block 371</option>
+                            <option value="Block 372">Block 372</option>
+                            <option value="Block 373">Block 373</option>
+                            <option value="Block 374">Block 374</option>
+                            <option value="Block 374A">Block 374A</option>
+                            <option value="Block 381">Block 381</option>
+                            <option value="Block 382">Block 382</option>
+                            <option value="Block 383">Block 383</option>
+                            <option value="Block 384">Block 384</option>
+                            <option value="Block 385">Block 385</option>
+                            <option value="Block 386">Block 386</option>
+                            <option value="Block 387">Block 387</option>
+                            <option value="Block 388">Block 388</option>
+                            <option value="Block 389">Block 389</option>
+                            <option value="Block 390">Block 390</option>
+                            <option value="Block 390A">Block 390A</option>
+                            <option value="Block 391">Block 391</option>
+                            <option value="Block 392">Block 392</option>
+                            <option value="Block 393">Block 393</option>
+                            <option value="Block 394">Block 394</option>
+                            <option value="Block 395">Block 395</option>
+                            <option value="Block 396">Block 396</option>
+                            <option value="Block 401">Block 401</option>
+                            <option value="Block 402">Block 402</option>
+                            <option value="Block 403">Block 403</option>
+                            <option value="Block 404">Block 404</option>
+                            <option value="Block 405">Block 405</option>
+                            <option value="Block 406">Block 406</option>
+                            <option value="Block 407">Block 407</option>
+                            <option value="Block 408">Block 408</option>
+                            <option value="Block 409">Block 409</option>
+                            <option value="Block 410">Block 410</option>
+                            <option value="Block 411">Block 411</option>
+                            <option value="Block 412">Block 412</option>
+                            <option value="Block 413">Block 413</option>
+                            <option value="Block 414">Block 414</option>
+                            <option value="Block 415">Block 415</option>
+                            <option value="Block 416">Block 416</option>
+                            <option value="Block 417">Block 417</option>
+                            <option value="Block 418">Block 418</option>
+                            <option value="Block 419">Block 419</option>
+                            <option value="Block 420">Block 420</option>
+                            <option value="Block 421">Block 421</option>
+                            <option value="Block 422">Block 422</option>
+                            <option value="Block 423">Block 423</option>
+                            <option value="Block 424">Block 424</option>
+                            <option value="Block 425">Block 425</option>
+                            <option value="Block 426">Block 426</option>
+                            <option value="Block 427">Block 427</option>
+                            <option value="Block 428">Block 428</option>
+                            <option value="Block 429">Block 429</option>
+                            <option value="Block 430">Block 430</option>
+                            <option value="Block 431">Block 431</option>
+                            <option value="Block 432">Block 432</option>
+                            <option value="Block 433">Block 433</option>
+                            <option value="Block 434">Block 434</option>
+                            <option value="Block 435">Block 435</option>
+                            <option value="Block 436">Block 436</option>
+                            <option value="Block 437">Block 437</option>
+                            <option value="Block 438">Block 438</option>
+                            <option value="Block 439">Block 439</option>
+                            <option value="Block 440">Block 440</option>
+                            <option value="Block 441">Block 441</option>
+                            <option value="Block 442">Block 442</option>
+                            <option value="Block 443">Block 443</option>
+                            <option value="Block 444">Block 444</option>
+                            <option value="Block 445">Block 445</option>
+                            <option value="Block 446">Block 446</option>
+                            <option value="Block 447">Block 447</option>
+                            <option value="Block 448">Block 448</option>
+                            <option value="Block 449">Block 449</option>
+                            <option value="Block 450">Block 450</option>
+                            <option value="Block 450A">Block 450A</option>
+                            <option value="Block 450B">Block 450B</option>
+                            <option value="Block 450C">Block 450C</option>
+                            <option value="Block 450D">Block 450D</option>
+                            <option value="Block 450E">Block 450E</option>
+                            <option value="Block 450F">Block 450F</option>
+                            <option value="Block 450G">Block 450G</option>
+                            <option value="Block 451">Block 451</option>
+                            <option value="Block 452">Block 452</option>
+                            <option value="Block 453">Block 453</option>
+                            <option value="Block 454">Block 454</option>
+                            <option value="Block 455">Block 455</option>
+                            <option value="Block 456">Block 456</option>
+                            <option value="Block 457">Block 457</option>
+                            <option value="Block 458">Block 458</option>
+                            <option value="Block 459">Block 459</option>
+                            <option value="Block 460">Block 460</option>
+                            <option value="Block 461">Block 461</option>
+                            <option value="Block 462">Block 462</option>
+                            <option value="Block 463">Block 463</option>
+                            <option value="Block 464">Block 464</option>
+                            <option value="Block 465">Block 465</option>
+                            <option value="Block 466">Block 466</option>
+                            <option value="Block 467">Block 467</option>
+                            <option value="Block 468">Block 468</option>
+                            <option value="Block 469">Block 469</option>
+                            <option value="Block 470">Block 470</option>
+                            <option value="Block 471">Block 471</option>
+                            <option value="Block 472">Block 472</option>
+                            <option value="Block 473">Block 473</option>
+                            <option value="Block 474">Block 474</option>
+                            <option value="Block 475">Block 475</option>
+                            <option value="Block 476">Block 476</option>
+                            <option value="Block 477">Block 477</option>
+                            <option value="Block 478">Block 478</option>
+                            <option value="Block 479">Block 479</option>
+                            <option value="Block 480">Block 480</option>
+                            <option value="Block 481">Block 481</option>
+                            <option value="Block 482">Block 482</option>
+                            <option value="Block 483">Block 483</option>
+                            <option value="Block 484">Block 484</option>
+                            <option value="Block 485A">Block 485A</option>
+                            <option value="Block 485B">Block 485B</option>
+                            <option value="Block 486A">Block 486A</option>
+                            <option value="Block 486B">Block 486B</option>
+                            <option value="Block 486C">Block 486C</option>
+                            <option value="Block 487A">Block 487A</option>
+                            <option value="Block 487B">Block 487B</option>
+                            <option value="Block 487C">Block 487C</option>
+                            <option value="Block 488A">Block 488A</option>
+                            <option value="Block 488B">Block 488B</option>
+                            <option value="Block 489A">Block 489A</option>
+                            <option value="Block 489B">Block 489B</option>
+                            <option value="Block 489C">Block 489C</option>
+                            <option value="Block 490A">Block 490A</option>
+                            <option value="Block 490B">Block 490B</option>
+                            <option value="Block 491A">Block 491A</option>
+                            <option value="Block 491B">Block 491B</option>
+                            <option value="Block 491C">Block 491C</option>
+                            <option value="Block 491D">Block 491D</option>
+                            <option value="Block 491E">Block 491E</option>
+                            <option value="Block 491F">Block 491F</option>
+                            <option value="Block 491G">Block 491G</option>
+                            <option value="Block 491H">Block 491H</option>
+                            <option value="Block 492">Block 492</option>
+                            <option value="Block 492A">Block 492A</option>
+                            <option value="Block 492B">Block 492B</option>
+                            <option value="Block 492C">Block 492C</option>
+                            <option value="Block 492D">Block 492D</option>
+                            <option value="Block 492E">Block 492E</option>
+                            <option value="Block 492F">Block 492F</option>
+                            <option value="Block 492G">Block 492G</option>
+                            <option value="Block 493A">Block 493A</option>
+                            <option value="Block 493B">Block 493B</option>
+                            <option value="Block 493C">Block 493C</option>
+                            <option value="Block 493D">Block 493D</option>
+                            <option value="Block 493E">Block 493E</option>
+                            <option value="Block 494">Block 494</option>
+                            <option value="Block 494A">Block 494A</option>
+                            <option value="Block 494B">Block 494B</option>
+                            <option value="Block 494C">Block 494C</option>
+                            <option value="Block 494D">Block 494D</option>
+                            <option value="Block 494E">Block 494E</option>
+                            <option value="Block 494F">Block 494F</option>
+                            <option value="Block 494G">Block 494G</option>
+                            <option value="Block 494H">Block 494H</option>
+                            <option value="Block 494I">Block 494I</option>
+                            <option value="Block 494J">Block 494J</option>
+                            <option value="Block 495A">Block 495A</option>
+                            <option value="Block 495B">Block 495B</option>
+                            <option value="Block 495C">Block 495C</option>
+                            <option value="Block 495D">Block 495D</option>
+                            <option value="Block 495E">Block 495E</option>
+                            <option value="Block 495F">Block 495F</option>
+                            <option value="Block 496A">Block 496A</option>
+                            <option value="Block 496B">Block 496B</option>
+                            <option value="Block 496C">Block 496C</option>
+                            <option value="Block 496D">Block 496D</option>
+                            <option value="Block 496E">Block 496E</option>
+                            <option value="Block 496F">Block 496F</option>
+                            <option value="Block 496G">Block 496G</option>
+                            <option value="Block 497A">Block 497A</option>
+                            <option value="Block 497B">Block 497B</option>
+                            <option value="Block 497C">Block 497C</option>
+                            <option value="Block 497D">Block 497D</option>
+                            <option value="Block 497F">Block 497F</option>
+                            <option value="Block 497G">Block 497G</option>
+                            <option value="Block 497H">Block 497H</option>
+                            <option value="Block 497I">Block 497I</option>
+                            <option value="Block 497J">Block 497J</option>
+                            <option value="Block 497K">Block 497K</option>
+                            <option value="Block 497L">Block 497L</option>
+                            <option value="Block 498A">Block 498A</option>
+                            <option value="Block 498B">Block 498B</option>
+                            <option value="Block 498D">Block 498D</option>
+                            <option value="Block 498E">Block 498E</option>
+                            <option value="Block 498F">Block 498F</option>
+                            <option value="Block 498G">Block 498G</option>
+                            <option value="Block 498H">Block 498H</option>
+                            <option value="Block 498I">Block 498I</option>
+                            <option value="Block 498J">Block 498J</option>
+                            <option value="Block 498K">Block 498K</option>
+                            <option value="Block 498L">Block 498L</option>
+                            <option value="Block 498M">Block 498M</option>
+                            <option value="Block 498N">Block 498N</option>
+                            <option value="Block 499">Block 499</option>
+                            <option value="Block 499A">Block 499A</option>
+                            <option value="Block 499B">Block 499B</option>
+                            <option value="Block 499C">Block 499C</option>
+                            <option value="Block 499D">Block 499D</option>
+                            <option value="Block 501">Block 501</option>
+                            <option value="Block 502">Block 502</option>
+                            <option value="Block 503">Block 503</option>
+                            <option value="Block 504">Block 504</option>
+                            <option value="Block 505">Block 505</option>
+                            <option value="Block 506">Block 506</option>
+                            <option value="Block 507">Block 507</option>
+                            <option value="Block 508">Block 508</option>
+                            <option value="Block 509">Block 509</option>
+                            <option value="Block 510">Block 510</option>
+                            <option value="Block 512">Block 512</option>
+                            <option value="Block 512A">Block 512A</option>
+                            <option value="Block 513">Block 513</option>
+                            <option value="Block 515">Block 515</option>
+                            <option value="Block 515A">Block 515A</option>
+                            <option value="Block 515B">Block 515B</option>
+                            <option value="Block 515C">Block 515C</option>
+                            <option value="Block 515D">Block 515D</option>
+                            <option value="Block 516">Block 516</option>
+                            <option value="Block 517">Block 517</option>
+                            <option value="Block 518">Block 518</option>
+                            <option value="Block 518A">Block 518A</option>
+                            <option value="Block 518B">Block 518B</option>
+                            <option value="Block 518C">Block 518C</option>
+                            <option value="Block 518D">Block 518D</option>
+                            <option value="Block 519">Block 519</option>
+                            <option value="Block 519A">Block 519A</option>
+                            <option value="Block 519B">Block 519B</option>
+                            <option value="Block 519C">Block 519C</option>
+                            <option value="Block 519D">Block 519D</option>
+                            <option value="Block 520">Block 520</option>
+                            <option value="Block 520A">Block 520A</option>
+                            <option value="Block 520B">Block 520B</option>
+                            <option value="Block 520C">Block 520C</option>
+                            <option value="Block 522">Block 522</option>
+                            <option value="Block 522A">Block 522A</option>
+                            <option value="Block 522B">Block 522B</option>
+                            <option value="Block 522C">Block 522C</option>
+                            <option value="Block 523">Block 523</option>
+                            <option value="Block 523A">Block 523A</option>
+                            <option value="Block 523B">Block 523B</option>
+                            <option value="Block 523C">Block 523C</option>
+                            <option value="Block 523D">Block 523D</option>
+                            <option value="Block 524">Block 524</option>
+                            <option value="Block 524A">Block 524A</option>
+                            <option value="Block 524B">Block 524B</option>
+                            <option value="Block 601">Block 601</option>
+                            <option value="Block 601A">Block 601A</option>
+                            <option value="Block 601A-D">Block 601A-D</option>
+                            <option value="Block 601B">Block 601B</option>
+                            <option value="Block 601C">Block 601C</option>
+                            <option value="Block 601D">Block 601D</option>
+                            <option value="Block 602A-B">Block 602A-B</option>
+                            <option value="Block 603">Block 603</option>
+                            <option value="Block 603A">Block 603A</option>
+                            <option value="Block 604">Block 604</option>
+                            <option value="Block 604A">Block 604A</option>
+                            <option value="Block 604B">Block 604B</option>
+                            <option value="Block 605">Block 605</option>
+                            <option value="Block 605A">Block 605A</option>
+                            <option value="Block 605B">Block 605B</option>
+                            <option value="Block 605C">Block 605C</option>
+                            <option value="Block 605D">Block 605D</option>
+                            <option value="Block 606">Block 606</option>
+                            <option value="Block 606A">Block 606A</option>
+                            <option value="Block 606B">Block 606B</option>
+                            <option value="Block 606C">Block 606C</option>
+                            <option value="Block 606D">Block 606D</option>
+                            <option value="Block 607A-C">Block 607A-C</option>
+                            <option value="Block 608">Block 608</option>
+                            <option value="Block 608A">Block 608A</option>
+                            <option value="Block 608B">Block 608B</option>
+                            <option value="Block 608C">Block 608C</option>
+                            <option value="Block 609">Block 609</option>
+                            <option value="Block 609A">Block 609A</option>
+                            <option value="Block 609B">Block 609B</option>
+                            <option value="Block 609C">Block 609C</option>
+                            <option value="Block 609D">Block 609D</option>
+                            <option value="Block 610">Block 610</option>
+                            <option value="Block 610A">Block 610A</option>
+                            <option value="Block 610B">Block 610B</option>
+                            <option value="Block 610C">Block 610C</option>
+                            <option value="Block 611">Block 611</option>
+                            <option value="Block 612A">Block 612A</option>
+                            <option value="Block 612B">Block 612B</option>
+                            <option value="Block 613">Block 613</option>
+                            <option value="Block 613A">Block 613A</option>
+                            <option value="Block 613B">Block 613B</option>
+                            <option value="Block 614">Block 614</option>
+                            <option value="Block 614A">Block 614A</option>
+                            <option value="Block 614B">Block 614B</option>
+                            <option value="Block 618A">Block 618A</option>
+                            <option value="Block 618B">Block 618B</option>
+                            <option value="Block 619A">Block 619A</option>
+                            <option value="Block 619B">Block 619B</option>
+                            <option value="Block 620A">Block 620A</option>
+                            <option value="Block 620B">Block 620B</option>
+                            <option value="Block 621A">Block 621A</option>
+                            <option value="Block 621B">Block 621B</option>
+                            <option value="Block 622A">Block 622A</option>
+                            <option value="Block 622B">Block 622B</option>
+                            <option value="Block 623A">Block 623A</option>
+                            <option value="Block 623B">Block 623B</option>
+                            <option value="Block 623C">Block 623C</option>
+                            <option value="Block 624A">Block 624A</option>
+                            <option value="Block 624B">Block 624B</option>
+                            <option value="Block 625A">Block 625A</option>
+                            <option value="Block 625B">Block 625B</option>
+                            <option value="Block 626A">Block 626A</option>
+                            <option value="Block 627A">Block 627A</option>
+                            <option value="Block 627B">Block 627B</option>
+                            <option value="Block 701">Block 701</option>
+                            <option value="Block 701A">Block 701A</option>
+                            <option value="Block 702">Block 702</option>
+                            <option value="Block 703">Block 703</option>
+                            <option value="Block 704">Block 704</option>
+                            <option value="Block 705">Block 705</option>
+                            <option value="Block 706">Block 706</option>
+                            <option value="Block 707">Block 707</option>
+                            <option value="Block 708">Block 708</option>
+                            <option value="Block 708A">Block 708A</option>
+                            <option value="Block 709">Block 709</option>
+                            <option value="Block 710">Block 710</option>
+                            <option value="Block 711">Block 711</option>
+                            <option value="Block 712">Block 712</option>
+                            <option value="Block 713">Block 713</option>
+                            <option value="Block 714">Block 714</option>
+                            <option value="Block 715">Block 715</option>
+                            <option value="Block 716">Block 716</option>
+                            <option value="Block 716A">Block 716A</option>
+                            <option value="Block 717">Block 717</option>
+                            <option value="Block 718">Block 718</option>
+                            <option value="Block 719">Block 719</option>
+                            <option value="Block 720">Block 720</option>
+                            <option value="Block 721">Block 721</option>
+                            <option value="Block 722">Block 722</option>
+                            <option value="Block 723">Block 723</option>
+                            <option value="Block 723A">Block 723A</option>
+                            <option value="Block 724">Block 724</option>
+                            <option value="Block 725">Block 725</option>
+                            <option value="Block 726">Block 726</option>
+                            <option value="Block 727">Block 727</option>
+                            <option value="Block 727A">Block 727A</option>
+                            <option value="Block 728">Block 728</option>
+                            <option value="Block 729">Block 729</option>
+                            <option value="Block 730">Block 730</option>
+                            <option value="Block 730A">Block 730A</option>
+                            <option value="Block 731">Block 731</option>
+                            <option value="Block 732">Block 732</option>
+                            <option value="Block 733">Block 733</option>
+                            <option value="Block 734">Block 734</option>
+                            <option value="Block 735">Block 735</option>
+                            <option value="Block 736">Block 736</option>
+                            <option value="Block 737">Block 737</option>
+                            <option value="Block 738">Block 738</option>
+                            <option value="Block 739">Block 739</option>
+                            <option value="Block 740">Block 740</option>
+                            <option value="Block 741">Block 741</option>
+                            <option value="Block 742">Block 742</option>
+                            <option value="Block 742A">Block 742A</option>
+                            <option value="Block 801">Block 801</option>
+                            <option value="Block 802">Block 802</option>
+                            <option value="Block 803">Block 803</option>
+                            <option value="Block 804">Block 804</option>
+                            <option value="Block 805">Block 805</option>
+                            <option value="Block 806">Block 806</option>
+                            <option value="Block 807">Block 807</option>
+                            <option value="Block 808">Block 808</option>
+                            <option value="Block 809">Block 809</option>
+                            <option value="Block 810">Block 810</option>
+                            <option value="Block 811">Block 811</option>
+                            <option value="Block 812">Block 812</option>
+                            <option value="Block 813">Block 813</option>
+                            <option value="Block 814">Block 814</option>
+                            <option value="Block 815">Block 815</option>
+                            <option value="Block 816">Block 816</option>
+                            <option value="Block 817">Block 817</option>
+                            <option value="Block 818">Block 818</option>
+                            <option value="Block 819">Block 819</option>
+                            <option value="Block 820">Block 820</option>
+                            <option value="Block 821">Block 821</option>
+                            <option value="Block 822">Block 822</option>
+                            <option value="Block 823">Block 823</option>
+                            <option value="Block 823A">Block 823A</option>
+                            <option value="Block 824">Block 824</option>
+                            <option value="Block 825">Block 825</option>
+                            <option value="Block 826">Block 826</option>
+                            <option value="Block 826A">Block 826A</option>
+                            <option value="Block 827">Block 827</option>
+                            <option value="Block 827A">Block 827A</option>
+                            <option value="Block 827B">Block 827B</option>
+                            <option value="Block 828">Block 828</option>
+                            <option value="Block 828A">Block 828A</option>
+                            <option value="Block 829">Block 829</option>
+                            <option value="Block 830">Block 830</option>
+                            <option value="Block 831">Block 831</option>
+                            <option value="Block 832">Block 832</option>
+                            <option value="Block 833">Block 833</option>
+                            <option value="Block 834">Block 834</option>
+                            <option value="Block 835">Block 835</option>
+                            <option value="Block 836">Block 836</option>
+                            <option value="Block 837">Block 837</option>
+                            <option value="Block 838">Block 838</option>
+                            <option value="Block 839">Block 839</option>
+                            <option value="Block 840">Block 840</option>
+                            <option value="Block 841">Block 841</option>
+                            <option value="Block 842">Block 842</option>
+                            <option value="Block 842A">Block 842A</option>
+                            <option value="Block 842B">Block 842B</option>
+                            <option value="Block 842C">Block 842C</option>
+                            <option value="Block 842D">Block 842D</option>
+                            <option value="Block 842E">Block 842E</option>
+                            <option value="Block 842F">Block 842F</option>
+                            <option value="Block 842G">Block 842G</option>
+                            <option value="Block 842H">Block 842H</option>
+                            <option value="Block 843">Block 843</option>
+                            <option value="Block 844">Block 844</option>
+                            <option value="Block 845">Block 845</option>
+                            <option value="Block 846">Block 846</option>
+                            <option value="Block 847">Block 847</option>
+                            <option value="Block 848">Block 848</option>
+                            <option value="Block 849">Block 849</option>
+                            <option value="Block 850">Block 850</option>
+                            <option value="Block 851">Block 851</option>
+                            <option value="Block 852">Block 852</option>
+                            <option value="Block 853">Block 853</option>
+                            <option value="Block 854">Block 854</option>
+                            <option value="Block 855">Block 855</option>
+                            <option value="Block 856">Block 856</option>
+                            <option value="Block 856A">Block 856A</option>
+                            <option value="Block 856B">Block 856B</option>
+                            <option value="Block 856C">Block 856C</option>
+                            <option value="Block 856D">Block 856D</option>
+                            <option value="Block 856E">Block 856E</option>
+                            <option value="Block 856F">Block 856F</option>
+                            <option value="Block 857">Block 857</option>
+                            <option value="Block 857A">Block 857A</option>
+                            <option value="Block 857B">Block 857B</option>
+                            <option value="Block 858">Block 858</option>
+                            <option value="Block 858A">Block 858A</option>
+                            <option value="Block 858B">Block 858B</option>
+                            <option value="Block 859">Block 859</option>
+                            <option value="Block 859A">Block 859A</option>
+                            <option value="Block 860">Block 860</option>
+                            <option value="Block 860A">Block 860A</option>
+                            <option value="Block 860B">Block 860B</option>
+                            <option value="Block 861">Block 861</option>
+                            <option value="Block 861A">Block 861A</option>
+                            <option value="Block 862">Block 862</option>
+                            <option value="Block 862A">Block 862A</option>
+                            <option value="Block 863">Block 863</option>
+                            <option value="Block 863A">Block 863A</option>
+                            <option value="Block 863B">Block 863B</option>
+                            <option value="Block 864">Block 864</option>
+                            <option value="Block 864A">Block 864A</option>
+                            <option value="Block 864B">Block 864B</option>
+                            <option value="Block 865">Block 865</option>
+                            <option value="Block 866">Block 866</option>
+                            <option value="Block 867">Block 867</option>
+                            <option value="Block 867A">Block 867A</option>
+                            <option value="Block 868">Block 868</option>
+                            <option value="Block 868A">Block 868A</option>
+                            <option value="Block 868B">Block 868B</option>
+                            <option value="Block 868C">Block 868C</option>
+                            <option value="Block 868D">Block 868D</option>
+                            <option value="Block 869">Block 869</option>
+                            <option value="Block 869A">Block 869A</option>
+                            <option value="Block 869B">Block 869B</option>
+                            <option value="Block 870">Block 870</option>
+                            <option value="Block 870A">Block 870A</option>
+                            <option value="Block 870B MSCP">Block 870B MSCP</option>
+                            <option value="Block 870C">Block 870C</option>
+                            <option value="Block 871">Block 871</option>
+                            <option value="Block 871A">Block 871A</option>
+                            <option value="Block 871B">Block 871B</option>
+                            <option value="Block 871C">Block 871C</option>
+                            <option value="Block 872">Block 872</option>
+                            <option value="Block 872A">Block 872A</option>
+                            <option value="Block 872B">Block 872B</option>
+                            <option value="Block 872C">Block 872C</option>
+                            <option value="Block 873">Block 873</option>
+                            <option value="Block 874">Block 874</option>
+                            <option value="Block 874A">Block 874A</option>
+                            <option value="Block 875">Block 875</option>
+                            <option value="Block 876">Block 876</option>
+                            <option value="Block 877">Block 877</option>
+                            <option value="Block 878">Block 878</option>
+                            <option value="Block 878A">Block 878A</option>
+                            <option value="Block 878B">Block 878B</option>
+                            <option value="Block 878C">Block 878C</option>
+                            <option value="Block 879">Block 879</option>
+                            <option value="Block 879A">Block 879A</option>
+                            <option value="Block 879B">Block 879B</option>
+                            <option value="Block 879C MSCP">Block 879C MSCP</option>
+                            <option value="Block 879D">Block 879D</option>
+                            <option value="Block 880">Block 880</option>
+                            <option value="Block 880A">Block 880A</option>
+                            <option value="Block 881">Block 881</option>
+                            <option value="Block 882">Block 882</option>
+                            <option value="Block 883">Block 883</option>
+                            <option value="Block 884">Block 884</option>
+                            <option value="Block 885">Block 885</option>
+                            <option value="Block 885A">Block 885A</option>
+                            <option value="Block 886">Block 886</option>
+                            <option value="Block 886A">Block 886A</option>
+                            <option value="Block 887">Block 887</option>
+                            <option value="Block 887A">Block 887A</option>
+                            <option value="Block 888">Block 888</option>
+                            <option value="Block 888A">Block 888A</option>
+                            <option value="Block 889">Block 889</option>
+                            <option value="Block 889A">Block 889A</option>
+                            <option value="Block 890A">Block 890A</option>
+                            <option value="Block 890B">Block 890B</option>
+                            <option value="Block 890C">Block 890C</option>
+                            <option value="Block 890D">Block 890D</option>
+                            <option value="Block 891">Block 891</option>
+                            <option value="Block 891A">Block 891A</option>
+                            <option value="Block 891A">Block 891A</option>
+                            <option value="Block 892">Block 892</option>
+                            <option value="Block 892A">Block 892A</option>
+                            <option value="Block 893">Block 893</option>
+                            <option value="Block 893A">Block 893A</option>
+                            <option value="Block 894">Block 894</option>
+                            <option value="Block 894A">Block 894A</option>
+                            <option value="Block 895">Block 895</option>
+                            <option value="Block 895A">Block 895A</option>
+                            <option value="Block 896">Block 896</option>
+                            <option value="Block 896A">Block 896A</option>
+                            <option value="Block 897">Block 897</option>
+                            <option value="Block 897A">Block 897A</option>
+                            <option value="Block 898">Block 898</option>
+                            <option value="Block 898A">Block 898A</option>
+                            <option value="Block 899">Block 899</option>
+                            <option value="Block 899A">Block 899A</option>
+                            <option value="Block 902">Block 902</option>
+                            <option value="Block 903">Block 903</option>
+                            <option value="Block 906">Block 906</option>
+                            <option value="Block 907">Block 907</option>
+                            <option value="Block 908">Block 908</option>
+                            <option value="Block 909">Block 909</option>
+                            <option value="Block 910">Block 910</option>
+                            <option value="Block 911">Block 911</option>
+                            <option value="Block 912">Block 912</option>
+                            <option value="Block 913">Block 913</option>
+                            <option value="Block 914">Block 914</option>
+                            <option value="Block 915">Block 915</option>
+                            <option value="Block 916">Block 916</option>
+                            <option value="Block 921">Block 921</option>
+                            <option value="Block 921A">Block 921A</option>
+                            <option value="Block 922">Block 922</option>
+                            <option value="Block 924">Block 924</option>
+                            <option value="Block 925">Block 925</option>
+                            <option value="Block 926">Block 926</option>
+                            <option value="Block 927">Block 927</option>
+                            <option value="Block 928">Block 928</option>
+                            <option value="Block 929">Block 929</option>
+                            <option value="Block 930">Block 930</option>
+                            <option value="Block 931">Block 931</option>
+                            <option value="Block 932">Block 932</option>
+                            <option value="Block 933">Block 933</option>
+                            <option value="Block 934">Block 934</option>
+                            <option value="Block 935">Block 935</option>
+                            <option value="Block 936">Block 936</option>
+                            <option value="Block 937">Block 937</option>
+                            <option value="Block 938">Block 938</option>
+                            <option value="Block 939">Block 939</option>
+                            <option value="Block 940">Block 940</option>
+                            <option value="Block 941">Block 941</option>
+                            <option value="Block 942">Block 942</option>
+                            <option value="Block 943">Block 943</option>
+                            <option value="Block 944">Block 944</option>
+                            <option value="Block 945">Block 945</option>
+                            <option value="Block 946">Block 946</option>
+                            <option value="Car Park 102-108">Car Park 102-108</option>
+                            <option value="Car Park 107">Car Park 107</option>
+                            <option value="Car Park 114-109">Car Park 114-109</option>
+                            <option value="Car Park 138">Car Park 138</option>
+                            <option value="Car Park 139">Car Park 139</option>
+                            <option value="Car Park 201A">Car Park 201A</option>
+                            <option value="Car Park 201B">Car Park 201B</option>
+                            <option value="Car Park 201D">Car Park 201D</option>
+                            <option value="Car Park 201E">Car Park 201E</option>
+                            <option value="Car Park 202">Car Park 202</option>
+                            <option value="Car Park 202A">Car Park 202A</option>
+                            <option value="Car Park 206">Car Park 206</option>
+                            <option value="Car Park 208A">Car Park 208A</option>
+                            <option value="Car Park 210">Car Park 210</option>
+                            <option value="Car Park 211">Car Park 211</option>
+                            <option value="Car Park 212">Car Park 212</option>
+                            <option value="Car Park 213">Car Park 213</option>
+                            <option value="Car Park 214">Car Park 214</option>
+                            <option value="Car Park 215">Car Park 215</option>
+                            <option value="Car Park 216">Car Park 216</option>
+                            <option value="Car Park 217">Car Park 217</option>
+                            <option value="Car Park 218">Car Park 218</option>
+                            <option value="Car Park 219">Car Park 219</option>
+                            <option value="Car Park 220">Car Park 220</option>
+                            <option value="Car Park 221">Car Park 221</option>
+                            <option value="Car Park 222">Car Park 222</option>
+                            <option value="Car Park 225">Car Park 225</option>
+                            <option value="Car Park 226">Car Park 226</option>
+                            <option value="Car Park 227">Car Park 227</option>
+                            <option value="Car Park 228">Car Park 228</option>
+                            <option value="Car Park 229">Car Park 229</option>
+                            <option value="Car Park 230">Car Park 230</option>
+                            <option value="Car Park 230A">Car Park 230A</option>
+                            <option value="Car Park 231/238">Car Park 231/238</option>
+                            <option value="Car Park 239">Car Park 239</option>
+                            <option value="Car Park 240">Car Park 240</option>
+                            <option value="Car Park 241">Car Park 241</option>
+                            <option value="Car Park 242">Car Park 242</option>
+                            <option value="Car Park 243">Car Park 243</option>
+                            <option value="Car Park 244">Car Park 244</option>
+                            <option value="Car Park 245">Car Park 245</option>
+                            <option value="Car Park 246">Car Park 246</option>
+                            <option value="Car Park 247">Car Park 247</option>
+                            <option value="Car Park 248">Car Park 248</option>
+                            <option value="Car Park 249/266">Car Park 249/266</option>
+                            <option value="Car Park 251/254">Car Park 251/254</option>
+                            <option value="Car Park 257/260">Car Park 257/260</option>
+                            <option value="Car Park 261/264">Car Park 261/264</option>
+                            <option value="Car Park 267">Car Park 267</option>
+                            <option value="Car Park 268">Car Park 268</option>
+                            <option value="Car Park 269">Car Park 269</option>
+                            <option value="Car Park 270">Car Park 270</option>
+                            <option value="Car Park 271">Car Park 271</option>
+                            <option value="Car Park 283">Car Park 283</option>
+                            <option value="Car Park 287">Car Park 287</option>
+                            <option value="Car Park 299A">Car Park 299A</option>
+                            <option value="Car Park 299B">Car Park 299B</option>
+                            <option value="Car Park 307A">Car Park 307A</option>
+                            <option value="Car Park 311A">Car Park 311A</option>
+                            <option value="Car Park 316A">Car Park 316A</option>
+                            <option value="Car Park 330A">Car Park 330A</option>
+                            <option value="Car Park 331A">Car Park 331A</option>
+                            <option value="Car Park 340A">Car Park 340A</option>
+                            <option value="Car Park 351A">Car Park 351A</option>
+                            <option value="Car Park 354A">Car Park 354A</option>
+                            <option value="Car Park 359A">Car Park 359A</option>
+                            <option value="Car Park 364A">Car Park 364A</option>
+                            <option value="Car Park 366A">Car Park 366A</option>
+                            <option value="Car Park 374A">Car Park 374A</option>
+                            <option value="Car Park 384A">Car Park 384A</option>
+                            <option value="Car Park 390A">Car Park 390A</option>
+                            <option value="Car Park 401">Car Park 401</option>
+                            <option value="Car Park 418">Car Park 418</option>
+                            <option value="Car Park 425">Car Park 425</option>
+                            <option value="Car Park 429">Car Park 429</option>
+                            <option value="Car Park 433">Car Park 433</option>
+                            <option value="Car Park 434">Car Park 434</option>
+                            <option value="Car Park 435">Car Park 435</option>
+                            <option value="Car Park 436">Car Park 436</option>
+                            <option value="Car Park 444">Car Park 444</option>
+                            <option value="Car Park 450B">Car Park 450B</option>
+                            <option value="Car Park 451">Car Park 451</option>
+                            <option value="Car Park 461">Car Park 461</option>
+                            <option value="Car Park 472">Car Park 472</option>
+                            <option value="Car Park 475">Car Park 475</option>
+                            <option value="Car Park 477">Car Park 477</option>
+                            <option value="Car Park 485A">Car Park 485A</option>
+                            <option value="Car Park 489A">Car Park 489A</option>
+                            <option value="Car Park 492A">Car Park 492A</option>
+                            <option value="Car Park 494A">Car Park 494A</option>
+                            <option value="Car Park 496A">Car Park 496A</option>
+                            <option value="Car Park 497E">Car Park 497E</option>
+                            <option value="Car Park 497K">Car Park 497K</option>
+                            <option value="Car Park 497L">Car Park 497L</option>
+                            <option value="Car Park 498C">Car Park 498C</option>
+                            <option value="Car Park 498K">Car Park 498K</option>
+                            <option value="Car Park 499">Car Park 499</option>
+                            <option value="Car Park 502">Car Park 502</option>
+                            <option value="Car Park 503/505">Car Park 503/505</option>
+                            <option value="Car Park 507">Car Park 507</option>
+                            <option value="Car Park 512">Car Park 512</option>
+                            <option value="Car Park 513">Car Park 513</option>
+                            <option value="Car Park 515">Car Park 515</option>
+                            <option value="Car Park 518">Car Park 518</option>
+                            <option value="Car Park 519(TM47)">Car Park 519(TM47)</option>
+                            <option value="Car Park 522">Car Park 522</option>
+                            <option value="Car Park 701A">Car Park 701A</option>
+                            <option value="Car Park 716A">Car Park 716A</option>
+                            <option value="Car Park 723A">Car Park 723A</option>
+                            <option value="Car Park 727A">Car Park 727A</option>
+                            <option value="Car Park 730A">Car Park 730A</option>
+                            <option value="Car Park 742A">Car Park 742A</option>
+                            <option value="Car Park 801">Car Park 801</option>
+                            <option value="Car Park 821">Car Park 821</option>
+                            <option value="Car Park 823A">Car Park 823A</option>
+                            <option value="Car Park 824">Car Park 824</option>
+                            <option value="Car Park 835">Car Park 835</option>
+                            <option value="Car Park 836">Car Park 836</option>
+                            <option value="Car Park 842">Car Park 842</option>
+                            <option value="Car Park 842A">Car Park 842A</option>
+                            <option value="Car Park 843">Car Park 843</option>
+                            <option value="Car Park 856A">Car Park 856A</option>
+                            <option value="Car Park 857A">Car Park 857A</option>
+                            <option value="Car Park 864B">Car Park 864B</option>
+                            <option value="Car Park 869C">Car Park 869C</option>
+                            <option value="Car Park 874">Car Park 874</option>
+                            <option value="Car Park 875">Car Park 875</option>
+                            <option value="Car Park 882A">Car Park 882A</option>
+                            <option value="Car Park 885A (T57)">Car Park 885A (T57)</option>
+                            <option value="Car Park 887">Car Park 887</option>
+                            <option value="Car Park 891B">Car Park 891B</option>
+                            <option value="Car Park 894">Car Park 894</option>
+                            <option value="Car Park 902">Car Park 902</option>
+                            <option value="Car Park 921">Car Park 921</option>
+                            <option value="Car Park 921A">Car Park 921A</option>
+                            <option value="Car Park 922">Car Park 922</option>
+                            <option value="Car Park 924">Car Park 924</option>
+                            <option value="Car Park 925">Car Park 925</option>
+                            <option value="Car Park 926">Car Park 926</option>
+                            <option value="Car Park 928">Car Park 928</option>
+                            <option value="Car Park 929">Car Park 929</option>
+                            <option value="Car Park 930">Car Park 930</option>
+                            <option value="Car Park 931">Car Park 931</option>
+                            <option value="Car Park 932">Car Park 932</option>
+                            <option value="Car Park 933">Car Park 933</option>
+                            <option value="Car Park 936">Car Park 936</option>
+                            <option value="Car Park 937">Car Park 937</option>
+                            <option value="Car Park 938">Car Park 938</option>
+                            <option value="Car Park 939">Car Park 939</option>
+                            <option value="Car Park 940">Car Park 940</option>
+                            <option value="Car Park T1">Car Park T1</option>
+                            <option value="Car Park T11">Car Park T11</option>
+                            <option value="Car Park T12">Car Park T12</option>
+                            <option value="Car Park T13">Car Park T13</option>
+                            <option value="Car Park T26">Car Park T26</option>
+                            <option value="Car Park T3">Car Park T3</option>
+                            <option value="Car Park T32">Car Park T32</option>
+                            <option value="Car Park T33">Car Park T33</option>
+                            <option value="Car Park T34">Car Park T34</option>
+                            <option value="Car Park T35">Car Park T35</option>
+                            <option value="Car Park T36">Car Park T36</option>
+                            <option value="Car Park T37">Car Park T37</option>
+                            <option value="Car Park T38">Car Park T38</option>
+                            <option value="Car Park T39">Car Park T39</option>
+                            <option value="Car Park T4">Car Park T4</option>
+                            <option value="Car Park T41">Car Park T41</option>
+                            <option value="Car Park T42">Car Park T42</option>
+                            <option value="Car Park T50">Car Park T50</option>
+                            <option value="Car Park T51">Car Park T51</option>
+                            <option value="Car Park T53">Car Park T53</option>
+                            <option value="Car Park T56">Car Park T56</option>
+                            <option value="Car Park T7">Car Park T7</option>
+                            <option value="Car Park T8">Car Park T8</option>
+                            <option value="Car Park T81">Car Park T81</option>
+                            <option value="Car Park T9">Car Park T9</option>
+                            <option value="Carpark Blk 890">Carpark Blk 890</option>
+                            <option value="MSCP 494F">MSCP 494F</option>
+                            <option value="T47 Temporary Carpark">T47 Temporary Carpark</option>
+                        </select>
+                        <span id="reqBlock" class="error" style="display:none;">Do not leave this field empty.</span>
+                    </span>
+
+                    <div class="clear"></div>
+
+                    <span class="fieldName">Unit No.: *</span>
+                    <span>
+                        <div class="UnitNo">
+                            <div class="symbol">#</div>
+                            <div class="floor"><input name="txtFloor" type="text" id="txtFloor" /></div>
+                            <div class="symbol">-</div>
+                            <div class="unit"><input name="txtUnitNo" type="text" id="txtUnitNo" /></div>
+                        </div>
+                        <span id="reqUnit" class="error" style="display:none;">Do not leave this field empty.</span>
+                    </span>
+
+                    <div class="clear"></div>
+
+                    <span class="fieldName">Road Name: *</span>
+                    <span>
+                        <input name="txtRoadName" type="text" id="txtRoadName" />
+                        <span id="reqRoadName" class="error" style="display:none;">Do not leave this field empty.</span>
+                    </span>
+
+                    <span class="fieldName">Postal Code: *</span>
+                    <span class="postalCode">
+                        <input name="txtPostalCode" type="text" id="txtPostalCode" />
+                        <span id="reqPostalCode" class="error" style="display:none;">Do not leave this field empty.</span>
+                    </span>
+
+                    <div class="clear"></div>
+
+                    <span class="fieldName">Feedback / Comments : *</span>
+                    <span>
+                        <textarea name="txtFeedbackText" rows="10" cols="20" id="txtFeedbackText" onkeypress="return this.value.length&lt;=500">
+</textarea>
+                        <p>Limited to first 500 characters</p>
+                        <span id="reqFeedbackText" class="error" style="display:none;">Do not leave this field empty.</span>
+                    </span>
+
+                    <span class="fieldName">Upload Photo:</span>
+                    <span>
+                        <div class="upload">
+                            <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach" id="uploadAttach" />
+                            <!--label id="uploadFile">No file chosen</label-->
+                            <label><input type="text" name="uploadFile" id="uploadFile" placeholder="No file chosen"></label>
+                        </div>
+                        <p>(Valid extensions are: png, jpg, jpeg)</p>
+                        <p>(Maximum file size: 5MB)</p>
+                    </span>
+
+                    <span class="fieldName">Word Verification: *</span>
+                    <span>
+                        <p style="font-size:14px;line-height:18px;">Type the characters you see in the picture below.</p>
+                        <div class="captcha">
+                            <div class="imgContainer">
+                                <img src="@appPath/Contents/Admin/images/captcha.jpg" id="imgCap" />
+                               
+                            </div>
+                            <a href="javascript:void(0)" class="refreshBtn"><img src="@appPath/Contents/images/common/refresh-icon.png" id="reload"></a>
+                        </div>
+                        <input type="text" name="txtImageVerifier" id="txtImageVerifier " placeholder="">
+                        <input type="hidden" id="SecurityCode" />
+                        <p>Letters are case-sensitive</p>
+                        <span id="reqCaptcha" class="error" style="display:none;">Do not leave this field empty.</span>
+                    </span>
+
+                    <div class="padding10"></div>
+
+                    <span class="fieldName"></span>
+                    <span>
+                        <input type="submit" class="submitBtn" value="Submit">
+                        <input type="reset" class="resetBtn" value="Reset">
+                    </span>
+                </div>
+            </form>
+
+            <div class="importantNote">
+                <p><strong>Important Note:</strong></p>
+                <p>The information disclosed by you to Tampines Town Council (the Town Council) is being furnished voluntarily.</p>
+                <p>You agree to grant the Town Council and its members (in any capacity) consent for use of any information provided for the purpose of communications or necessary actions.</p>
+            </div>
+
+            <div class="padding20"></div>
+        </div>
+
+    </div><!--End Contact Us-->
+</div><!-- End Main Contents -->
+
+@section scripts{
+
+
+
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.js"></script>
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.additional-methods.js"></script>
+
+
+
+
+
+
+
+}
+
+
+<script>
+    $('input[name=uploadAttach]').change(function () {
+        var fileName = document.getElementById("uploadAttach").files.item(0).name;
+        document.getElementById("uploadFile").value = fileName;
+    });
+
+    
+
+
+
+    $(document).ready(function () {
+
+        //$(".Numeric").numeric({
+        //    allowMinus: false,
+        //    allowThouSep: false
+        //});
+
+        loadCaptcha();
+        $("#reload").click(loadCaptcha);
+        IntializeValidation();
+       
+    });
+    function IntializeValidation() {
+
+        jQuery.validator.addMethod('filesize', function (value, element, param) {
+            return this.optional(element) || (element.files[0].size <= param)
+        }, 'File size must be less than 5MB');
+
+        //jQuery.validator.addMethod('lessthen', function (value, element, param) {
+        //	return this.optional(element) || parseInt(value) <= parseInt($(param).val());
+        //}, 'Invalid value');
+
+        $("#FeedBackForm").validate({
+            errorPlacement: function (error, element) {
+                $("span[data-valmsg-for='" + $(element).attr("name") + "']").html($(error));
+            },
+            rules: {
+                feedbackType: {
+                    required: true
+                },
+                Name: {
+                    required: true,
+
+                },
+                NRIC: {
+                    required: true,
+                    minlength: 4,
+                    maxlength: 4
+                },
+                Email: {
+                    required: true,
+                    email: true
+                },
+                ContactNo: {
+                    required: true,
+                    minlength: 8,
+                    maxlength: 8
+                },
+                Block: {
+                    required: true
+                },
+                Floor: {
+                    required: true
+                },
+                UnitNo: {
+                    required: true
+                },
+                RoadName: {
+                    required: true
+                },
+                PostalCode: {
+                    required: true,
+                    minlength: 6,
+                    maxlength: 6
+                },
+                FeedbackText: {
+                    required: true
+                },
+                uploadAttach: {
+
+                    extension: 'jpg|jpeg|png',
+                    filesize: 2048000 /*5MB*/
+                },
+                captcha: {
+                    required: true
+                }
+
+            },
+            messages: {
+
+                ContactNo: {
+                    minlength: "Please enter 8 digit number.",
+                    maxlength: "Please enter 8 digit number."
+                },
+                PostalCode: {
+                    minlength: "Please enter 6 digit number.",
+                    maxlength: "Please enter 6 digit number."
+                }
+            }
+        });
+    }
+
+    $("input[name='uploadAttach']").change(function () {
+
+        var filename = $(this).val();
+        if (filename.substring(3, 11) == 'fakepath') {
+            filename = filename.substring(12);
+        }
+        document.getElementById("uploadFile").value = filename;
+    });
+
+
+    function loadCaptcha() {
+        $("#imgCap").val('');
+        $.ajax({
+            type: "GET",
+            url: apppath + '/ContactUs/RefreshCaptcha',
+            contentType: "image/png",
+            success: function (data) {
+                $('#imgCap').attr('src', "data:image/png;base64," + data.captchaImage);
+                $("#SecurityCode").val(data.code);
+            },
+            error: function (error, txtStatus) {
+                console.log(txtStatus);
+            }
+        });
+    }
+
+</script>
+

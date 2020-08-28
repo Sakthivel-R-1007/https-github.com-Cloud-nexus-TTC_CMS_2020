@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Service & Conservancy Charges | Tampines Town Council";
+    ViewBag.BodyClass = "SERVICES";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@section meta{
+    <meta property="og:url" content="@appPath/ResidentServices/MediateDisputes" />
+    <meta property="og:title" content="Mediate Disputes Between Neighbours | Tampines Town Council" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="https://www.tampines.org.sg/images/residentservices/banner-img-cmc.jpg" />
+}
+<div class="mainContents">
+    <div class="residentServices">
+        <!--Page Banner-->
+        <div class="pageBanner">
+            <img src="@appPath/Contents/images/residentservices/banner-img-cmc.jpg" alt="">
+        </div>
+        <!--Breadcrumb-->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="@appPath/">Home</a><span></span><a href="javascript:void(0)">Resident Services</a><span></span>Mediate Disputes Between Neighbours
+            </div>
+        </div>
+
+        <!--Resident Services (Mediate Disputes)-->
+        <div class="pageContents mediateDisputes">
+            <h1>Community Mediation Centre (CMC)</h1>
+
+            <p><img src="@appPath/Contents/images/residentservices/mediateDisputes/dispute-2017-logo.png" alt=""></p>
+
+            <h2><span>What</span> is CMC?</h2>
+
+            <p>Set up in 1998 as a department of the Ministry of Law, the CMC provides mediation – a type of conflict resolution service - to residents in Singapore who face relational, community and social disputes.</p>
+
+            <p class="imgContainer"><img src="@appPath/Contents/images/residentservices/mediateDisputes/dispute-2017-01.png" alt=""></p>
+
+            <h2><span>Why</span> choose mediation?</h2>
+
+            <p class="imgContainer"><img src="@appPath/Contents/images/residentservices/mediateDisputes/dispute-2017-02.png" alt=""></p>
+
+            <h2><span>During mediation...</span></h2>
+
+            <p class="imgContainer"><img src="@appPath/Contents/images/residentservices/mediateDisputes/dispute-2017-03.png" alt=""></p>
+
+            <p><em>*The settlement agreement is a private contract. A breach may result in civil proceedings if initiated by the parties. We strongly encourage parties to try mediation again and identify new solutions if breach occurs as it is less likely to create further tension.</em></p>
+
+            <h2><span>Where</span> is mediation conducted?</h2>
+
+            <p>45 Maxwell Road, #07-11 The URA Centre (East Wing), Singapore 069118</p>
+
+            <p class="imgContainer"><img src="@appPath/Contents/images/residentservices/mediateDisputes/dispute-2017-04.png" alt=""></p>
+
+            <h2><span>How</span> to apply for mediation?</h2>
+
+            <p>There are 2 ways to apply:</p>
+
+            <ul>
+                <li><a href="https://cmc.mlaw.gov.sg/" target="_blank"><img src="@appPath/Contents/images/residentservices/mediateDisputes/dispute-2017-05link.png"></a></li>
+                <li><a href="tel:1800-2255-529" target="_blank"><img src="@appPath/Contents/images/residentservices/mediateDisputes/dispute-2017-06link.png"></a></li>
+            </ul>
+
+            <div class="padding20"></div>
+        </div>
+
+    </div><!--End Resident Services-->
+</div><!-- End Main Contents -->

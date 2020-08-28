@@ -1,0 +1,68 @@
+﻿
+
+@{
+    ViewBag.Title = "Eco Town | Tampines Town Council";
+    ViewBag.BodyClass = "OURTOWN";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model OurTownBanner
+@section meta{
+    <meta property="og:url" content="@appPath/OurTown/EcoTown" />
+    <meta property="og:title" content="Eco Town | Tampines Town Council" />
+    <meta property="og:description" content="" />
+    @if (Model != null && Model.ImageGUID != null)
+    {
+        <meta property="og:image" content="@appPath/Resources/images/OurTownBanner/@Model.ImageGUID.@Model.ImageExtension" />
+    }
+}
+<div class="mainContents">
+    <div class="ourTown">
+        <!--Page Banner-->
+        <div class="pageBanner">
+            @if (Model != null && Model.ImageGUID != null)
+            {
+                <img src="@appPath/Resources/images/OurTownBanner/@Model.ImageGUID.@Model.ImageExtension" alt="">
+            }
+        </div>
+        <!--Breadcrumb-->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="@appPath/">Home</a><span></span><a href="#">Our Town</a><span></span>Eco Town
+            </div>
+        </div>
+
+        <!--Eco Town (Introduction)-->
+        <div class="pageContents ecoTown">
+            <h1>Transforming Tampines Into An Eco Town</h1>
+
+            <p>Tampines is fast becoming Singapore's sustainable Eco Town. Our town will see enhancements making it more green and environmentally sustainable.</p>
+
+            <p class="imgContainer"><img src="@appPath/Contents/images/ourtown/ecotown/img-01.jpg"></p>
+
+            <h2>Sustainability@Tampines Park</h2>
+
+            <p>It is Singapore's first community-based circular ecosystem. Residents will segregate food waste generated at home, and feed it to black soldier fly larvae. The larvae break down the food waste into fertiliser, which can be used in a vertical vegetable farm. The larvae will then be fed to Tilapia fish cultivated in the Tampines Park pond. As a result, we will reduce food waste while strengthening the community's food resilience.</p>
+
+            <div class="clear"></div>
+            <hr />
+
+            <p class="imgContainer"><img src="@appPath/Contents/images/ourtown/ecotown/img-02.jpg"></p>
+
+            <h2>Digital Eco Boards to track utility usage</h2>
+
+            <p>To reduce energy consumption, <strong>Ministry of Sustainability and the Environment</strong> (in partnership with Singapore Power and Temasek) will install Eco Boards at our lift lobbies. These low-energy digital boards use smart meters to provide block-level information on water and energy use. Residents will become more aware of their consumption patterns to reduce wastage and the Town Council will manage resource usage more efficiently as a result.</p>
+
+            <div class="clear"></div>
+            <hr />
+
+            <p class="imgContainer"><img src="@appPath/Contents/images/ourtown/ecotown/img-03.jpg"></p>
+
+            <h2>Sustainable community touchpoints</h2>
+
+            <p>Tampines has implemented community-based projects to encourage on-the-ground sustainability initiatives. There are Reverse Vending Machines in selected parts of Tampines where residents are incentivised with FairPrice discount coupons to practise recycling. The Town Council is also working with relevant agencies to recruit Resident Gardeners to maintain and enhance our community gardens.</p>
+
+            <div class="clear padding30"></div>
+        </div>
+
+    </div><!--End Eco Town-->
+</div><!-- End Main Contents -->

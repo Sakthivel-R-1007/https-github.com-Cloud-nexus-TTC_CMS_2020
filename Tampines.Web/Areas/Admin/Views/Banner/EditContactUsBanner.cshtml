@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model ContactUsBanner
+@Html.AntiForgeryToken()
+<table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+    <tr>
+        <td class="fieldname">Page</td>
+        <td>
+            @Html.TextBoxFor(m => m.Page, new { @type = "text", disabled = "disabled" })
+
+            @Html.HiddenFor(m => m.GUID)
+
+        </td>
+    </tr>
+    <tr>
+        <td class="fieldname">Upload Image <span class="importantNote">(1920px by 600px)</span></td>
+        <td>
+            <div class="upload">
+                <input type="button" class="uploadBtn" value="Choose File">
+                <input type="file" name="Image" id="Image" data-imageWidth="" data-imageHeight="" />
+                <label>
+                    @Html.TextBox("ImageFileNames", (Model != null && !string.IsNullOrEmpty(Model.ImageName) ? Model.ImageName + "." + Model.ImageExtension.Trim('.') : ""), new { @type = "text", @placeholder = "No file chosen", @readonly = "true" })
+                    @Html.HiddenFor(m => m.ImageGUID)
+                    @Html.HiddenFor(m => m.ImageExtension)
+                    @Html.HiddenFor(m => m.ImageName)
+                   
+                </label>
+            </div>
+            @Html.ValidationMessage("Image")
+            <div class="imgPreview"><img id="ImageFilePath" src="@appPath/Resources/Images/ContactUsBanner/@Model.ImageGUID.@Model.ImageExtension"></div>
+
+
+        </td>
+    </tr>
+</table>
+<div class="padding10"></div>
+<input type="button" class="submitBtn floatRight" id="contactBannersubmitbtn" value="Publish">
+<div class="clear padding10"></div>
+
+
+
+

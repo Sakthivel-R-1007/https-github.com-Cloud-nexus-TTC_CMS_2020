@@ -1,0 +1,91 @@
+﻿
+@{
+    Layout = null;
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+@model Events
+
+<table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+    <tr>
+        <td class="fieldname">Title</td>
+        <td>
+            @Html.TextBoxFor(m => m.Title, new { placeholder = "" })
+            @Html.ValidationMessageFor(m => m.Title)
+        </td>
+    </tr>
+    <tr>
+        <td class="fieldname">Date</td>
+        <td>
+            @Html.TextBoxFor(m => m.Date, new { placeholder = "", @class = "calendar ", @readonly = "readonly" })
+            @Html.ValidationMessageFor(m => m.Date)
+        </td>
+    </tr>
+</table>
+
+<div class="padding10"></div>
+<hr />
+<div class="padding10"></div>
+
+<div id="tablecontent">
+
+    <table cellpadding="0" cellspacing="0" border="0" class="addSectionForm" id="0">
+        <tr>
+            <td class="fieldname">With</td>
+            <td><input type="text" class="required" name="EventSection[0].With"></td>
+        </tr>
+        <tr>
+            <td class="fieldname">Venue</td>
+            <td><input type="text" name="EventSection[0].Venue"></td>
+        </tr>
+        <tr>
+            <td class="fieldname">Time</td>
+            <td><input type="text" name="EventSection[0].Time"></td>
+        </tr>
+    </table>
+</div>
+<div class="padding5"></div>
+
+<input type="button" class="submitBtn floatRight" id="addsectionbtn" value="Add Section">
+<div class="clear padding5"></div>
+
+
+<div class="padding10"></div>
+<hr />
+<div class="padding10"></div>
+
+<table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+    <tr>
+        <td class="fieldname">Facebook Link</td>
+        <td>
+            @Html.TextBoxFor(m => m.FacebookLink, new { placeholder = "" })
+            @Html.ValidationMessageFor(m => m.FacebookLink)
+        </td>
+    </tr>
+    <tr>
+        <td class="fieldname">Instagram Link</td>
+        <td>
+            @Html.TextBoxFor(m => m.InstagramLink, new { placeholder = "" })
+            @Html.ValidationMessageFor(m => m.InstagramLink)
+        </td>
+    </tr>
+    <tr>
+        <td class="fieldname">Upload Image <span class="importantNote">(680px by 366px)</span></td>
+        <td>
+            <div class="upload">
+                <input type="button" class="uploadBtn" value="Choose File">
+                <input type="file" name="Image" id="Image" data-imageWidth="" data-imageHeight="" />
+                <label>
+                    @Html.TextBox("ImageFileNames", (Model != null && !string.IsNullOrEmpty(Model.ImageName) ? Model.ImageName + "." + Model.ImageExtension.Trim('.') : ""), new { @type = "text", @placeholder = "No file chosen", @readonly = "true" })
+                  
+
+                </label>
+            </div>
+            @Html.ValidationMessage("Image")
+            <div class="imgPreview"><img id="ImageFilePath" src=""></div>
+        </td>
+    </tr>
+</table>
+<div class="padding10"></div>
+<input type="button" class="submitBtn floatRight" id="addeventPublishbtn" value="Publish">
+<div class="clear padding10"></div>

@@ -1,0 +1,43 @@
+﻿
+
+@{
+    ViewBag.Title = "Bulky Item Removal Services | Tampines Town Council";
+    ViewBag.BodyClass = "SERVICES";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+    Layout = "~/Areas/Admin/Views/Shared/_FrontEndLayout.cshtml";
+}
+@model BulkyItemRemovalServices
+@section meta{
+    <meta property="og:url" content="@appPath/ResidentServices/BulkyItemRemovalServices" />
+    <meta property="og:title" content="Bulky Item Removal Services | Tampines Town Council" />
+    <meta property="og:description" content="" />
+    @if (Model != null && Model.ResidentServicesBanner != null)
+    {
+        <meta property="og:image" content="@appPath/Resources/images/ResidentServicesBanner/@Model.ResidentServicesBanner.ImageGUID.@Model.ResidentServicesBanner.ImageExtension" />
+    }
+}
+<div class="mainContents">
+    <div class="residentServices">
+        <!--Page Banner-->
+        <div class="pageBanner">
+            @if (Model != null && Model.ResidentServicesBanner != null)
+            {
+                <img src="@appPath/Resources/images/ResidentServicesBanner/@Model.ResidentServicesBanner.ImageGUID.@Model.ResidentServicesBanner.ImageExtension" alt="">
+            }
+        </div>
+        <!--Breadcrumb-->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="@appPath/">Home</a><span></span><a href="javascript:void(0)">Resident Services</a><span></span>Bulky Item Removal Services
+            </div>
+        </div>
+
+        <!--Resident Services (Bulky Item Removal Services)-->
+        <div class="pageContents bulkyRemovalServ">
+            <h1>Bulky Item Removal Services</h1>
+            @Html.Raw(Model.Content)
+            <div class="padding20"></div>
+        </div>
+
+    </div><!--End Resident Services-->
+</div><!-- End Main Contents -->

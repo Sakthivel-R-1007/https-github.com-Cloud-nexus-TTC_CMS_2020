@@ -1,0 +1,38 @@
+﻿
+
+
+@{
+
+    Layout = null;
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+
+@model IList<Events>
+@if (Model != null)
+{
+    int SNO = 1;
+    foreach (Events LC in Model)
+    {
+        <tr>
+            <td>@SNO</td>
+            <td>@LC.EventDate.ToString("dd/MM/yyyy")</td>
+            <td>@LC.Title</td>
+            <td>@((LC.ModifiedOn != null && LC.ModifiedOn != DateTime.MinValue) ? LC.ModifiedOn.ToString("dd/MMM/yyyy hh:mm tt") : (LC.CreatedOn != null && LC.CreatedOn != DateTime.MinValue) ? LC.CreatedOn.ToString("dd/MMM/yyyy hh:mm tt") : "")</td>
+            <td><a href="javascript:void(0)" data-id="@LC.GUID" class="editEventsbtn">Edit</a> | <a href="javascript:void(0)" data-toggle="modal" data-target="#delete" id="deletebtn" data-uniquecode="@LC.GUID">Delete</a></td>
+        </tr>
+        SNO++;
+      
+    }
+}
+else
+{
+    <tr>
+        <td colspan="4">
+            No Records Found!
+
+        </td>
+
+    </tr>
+}
+

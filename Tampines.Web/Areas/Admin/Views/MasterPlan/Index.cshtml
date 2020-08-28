@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model TownMapPDF
+<div class="maincontents">
+    @using (Html.BeginForm("Index", "MasterPlan", FormMethod.Post, new { enctype = "multipart/form-data", id = "TownMapForm" }))
+    {
+        @Html.AntiForgeryToken()
+        <h1>Master Plan</h1>
+        <div class="padding5"></div>
+        <div class="formLayout">
+            <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+                <tr>
+                    <td class="fieldname">Upload PDF File</td>
+                    <td>
+                        <div class="upload">
+                            <input type="button" class="uploadBtn" value="Choose File">
+                            <input type="file" name="PDFFile" id="PDFFile" />
+                            <label>
+                                @Html.TextBox("PDFFileNames", (Model != null && !string.IsNullOrEmpty(Model.PDFFileName) ? Model.PDFFileName + "." + Model.PDFFileExtension.Trim('.') : ""), new { @type = "text", @placeholder = "No file chosen", @readonly = "true" })
+
+                                @Html.HiddenFor(m => m.PDFFileGUID)
+                                @Html.HiddenFor(m => m.PDFFileName)
+                                @Html.HiddenFor(m => m.PDFFileExtension)
+                                @Html.HiddenFor(m => m.GUID)
+                            </label>
+                        </div>
+                        @Html.ValidationMessage("PDFFile")
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="clear padding10"></div>
+        <div class="floatRight">
+            <input type="button" id="publishToLiveBtn" class="submitBtn whiteBg" value="Publish">
+        </div>
+        <div class="clear padding10"></div>
+    }
+</div>
+
+
+@if (ViewBag.DataBaseStatus != null)
+{
+    <div class="modal fade" id="ChangesUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content deletealert">
+                <div class="modal-header">
+                    <div class="title">Status</div>
+                    <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                    <div class="clear"></div>
+                </div>
+                <div class="modal-body">
+                    <div class="container" style="text-align:center;">
+
+
+                        <div class="padding10"></div>
+
+                        <div class="field"></div>
+                        <div style="text-align: center;">
+                            <p><strong>Changes Updated</strong></p>
+                            <div class="padding10"></div>
+                            &nbsp; &nbsp;
+                            <a href="javascript:;" class="commonBtn close" data-dismiss="modal" aria-hidden="true">Ok</a>
+                            <div class="clear padding10"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+@section scripts{
+
+
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.js"></script>
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.additional-methods.js"></script>
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.alphanum.js"></script>
+    <script src="@appPath/Contents/Admin/js/Custom/admin-masterplan-pdf.js"></script>
+
+
+
+}
+
+

@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "About Us | Tampines Town Council";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+    Layout = "~/Areas/Admin/Views/Shared/_FrontEndLayout.cshtml";
+}
+
+
+@section meta{
+    <meta property="og:url" content="https://www.tampines.org.sg/about-us.html" />
+    <meta property="og:title" content="About Us | Tampines Town Council" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="https://www.tampines.org.sg/images/aboutus/banner-img.jpg" />
+}
+@model AboutUsIntroduction
+<div class="mainContents">
+    <div class="aboutUs">
+        <!--Page Banner-->
+        <div class="pageBanner">
+            @if (Model != null && Model.AboutUsBanner != null)
+            {
+                <img src="@appPath/Resources/images/AboutUsBanner/@Model.AboutUsBanner.ImageGUID.@Model.AboutUsBanner.ImageExtension" alt="">
+            }
+        </div>
+        <!--Breadcrumb-->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="javascript:void(0)">Home</a><span></span><a href="javascript:void(0)">About Us</a><span></span>Introduction
+            </div>
+        </div>
+
+        <!--About Us (Introduction)-->
+        <div class="pageContents introduction">
+            <h1>Introduction</h1>
+            @Html.Raw(Model.Content)
+
+            <div class="padding20"></div>
+        </div>
+
+    </div><!--End About Us-->
+</div><!-- End Main Contents -->

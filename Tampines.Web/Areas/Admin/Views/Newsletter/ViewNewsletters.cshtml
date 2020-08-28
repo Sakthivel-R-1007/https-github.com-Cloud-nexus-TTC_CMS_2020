@@ -1,0 +1,241 @@
+﻿
+@{
+    ViewBag.Title = "ViewNewsletters";
+}
+<div class="maincontents">
+    <form>
+        <h1>TEMPO</h1>
+        <h2>Newsletters</h2>
+        <div class="floatRight">
+            <a href="#" data-toggle="modal" data-target="#add" class="editMetaBtn">Add Newsletter</a>
+        </div>
+        <div class="clear padding10"></div>
+        <div class="homepage">
+            <table cellpadding="0" cellspacing="0" class="tblgrey">
+                <tr>
+                    <th width="60">S/N</th>
+                    <th width="200">Year</th>
+                    <th>Title</th>
+                    <th width="200">Modified Date</th>
+                    <th width="120">Action</th>
+                </tr>
+                <tr>
+                    <td>01</td>
+                    <td>2020</td>
+                    <td>June 2020</td>
+                    <td>06/05/2020 12:00:00 PM</td>
+                    <td><a href="#" data-toggle="modal" data-target="#edit">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>2019</td>
+                    <td>December 2019</td>
+                    <td>06/05/2020 12:00:00 PM</td>
+                    <td><a href="#" data-toggle="modal" data-target="#edit">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td>2019</td>
+                    <td>June 2019</td>
+                    <td>06/05/2020 12:00:00 PM</td>
+                    <td><a href="#" data-toggle="modal" data-target="#edit">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>04</td>
+                    <td>2018</td>
+                    <td>December 2018</td>
+                    <td>06/05/2020 12:00:00 PM</td>
+                    <td><a href="#" data-toggle="modal" data-target="#edit">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>05</td>
+                    <td>2018</td>
+                    <td>June 2018</td>
+                    <td>06/05/2020 12:00:00 PM</td>
+                    <td><a href="#" data-toggle="modal" data-target="#edit">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>06</td>
+                    <td>2017</td>
+                    <td>December 2018</td>
+                    <td>06/05/2020 12:00:00 PM</td>
+                    <td><a href="#" data-toggle="modal" data-target="#edit">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>07</td>
+                    <td>2017</td>
+                    <td>August 2017</td>
+                    <td>06/05/2020 12:00:00 PM</td>
+                    <td><a href="#" data-toggle="modal" data-target="#edit">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>08</td>
+                    <td>2017</td>
+                    <td>February 2017</td>
+                    <td>06/05/2020 12:00:00 PM</td>
+                    <td><a href="#" data-toggle="modal" data-target="#edit">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>09</td>
+                    <td>2016</td>
+                    <td>October 2016</td>
+                    <td>06/05/2020 12:00:00 PM</td>
+                    <td><a href="#" data-toggle="modal" data-target="#edit">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>2016</td>
+                    <td>June 2016</td>
+                    <td>06/05/2020 12:00:00 PM</td>
+                    <td><a href="#" data-toggle="modal" data-target="#edit">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>2016</td>
+                    <td>February 2016</td>
+                    <td>06/05/2020 12:00:00 PM</td>
+                    <td><a href="#" data-toggle="modal" data-target="#edit">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="clear padding10"></div>
+    </form>
+</div>
+
+
+<!-- Popup (delete) -->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content deletealert">
+            <div class="modal-header">
+                <div class="title">Delete Newsletter</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container" style="text-align:center;">
+                    <p><strong>Are you sure to delete this newsletter?</strong></p>
+                    <div class="padding10"></div>
+                    <input type="button" class="submitBtn" value="Delete">
+                    <div class="clear padding10"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popup (edit) -->
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content editalert">
+            <div class="modal-header">
+                <div class="title">Edit Newsletter</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+                        <tr>
+                            <td class="fieldname">Year</td>
+                            <td><input type="text" value="2020"></td>
+                        </tr>
+                        <tr>
+                            <td class="fieldname">Title</td>
+                            <td><input type="text" value="June 2020"></td>
+                        </tr>
+                        <tr>
+                            <td class="fieldname">Upload Cover Image <span class="importantNote">(620px by 880x)</span></td>
+                            <td>
+                                <div class="upload">
+                                    <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach_1" id="uploadAttach_1" />
+                                    <label><input type="text" name="uploadFile_1" id="uploadFile_1" value="2020-06.jpg" placeholder="No file chosen"></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fieldname">Upload PDF File</td>
+                            <td>
+                                <div class="upload">
+                                    <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach_2" id="uploadAttach_2" />
+                                    <label><input type="text" name="uploadFile_2" id="uploadFile_2" value="Jun-2020.pdf" placeholder="No file chosen"></label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="padding10"></div>
+                    <input type="button" class="submitBtn floatRight" value="Publish">
+                    <div class="clear padding10"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popup (add report) -->
+<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content editalert">
+            <div class="modal-header">
+                <div class="title">Add Newsletter</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+                        <tr>
+                            <td class="fieldname">Year</td>
+                            <td><input type="text" value=""></td>
+                        </tr>
+                        <tr>
+                            <td class="fieldname">Title</td>
+                            <td><input type="text" value=""></td>
+                        </tr>
+                        <tr>
+                            <td class="fieldname">Upload Cover Image <span class="importantNote">(620px by 880x)</span></td>
+                            <td>
+                                <div class="upload">
+                                    <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach_3" id="uploadAttach_3" />
+                                    <label><input type="text" name="uploadFile_3" id="uploadFile_3" value="" placeholder="No file chosen"></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fieldname">Upload PDF File</td>
+                            <td>
+                                <div class="upload">
+                                    <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach_4" id="uploadAttach_4" />
+                                    <label><input type="text" name="uploadFile_4" id="uploadFile_4" value="" placeholder="No file chosen"></label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="padding10"></div>
+                    <input type="button" class="submitBtn floatRight" value="Publish">
+                    <div class="clear padding10"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+	$('input[name=uploadAttach_1]').change(function() {
+		var fileName = document.getElementById("uploadAttach_1").files.item(0).name;
+		document.getElementById("uploadFile_1").value = fileName;
+	});
+	$('input[name=uploadAttach_2]').change(function() {
+		var fileName = document.getElementById("uploadAttach_2").files.item(0).name;
+		document.getElementById("uploadFile_2").value = fileName;
+	});
+	$('input[name=uploadAttach_3]').change(function() {
+		var fileName = document.getElementById("uploadAttach_3").files.item(0).name;
+		document.getElementById("uploadFile_3").value = fileName;
+	});
+	$('input[name=uploadAttach_4]').change(function() {
+		var fileName = document.getElementById("uploadAttach_4").files.item(0).name;
+		document.getElementById("uploadFile_4").value = fileName;
+	});
+</script>
+

@@ -1,0 +1,79 @@
+﻿@{
+    Layout = null;
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model HomeBanner
+
+@Html.AntiForgeryToken()
+<table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+    <tr>
+        <td class="fieldname">Header 1 <span class="importantNote">(character count: 15)</span></td>
+        <td>
+            @Html.TextBoxFor(m => m.Header1, new { @type = "text", placeholder = "" })
+            @Html.ValidationMessageFor(m => m.Header1)
+            @Html.HiddenFor(m=>m.GUID)
+            <div class="wordCount">Character count: <label id="wordCount1"></label> / 15</div>
+        </td>
+    </tr>
+    <tr>
+        <td class="fieldname">Header 2 <span class="importantNote">(character count: 15)</span></td>
+        <td>
+            @Html.TextBoxFor(m => m.Header2, new { @type = "text", placeholder = "" })
+            @Html.ValidationMessageFor(m => m.Header2)
+            <div class="wordCount">Character count: <label id="wordCount2"></label> / 15</div>
+        </td>
+    </tr>
+    <tr>
+        <td class="fieldname">Header 3 <span class="importantNote">(character count: 50)</span></td>
+        <td>
+            @Html.TextBoxFor(m => m.Header3, new { @type = "text", placeholder = "" })
+            @Html.ValidationMessageFor(m => m.Header3)
+            <div class="wordCount">Character count: <label id="wordCount3"></label> / 50</div>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="fieldname">Read More</td>
+        <td>
+            @Html.TextBoxFor(m => m.ReadMore, new { @type = "text", placeholder = "" })
+            @Html.ValidationMessageFor(m => m.ReadMore)
+        </td>
+    </tr>
+    <tr>
+        <td class="fieldname">Link Target</td>
+        <td>
+
+            @Html.DropDownListFor(m => m.LinkTarget,
+       new List<string> {
+                          "None", "Blank (open a new page)"
+       }.Select(S => new SelectListItem
+       {
+           Text = S,
+           Value = S
+       }).ToList(), "Please Select", new { @class = "required" })<br />
+            @Html.ValidationMessageFor(m => m.LinkTarget)
+
+        </td>
+    </tr>
+    <tr>
+        <td class="fieldname">Upload Image <span class="importantNote">(1920px by 960px)</span></td>
+        <td>
+            <div class="upload">
+                <input type="button" class="uploadBtn" value="Choose File">
+                <input type="file" name="Image" id="Image" data-imageWidth="" data-imageHeight="" />
+                <label>
+                    @Html.TextBox("ImageFileNames", (Model != null && !string.IsNullOrEmpty(Model.ImageName) ? Model.ImageName + "." + Model.ImageExtension.Trim('.') : ""), new { @type = "text", @placeholder = "No file chosen", @readonly = "true" })
+                    @Html.HiddenFor(m => m.ImageGUID)
+                    @Html.HiddenFor(m => m.ImageExtension)
+                    @Html.HiddenFor(m => m.ImageName)
+                    @*<input type="text" name="uploadFile_HomeAdd" id="uploadFile_HomeAdd" value="" placeholder="No file chosen">*@
+                </label>
+            </div>
+            @Html.ValidationMessage("Image")
+            <div class="imgPreview"><img id="ImageFilePath" src="@appPath/Resources/Images/HomeBanner/@Model.ImageGUID.@Model.ImageExtension"></div>
+        </td>
+    </tr>
+</table>
+<div class="padding10"></div>
+<input type="button" id="edithomebanner" class="submitBtn floatRight" value="Publish">
+<div class="clear padding10"></div>

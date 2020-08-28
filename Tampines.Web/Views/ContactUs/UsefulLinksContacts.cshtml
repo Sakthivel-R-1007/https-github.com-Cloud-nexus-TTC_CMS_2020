@@ -1,0 +1,85 @@
+﻿
+@{
+
+    ViewBag.Title = "Useful Links & Contacts | Tampines Town Council";
+    ViewBag.BodyClass = "CONTACTUS";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@section meta{
+    <meta property="og:url" content="https://www.tampines.org.sg/useful-links-contacts.html" />
+    <meta property="og:title" content="Useful Links & Contacts | Tampines Town Council" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="https://www.tampines.org.sg/images/contactus/banner-img-links.jpg" />
+}
+@model UsefulLinksContactViewModel
+<div class="mainContents">
+    <div class="contactUs">
+        <!--Page Banner-->
+        <div class="pageBanner">
+
+            @if (Model != null && Model.ContactUsBanner != null)
+            {
+                <img src="@appPath/Resources/images/ContactUsBanner/@Model.ContactUsBanner.ImageGUID.@Model.ContactUsBanner.ImageExtension" alt="">
+            }
+        </div>
+        <!--Breadcrumb-->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="@appPath/">Home</a><span></span><a href="#">Contact Us</a><span></span>Useful Links &amp; Contacts
+            </div>
+        </div>
+
+        <!--Contact Us (Useful Links & Contacts)-->
+        <div class="pageContents usefulLinks">
+            <h1>Useful Links &amp; Contacts</h1>
+
+            <div class="commonTable">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                        <tr>
+                            <th>Organisation</th>
+                            <th>Issue</th>
+                            <th>Contact Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @if (Model != null && Model.LinksContacts!=null && Model.LinksContacts.Count>0)
+                        {
+                            IList<LinksContacts> LinksContacts = Model.LinksContacts;
+                            int i = 0;
+                            foreach (LinksContacts LC in LinksContacts)
+                            {
+                                <tr>
+                                    <td data-label="Organisation"><span>@LC.Organisation</span></td>
+                                    <td data-label="Issue">
+                                        <span>
+                                            @Html.Raw(LC.Issue)
+                                        </span>
+                                    </td>
+                                    <td data-label="Contact Details">
+                                        <span>
+                                            @Html.Raw(LC.Contact)
+                                        </span>
+                                    </td>
+                                </tr>
+                                i++;
+                            }
+
+                        }
+
+
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="padding20"></div>
+        </div>
+        <div class="padding20"></div>
+    </div><!--End Contact Us-->
+</div><!-- End Main Contents -->
+@section scripts
+{
+
+}

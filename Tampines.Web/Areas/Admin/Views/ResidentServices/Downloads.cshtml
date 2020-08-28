@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "Downloads";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model IList<Accordion>
+<div class="maincontents">
+    @*<form>*@
+    <h1>Resident Services</h1>
+    <h2>Downloads</h2>
+    <div class="padding5"></div>
+    @*<table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+            <tr>
+                <td class="fieldname">Accordion Title</td>
+                <td><input type="text" value="Finance"></td>
+            </tr>
+            <tr>
+                <td class="fieldname">Short Description</td>
+                <td><textarea></textarea></td>
+            </tr>
+        </table>*@
+    <div class="clear padding10"></div>
+    @*<div class="floatRight"><a href="#" data-toggle="modal" data-target="#add" class="editMetaBtn">Add PDF</a></div>
+        <div class="clear padding10"></div>*@
+    <div class="floatRight"><a href="@appPath/Admin/ResidentServices/AddAccordion" class="editMetaBtn">Add Accordion</a></div>
+    <div class="clear padding10"></div>
+    <table cellpadding="0" cellspacing="0" class="tblgrey">
+        <thead>
+            <tr>
+                <th width="60">S/N</th>
+                <th>Accordion Title</th>
+                <th>Short Description</th>
+                <th width="200">Modified Date</th>
+                <th width="120">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Count > 0)
+            {
+                int SNo = 1;
+                foreach (Accordion A in Model)
+                {
+                    <tr>
+                        <td>@SNo</td>
+                        <td>@A.Title</td>
+                        <td>@A.ShortDescription</td>
+                        <td>@((A.ModifiedOn != null && A.ModifiedOn != DateTime.MinValue) ? A.ModifiedOn.ToString("dd/MMM/yyyy hh:mm tt") : (A.CreatedOn != null && A.CreatedOn != DateTime.MinValue) ? A.CreatedOn.ToString("dd/MMM/yyyy hh:mm tt") : "")</td>
+                        <td><a href="@appPath/Admin/ResidentServices/EditAccordion/@A.GUID">Edit</a> | <a href="javascipt:void(0)" data-toggle="modal" data-target="#delete" id="accordianDeletePopup" data-uniquecode="@A.GUID">Delete</a></td>
+                    </tr>
+                    SNo++;
+                }
+            }
+            else
+            {
+                <tr>
+
+                    <td colspan="5" align="center">No Records Found </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="padding10"></div>
+    <div class="clear padding20"></div>
+    <div class="floatRight">
+        <input type="button" class="submitBtn whiteBg" value="Preview" id="previewBtn">&nbsp;
+        <input type="button" class="submitBtn whiteBg" value="Publish" id="publishToLive">
+    </div>
+    <div class="clear padding10"></div>
+    @*</form>*@
+</div>
+@using (Html.BeginForm("", "", FormMethod.Post, new { id = "Form" }))
+{
+    @Html.AntiForgeryToken()
+    <div id="dynamic_container">
+
+    </div>
+}
+<!-- Popup (delete) -->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content deletealert">
+            <div class="modal-header">
+                <div class="title">Delete Accordion</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container" style="text-align:center;">
+                    <p><strong>Are you sure to delete this Accordion?</strong></p>
+                    <div class="padding10"></div>
+                    <input type="button" class="submitBtn" value="Delete" id="btnconfirm_delete">
+                    <div class="clear padding10"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.js"></script>
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.additional-methods.js"></script>
+    <script src="@appPath/Contents/Admin/js/Custom/admin-accordion-view.js"></script>
+}

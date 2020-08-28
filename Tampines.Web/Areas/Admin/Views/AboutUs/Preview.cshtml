@@ -1,0 +1,113 @@
+﻿
+
+@{
+    ViewBag.Title = "OurMPs";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+    Layout = "~/Areas/Admin/Views/Shared/_FrontEndLayout.cshtml";
+}
+@section meta{
+    <meta property="og:url" content="https://www.tampines.org.sg/our-mps.html" />
+    <meta property="og:title" content=">Our MPs | Tampines Town Council" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="https://www.tampines.org.sg/images/aboutus/banner-img-mps.jpg" />
+}
+
+@model OurMpsContents
+<div class="mainContents">
+    <div class="aboutUs">
+        <!--Page Banner-->
+        <div class="pageBanner">
+            <img src="@appPath/Contents/images/aboutus/banner-img-mps.jpg" alt="">
+        </div>
+        <!--Breadcrumb-->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">Home</a><span></span><a href="#">About Us</a><span></span>Our MPs
+            </div>
+        </div>
+
+        <!--About Us (Our MPs)-->
+        <div class="pageContents ourMps">
+            <h1>Our MPs</h1>
+      
+
+      
+            <span id="Errormsg" style="color:orangered;"></span>
+
+            <div class="mpsDetails">
+                <ul>
+                    @if (Model != null)
+                    {
+                        <li id="masagos-zulkifli" class="allusers TW">
+                            <span class="col_left">
+                                <div class="container">
+                                    <div class="mpPhoto"><img src="@appPath/Resources/Images/OurMps/@(Model.OurMps.ImageGUID!=null? Model.OurMps.ImageGUID:"").@(Model.OurMps.ImageExtension!=null ? Model.OurMps.ImageExtension:"" )" alt=""></div>
+                                    <div class="mpDetail">
+                                        <h2>@Model.OurMps.Name</h2>
+                                        <p>
+                                            @Html.Raw(Model.OurMps.Designation)
+                                           
+                                        </p>
+                                        <div class="padding10"></div>
+                                        <p>
+                                            <a href="@Model.OurMps.FacebookLink" target="_blank"><img src="@appPath/Contents/images/homepage/fb-icon.png"></a>&nbsp;&nbsp;&nbsp;
+                                            <a href="@Model.OurMps.InstagramLink" target="_blank"><img src="@appPath/Contents/images/homepage/instagram-icon.png"></a>&nbsp;&nbsp;&nbsp;
+                                            <a href="@("mailto:"+Model.OurMps.Email)"><img src="@appPath/Contents/images/homepage/email-icon.png"></a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="col_rgt">
+                                <div class="container">
+                                    <h2>@Model.OurMps.Division</h2>
+                                    <div class="mpContact">
+                                        <p><strong>Meet-The-People Session at:</strong></p>
+                                       
+                                                @Html.Raw(Model.OurMps.MeetThePeople)
+
+                                          
+
+                                    </div>
+                                    <div class="mpClub">
+                                        <p><strong>Tampines West Community Club</strong></p>
+                                        <p>
+                                            @Html.Raw(Model.OurMps.CommunityClub)
+                                           
+                                      
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </span>
+                        </li>
+
+                    }
+
+
+
+                </ul>
+            </div>
+
+            <div class="padding30"></div>
+        </div>
+
+    </div><!--End About Us-->
+</div>
+
+<script>
+    $(document).ready(function () {
+        var hashtag = window.location.hash;
+        if (hashtag == "#masagos-zulkifli") {
+            var offset = $('.ourMps .mpsDetails ul li').offset();
+            var scrollto = offset.top - 150; // minus fixed header height
+            $('html, body').animate({ scrollTop: scrollto }, 0);
+        }
+
+        $('.searchBtnMp').click(function () {
+            $('.ourMps .mpsDetails').css("margin-top", 0);
+            $('.ourMps .mpsDetails ul li').css("margin-top", 0);
+            $('.ourMps .mpsDetails ul li').css("padding-top", 0);
+        });
+    });
+</script>
+

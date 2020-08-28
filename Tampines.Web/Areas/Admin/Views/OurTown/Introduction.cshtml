@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewBag.Title = "Introduction";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model OurTown
+<div class="maincontents">
+    @using (Html.BeginForm("Introduction", "OurTown", FormMethod.Post, new { enctype = "multipart/form-data", id = "OurTownForm" }))
+    {
+        @Html.AntiForgeryToken()
+        <h1>Our Town</h1>
+        <h2>Introduction</h2>
+        <div class="clear"></div>
+        <div class="homepage">
+            <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+                <tr>
+                    <td class="fieldname">Image 01 <span class="importantNote">(600px by 400px)</span></td>
+                    <td>
+                        <div class="upload">
+                            <input type="button" class="uploadBtn" value="Choose File">
+                            <input type="file" name="Image1" id="Image1" data-imageWidth="" data-imageHeight="" />
+                            <label>
+                                @Html.TextBox("ImageFileNames1", (Model != null && !string.IsNullOrEmpty(Model.ImageName1) ? Model.ImageName1 + "." + Model.ImageExtension1.Trim('.') : ""), new { @type = "text", @placeholder = "No file chosen", @readonly = "true" })
+
+                                @Html.HiddenFor(m => m.ImageGUID1)
+                                @Html.HiddenFor(m => m.ImageExtension1)
+                                @Html.HiddenFor(m => m.ImageName1)
+                            </label>
+                        </div>
+                        @Html.ValidationMessage("Image1")
+                        <div class="imgPreview"><img id="ImageFilePath1" src="@appPath/Resources/Images/OurTown/@Model.ImageGUID1.@Model.ImageExtension1"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname">Image 01 Alt Tag</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.ImageAltTag1, new { placeholder = "" })
+                        @Html.ValidationMessageFor(m => m.ImageAltTag1)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname">Image 02 <span class="importantNote">(600px by 400px)</span></td>
+                    <td>
+                        <div class="upload">
+                            <input type="button" class="uploadBtn" value="Choose File">
+                            <input type="file" name="Image2" id="Image2" data-imageWidth="" data-imageHeight="" />
+                            <label>
+                                @Html.TextBox("ImageFileNames2", (Model != null && !string.IsNullOrEmpty(Model.ImageName2) ? Model.ImageName2 + "." + Model.ImageExtension2.Trim('.') : ""), new { @type = "text", @placeholder = "No file chosen", @readonly = "true" })
+
+                                @Html.HiddenFor(m => m.ImageGUID2)
+                                @Html.HiddenFor(m => m.ImageExtension2)
+                                @Html.HiddenFor(m => m.ImageName2)
+                            </label>
+                        </div>
+                        @Html.ValidationMessage("Image2")
+                        <div class="imgPreview"><img id="ImageFilePath2" src="@appPath/Resources/Images/OurTown/@Model.ImageGUID2.@Model.ImageExtension2"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname">Image 02 Alt Tag</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.ImageAltTag3, new { placeholder = "" })
+                        @Html.ValidationMessageFor(m => m.ImageAltTag3)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname">Image 03 <span class="importantNote">(600px by 400px)</span></td>
+                    <td>
+                        <div class="upload">
+                            <input type="button" class="uploadBtn" value="Choose File">
+                            <input type="file" name="Image3" id="Image3" data-imageWidth="" data-imageHeight="" />
+                            <label>
+                                @Html.TextBox("ImageFileNames3", (Model != null && !string.IsNullOrEmpty(Model.ImageName3) ? Model.ImageName3 + "." + Model.ImageExtension3.Trim('.') : ""), new { @type = "text", @placeholder = "No file chosen", @readonly = "true" })
+
+                                @Html.HiddenFor(m => m.ImageGUID3)
+                                @Html.HiddenFor(m => m.ImageExtension3)
+                                @Html.HiddenFor(m => m.ImageName3)
+                            </label>
+                        </div>
+                        @Html.ValidationMessage("Image3")
+                        <div class="imgPreview"><img id="ImageFilePath3" src="@appPath/Resources/Images/OurTown/@Model.ImageGUID3.@Model.ImageExtension3"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname">Image 03 Alt Tag</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.ImageAltTag3, new { placeholder = "" })
+                        @Html.ValidationMessageFor(m => m.ImageAltTag3)
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname" colspan="2">Content</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        @Html.TextAreaFor(m => m.Content, new { @class = "ckeditor", @name = "Content", placeholder = "" })
+                        @Html.ValidationMessageFor(m => m.Content)
+                        @Html.HiddenFor(m => m.GUID)
+                    </td>
+                </tr>
+            </table>
+            <div class="padding10"></div>
+            <div class="floatRight">
+                <input type="button" id="previewBtn" class="submitBtn whiteBg" value="Preview">&nbsp;
+                <input type="button" id="publishToLiveBtn" class="submitBtn whiteBg" value="Publish">
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear padding10"></div>
+    }
+</div>
+@if (ViewBag.DataBaseStatus != null)
+{
+    <div class="modal fade" id="ChangesUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content deletealert">
+                <div class="modal-header">
+                    <div class="title">Status</div>
+                    <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                    <div class="clear"></div>
+                </div>
+                <div class="modal-body">
+                    <div class="container" style="text-align:center;">
+
+
+                        <div class="padding10"></div>
+
+                        <div class="field"></div>
+                        <div style="text-align: center;">
+                            <p><strong>Changes Updated</strong></p>
+                            <div class="padding10"></div>
+                            &nbsp; &nbsp;
+                            <a href="javascript:;" class="commonBtn close" data-dismiss="modal" aria-hidden="true">Ok</a>
+                            <div class="clear padding10"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section scripts{
+
+
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.js"></script>
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.additional-methods.js"></script>
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.alphanum.js"></script>
+    <script src="@appPath/Contents/Admin/js/Custom/admin-ourtown-introduction.js"></script>
+
+    <script src="@appPath/Contents/ckeditor/ckeditor.js"></script>
+
+}
+
+

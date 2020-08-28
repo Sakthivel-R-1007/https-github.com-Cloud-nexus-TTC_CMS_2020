@@ -1,0 +1,269 @@
+﻿
+
+@{
+    ViewBag.Title = "Tampines Town Council | CMS";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+<style>
+
+    input[type="text"].calendar {
+        background-image: url(/contents/images/calendar.png);
+        background-position: 98% center;
+        background-repeat: no-repeat;
+        padding-right: 30px;
+    }
+
+    #ui-datepicker-div {
+        z-index: 999999999 !important;
+    }
+</style>
+@model OurPublicationsViewModel
+
+<div class="maincontents">
+
+    <h1>About Us</h1>
+    <h2>Our Publications</h2>
+    <p class="floatLeft"><strong>Annual Reports</strong></p>
+    <div class="floatRight">
+        <a href="javascript:void(0)" id="addannualrepot" class="editMetaBtn">Add Annual Reports</a>
+    </div>
+    <div class="clear"></div>
+    <div class="homepage">
+        <table cellpadding="0" cellspacing="0" class="tblgrey">
+            <thead>
+                <tr>
+                    <th width="60">S/N</th>
+                    <th width="200">Year</th>
+                    <th>Title</th>
+                    <th width="200">Modified Date</th>
+                    <th width="120">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.AnnualReports != null && Model.AnnualReports.Count > 0)
+                {
+                    int SNo = 1;
+                    foreach (AnnualReports AR in Model.AnnualReports)
+                    {
+                        <tr>
+                            <td>@SNo</td>
+                            <td>@AR.Year</td>
+                            <td>@AR.Title</td>
+
+                            <td>@((AR.ModifiedOn != null && AR.ModifiedOn != DateTime.MinValue) ? AR.ModifiedOn.ToString("dd/MMM/yyyy hh:mm tt") : (AR.CreatedOn != null && AR.CreatedOn != DateTime.MinValue) ? AR.CreatedOn.ToString("dd/MMM/yyyy hh:mm tt") : "")</td>
+                            <td><a href="javascript:void(0)" data-uniquecode="@AR.GUID" id="editannualrepot">Edit</a> | <a href="javascript:void(0)" data-uniquecode="@AR.GUID" id="deleteaboutusbtn">Delete</a></td>
+
+                        </tr>
+                        SNo++;
+                    }
+                }
+                else
+                {
+                    <tr>
+
+                        <td colspan="5" align="center">No Records Found </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="clear padding20"></div>
+
+    <p class="floatLeft"><strong>Press Releases</strong></p>
+    <div class="floatRight">
+        <a href="javascript:void(0)" id="addPressBtn" class="editMetaBtn">Add Press Releases</a>
+    </div>
+    <div class="clear"></div>
+    <div class="homepage">
+        <table cellpadding="0" cellspacing="0" class="tblgrey">
+            <thead>
+                <tr>
+                    <th width="60">S/N</th>
+                    <th width="200">Date</th>
+                    <th>Title</th>
+                    <th width="200">Modified Date</th>
+                    <th width="120">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.PressReleases.Count > 0)
+                {
+                    int SNo = 1;
+                    foreach (PressRelease PR in Model.PressReleases)
+                    {
+                        <tr>
+                            <td>@SNo</td>
+                            <td>@PR.Date</td>
+                            <td>@PR.Title</td>
+
+                            <td>@((PR.ModifiedOn != null && PR.ModifiedOn != DateTime.MinValue) ? PR.ModifiedOn.ToString("dd/MMM/yyyy hh:mm tt") : (PR.CreatedOn != null && PR.CreatedOn != DateTime.MinValue) ? PR.CreatedOn.ToString("dd/MMM/yyyy hh:mm tt") : "")</td>
+                            @*<td><a href="#" data-toggle="modal" data-target="#edit">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>*@
+                            <td><a href="javascript:void(0)"  data-uniquecode="@PR.GUID" id="editPressbtn" >Edit</a> | <a href="javascript:void(0)" data-uniquecode="@PR.GUID" id="deletepressbtn">Delete</a></td>
+
+                        </tr>
+                        SNo++;
+                    }
+                }
+                else
+                {
+                    <tr>
+
+                        <td colspan="5" align="center">No Records Found </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="clear padding10"></div>
+
+</div>
+
+<!-- Popup (delete report) -->
+<div class="modal fade" id="deleteReport" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content deletealert">
+            <div class="modal-header">
+                <div class="title">Delete Annual Report</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container" style="text-align:center;">
+                    @using (Html.BeginForm("DeleteAnnualReports", "AboutUs", FormMethod.Post, new { enctype = "multipart/form-data", id = "DeleteAnnualReportForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <p><strong>Are you sure to delete this annual report?</strong></p>
+                        <div class="padding10"></div>
+                        <input type="button" class="submitBtn" value="Delete">
+                        <div class="clear padding10"></div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popup (edit report) -->
+<div class="modal fade" id="editReport" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content editalert">
+            <div class="modal-header">
+                <div class="title">Edit Annual Report</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    @using (Html.BeginForm("EditAnnualReports", "AboutUs", FormMethod.Post, new { enctype = "multipart/form-data", id = "EditAnnualReportForm" }))
+                    {
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popup (add report) -->
+<div class="modal fade" id="addReport" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content editalert">
+            <div class="modal-header">
+                <div class="title">Add Annual Report</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    @using (Html.BeginForm("AddAnnualReports", "AboutUs", FormMethod.Post, new { enctype = "multipart/form-data", id = "AddAnnualReportForm" }))
+                    {
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popup (delete release) -->
+<div class="modal fade" id="deleteRelease" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content deletealert">
+            <div class="modal-header">
+                <div class="title">Delete Press Release</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container" style="text-align:center;">
+                    @using (Html.BeginForm("DeletePressRelease", "AboutUs", FormMethod.Post, new { enctype = "multipart/form-data", id = "DeletePressReleaseForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <p><strong>Are you sure to delete this press release?</strong></p>
+                        <div class="padding10"></div>
+                        <input type="button" class="submitBtn" value="Delete">
+                        <div class="clear padding10"></div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popup (edit release) -->
+<div class="modal fade" id="editRelease" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content editalert">
+            <div class="modal-header">
+                <div class="title">Edit Press Release</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    @using (Html.BeginForm("EditPressRelease", "AboutUs", FormMethod.Post, new { enctype = "multipart/form-data", id = "EditPressReleaseForm" }))
+                    {
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popup (add release) -->
+<div class="modal fade" id="addRelease" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content editalert">
+            <div class="modal-header">
+                <div class="title">Add Press Release</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    @using (Html.BeginForm("AddPressRelease", "AboutUs", FormMethod.Post, new { enctype = "multipart/form-data", id = "AddPressReleaseForm" }))
+                    {
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="@appPath/Contents/jquery-1.12.4.js"></script>
+    <script src="@appPath/Contents/jquery-ui.js"></script>
+    <script src="@appPath/Contents/bootstrap/bootstrap.js"></script>
+
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.js"></script>
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.additional-methods.js"></script>
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.alphanum.js"></script>
+    <script src="@appPath/Contents/Admin/js/Custom/admin-aboutus-publications.js"></script>
+
+
+}
+
+
+

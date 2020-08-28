@@ -1,0 +1,175 @@
+﻿
+@{ 
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="Tampines Town Council - set up in 1990, manages HDB residential units in Tampines GRC. Email:feedback@ttc.org.sg; Tel: 67812222; EMSU hotline: 1800 325 8888" />
+    <meta name="keywords" content="" />
+    @RenderSection("meta", false)
+    <title>Tampines Town Council</title>
+    <!--For FB share-->
+    <meta property="og:url" content="https://www.tampines.org.sg/index.html" />
+    <meta property="og:title" content="Tampines Town Council" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="https://www.tampines.org.sg/images/homepage/banner-img-01.jpg" />
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/css/reset.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/css/layout.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/css/common.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/css/styles.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/css/responsive.css" media="all" />
+    <!--[if lt IE 9]>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <![endif]-->
+    <!--[if !(IE)|(gte IE 9)]><!-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!--<![endif]-->
+    <script src="@appPath/Contents/scripts/jquery-ui.min.js"></script>
+    <script src="@appPath/Contents/scripts/vendor/modernizr-2.7.1.min.js"></script>
+    <script src="@appPath/Contents/scripts/common.js"></script>
+    <script src="@appPath/Contents/scripts/classie.min.js"></script>
+    <script src="@appPath/Contents/scripts/jquery.parallax-1.1.3.js" type="text/javascript"></script>
+    <script src="@appPath/Contents/scripts/jquery.scrollTo-1.4.3.1-min.js" type="text/javascript"></script>
+    <script src="@appPath/Contents/scripts/jquery.localscroll-1.2.7-min.js" type="text/javascript"></script>
+    <script src="@appPath/Contents/scripts/bootstrap/bootstrap.min.js"></script>
+    <style>
+
+        .subscribe label.error {
+            color: #c63c3c;
+            font-size: 12px;
+            line-height: 14px;
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 0 !important;
+            width: 100% !important;
+        }
+    </style>
+</head>
+<body class="@(ViewBag.BodyClass!=null?ViewBag.BodyClass:"")">
+    <header>@Html.Partial("_FrontEndHeader", null)</header><!--End Header-->
+
+
+    <div class="wrapper">
+        <div class="backtop"><a onClick="backToTop();" class="backTopBtn"></a></div>
+        @RenderBody()
+
+    </div>
+    <!--End Wrapper-->
+    <div class="footer">
+        @Html.Partial("_FrontEndFooter", null)
+    </div>
+
+
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/scripts/slick/slick-theme.css" />
+    <script type="text/javascript" src="@appPath/Contents/scripts/slick/slick.js"></script>
+  
+    <script>
+        jQuery(document).ready(function () {
+
+            $('body').css('overflow', 'auto');
+
+            $('.bannerSlider').slick({
+                dots: true,
+                infinite: true,
+                fade: true,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                speed: 1500,
+                slidesToShow: 1,
+                adaptiveHeight: true
+            });
+
+            $('.mpsSlider').slick({
+                dots: true,
+                infinite: true,
+                autoplay: false,
+                autoplaySpeed: 3000,
+                speed: 1500,
+                slidesToShow: 5,
+                slidesToScroll: 5,
+                adaptiveHeight: true,
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 4
+                        }
+                    },
+                    {
+                        breakpoint: 900,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 460,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            adaptiveHeight: false
+                        }
+                    }
+                ]
+            });
+
+            $('.newsEventsSlider').slick({
+                dots: true,
+                infinite: true,
+                autoplay: false,
+                autoplaySpeed: 3000,
+                speed: 1500,
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                adaptiveHeight: true,
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3
+                        }
+                    },
+                    {
+                        breakpoint: 900,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 500,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            adaptiveHeight: false
+                        }
+                    }
+                ]
+            });
+        });
+
+       
+
+      
+
+
+    </script>
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

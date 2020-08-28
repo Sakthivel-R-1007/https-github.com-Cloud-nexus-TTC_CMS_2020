@@ -1,0 +1,350 @@
+﻿
+@{
+    ViewBag.Title = "EddArticle";
+}
+
+    <div class="maincontents">
+        <form action="viewTempo.html">
+            <h1>TEMPO</h1>
+            <h2>Edit Article</h2>
+            <div class="clear"></div>
+
+            <div class="draftBox">
+                Draft created by Vincent on 06/05/2020, 12:00PM
+                <a href="#" class="floatRight">[ Delete Draft ]</a>
+                <a href="#" class="floatRight">[ Open Draft ]</a>
+                <div class="clear"></div>
+            </div>
+
+            <div class="homepage">
+                <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+                    <tr>
+                        <td class="fieldname">Title</td>
+                        <td><input type="text" value="Meet Jeryl Tan!"></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Date</td>
+                        <td><input type="text" value="19 Aug 2019" class="calendar"></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Banner Image <span class="importantNote">(1920px by 600px)</span></td>
+                        <td>
+                            <div class="upload">
+                                <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach_1" id="uploadAttach_1" />
+                                <label><input type="text" name="uploadFile_1" id="uploadFile_1" value="banner-img.jpg" placeholder="No file chosen"></label>
+                            </div>
+                            <div class="imgPreview"><img src="images/banner-img.jpg"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Banner Image Alt Tag</td>
+                        <td><input type="text" value="Meet Jeryl Tan!"></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Thumbnail Image <span class="importantNote">(680px by 366px)</span></td>
+                        <td>
+                            <div class="upload">
+                                <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach_2" id="uploadAttach_2" />
+                                <label><input type="text" name="uploadFile_2" id="uploadFile_2" value="thumbnail-img.jpg" placeholder="No file chosen"></label>
+                            </div>
+                            <div class="imgPreview"><img src="images/thumbnail-img.jpg"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Thumbnail Image Alt Tag</td>
+                        <td><input type="text" value="Meet Jeryl Tan!"></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Short Description <span class="importantNote">(Only display in TEMPO landing page)</span></td>
+                        <td><textarea>Jeryl Tan will be judge for Facilities category for Tampines Town Council 2019 Photo Contest! Jeryl is a commercial photographer and specializes in architectural photography. Read on to find out more about Jeryl as he shares his experience and tips!</textarea></td>
+                    </tr>
+                </table>
+                <div class="padding10"></div>
+
+                <h3>
+                    <input type="button" class="resetBtn" value="Delete" data-toggle="modal" data-target="#delete">&nbsp;&nbsp;
+                    Template 01: Header & Content
+                </h3>
+                <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+                    <tr>
+                        <td class="fieldname">Header</td>
+                        <td><input type="text" value=""></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname" colspan="2">Content</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><div class="ckeditor"><img src="images/editor-tempo01.jpg"></div></td>
+                    </tr>
+                </table>
+                <div class="padding10"></div>
+
+                <h3>
+                    <input type="button" class="resetBtn" value="Delete" data-toggle="modal" data-target="#delete">&nbsp;&nbsp;
+                    Template 03: Header, Image/YouTube on the Left & Content on the Right
+                </h3>
+                <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+                    <tr>
+                        <td class="fieldname">Header</td>
+                        <td><input type="text" value="Meet Jeryl Tan, our judge for the ‘Facilities’ category for this year’s Photo Contest!"></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Video or Image?</td>
+                        <td>
+                            <div class="padding5"></div>
+                            <input type="radio" id="video" name="srcOption" value="video">
+                            <label for="video">Video</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="image" name="srcOption" value="image" checked>
+                            <label for="image">Image</label>
+                        </td>
+                    </tr>
+                    <tr class="videoField">
+                        <td class="fieldname">Youtube Link</td>
+                        <td><input type="text" value=""></td>
+                    </tr>
+                    <tr class="imgField">
+                        <td class="fieldname">Image <span class="importantNote">(width more than 1024px)</span></td>
+                        <td>
+                            <div class="upload">
+                                <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach_3" id="uploadAttach_3" />
+                                <label><input type="text" name="uploadFile_3" id="uploadFile_3" value="images/img-01.jpg" placeholder="No file chosen"></label>
+                            </div>
+                            <div class="imgPreview"><img src="images/img-01.jpg"></div>
+                        </td>
+                    </tr>
+                    <tr class="imgField">
+                        <td class="fieldname">Image Alt Tag</td>
+                        <td><input type="text" value=""></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Caption</td>
+                        <td><input type="text" value=""></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname" colspan="2">Content</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><div class="ckeditor"><img src="images/editor-tempo02.jpg"></div></td>
+                    </tr>
+                </table>
+                <div class="padding10"></div>
+
+                <h3>
+                    <input type="button" class="resetBtn" value="Delete" data-toggle="modal" data-target="#delete">&nbsp;&nbsp;
+                    Template 02: Header, Image/YouTube & Content
+                </h3>
+                <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+                    <tr>
+                        <td class="fieldname">Header</td>
+                        <td><input type="text" value=""></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Video or Image?</td>
+                        <td>
+                            <div class="padding5"></div>
+                            <input type="radio" id="video_2" name="srcOption_2" value="video">
+                            <label for="video_2">Video</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="image_2" name="srcOption_2" value="image" checked>
+                            <label for="image_2">Image</label>
+                        </td>
+                    </tr>
+                    <tr class="videoField_2">
+                        <td class="fieldname">Youtube Link</td>
+                        <td><input type="text" value=""></td>
+                    </tr>
+                    <tr class="imgField_2">
+                        <td class="fieldname">Image <span class="importantNote">(width more than 1024px)</span></td>
+                        <td>
+                            <div class="upload">
+                                <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach_4" id="uploadAttach_4" />
+                                <label><input type="text" name="uploadFile_4" id="uploadFile_4" value="images/img-01.jpg" placeholder="No file chosen"></label>
+                            </div>
+                            <div class="imgPreview"><img src="images/img-02.jpg"></div>
+                        </td>
+                    </tr>
+                    <tr class="imgField_2">
+                        <td class="fieldname">Image Alt Tag</td>
+                        <td><input type="text" value=""></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Caption</td>
+                        <td><input type="text" value="Jeryl’s Instagram, @smilewithjeryl features his travels to New York City, Los Angeles, Hong Kong, Taiwan, and Belgium, to name a few, for his photography projects!"></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname" colspan="2">Content</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><div class="ckeditor"><img src="images/editor.jpg"></div></td>
+                    </tr>
+                </table>
+                <div class="padding10"></div>
+
+                <h3>
+                    <input type="button" class="resetBtn" value="Delete" data-toggle="modal" data-target="#delete">&nbsp;&nbsp;
+                    Template 04: Header, Image/YouTube on the Right & Content on the Left
+                </h3>
+                <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+                    <tr>
+                        <td class="fieldname">Header</td>
+                        <td><input type="text" value="Photo Tips From Jeryl"></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Video or Image?</td>
+                        <td>
+                            <div class="padding5"></div>
+                            <input type="radio" id="video_3" name="srcOption_3" value="video" checked>
+                            <label for="video_3">Video</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="image_3" name="srcOption_3" value="image">
+                            <label for="image_3">Image</label>
+                        </td>
+                    </tr>
+                    <tr class="videoField_3">
+                        <td class="fieldname">Youtube Link</td>
+                        <td><input type="text" value="https://www.youtube.com/embed/JVAbOdElavI"></td>
+                    </tr>
+                    <tr class="imgField_3">
+                        <td class="fieldname">Image <span class="importantNote">(width more than 1024px)</span></td>
+                        <td>
+                            <div class="upload">
+                                <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach_4" id="uploadAttach_4" />
+                                <label><input type="text" name="uploadFile_4" id="uploadFile_4" value="" placeholder="No file chosen"></label>
+                            </div>
+                            <div class="imgPreview"></div>
+                        </td>
+                    </tr>
+                    <tr class="imgField_3">
+                        <td class="fieldname">Image Alt Tag</td>
+                        <td><input type="text" value=""></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Caption</td>
+                        <td><input type="text" value=""></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname" colspan="2">Content</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><div class="ckeditor"><img src="images/editor-tempo03.jpg"></div></td>
+                    </tr>
+                </table>
+                <div class="padding10"></div>
+
+                <h3>
+                    <input type="button" class="resetBtn" value="Delete" data-toggle="modal" data-target="#delete">&nbsp;&nbsp;
+                    Template 03: Header, Image/YouTube on the Left & Content on the Right
+                </h3>
+                <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+                    <tr>
+                        <td class="fieldname">Header</td>
+                        <td><input type="text" value="Wondering how to take part? Say no more…"></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Video or Image?</td>
+                        <td>
+                            <div class="padding5"></div>
+                            <input type="radio" id="video_4" name="srcOption_4" value="video">
+                            <label for="video_4">Video</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="image_4" name="srcOption_4" value="image" checked>
+                            <label for="image_4">Image</label>
+                        </td>
+                    </tr>
+                    <tr class="videoField_4">
+                        <td class="fieldname">Youtube Link</td>
+                        <td><input type="text" value=""></td>
+                    </tr>
+                    <tr class="imgField_4">
+                        <td class="fieldname">Image <span class="importantNote">(width more than 1024px)</span></td>
+                        <td>
+                            <div class="upload">
+                                <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach_5" id="uploadAttach_5" />
+                                <label><input type="text" name="uploadFile_5" id="uploadFile_5" value="images/img-03.jpg" placeholder="No file chosen"></label>
+                            </div>
+                            <div class="imgPreview"><img src="images/img-03.jpg"></div>
+                        </td>
+                    </tr>
+                    <tr class="imgField_4">
+                        <td class="fieldname">Image Alt Tag</td>
+                        <td><input type="text" value=""></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Caption</td>
+                        <td><input type="text" value=""></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname" colspan="2">Content</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><div class="ckeditor"><img src="images/editor-tempo04.jpg"></div></td>
+                    </tr>
+                </table>
+                <div class="padding10"></div>
+
+                <h3>
+                    <input type="button" class="resetBtn" value="Delete" data-toggle="modal" data-target="#delete">&nbsp;&nbsp;
+                    Template 03: Header, Image/YouTube on the Left & Content on the Right
+                </h3>
+                <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+                    <tr>
+                        <td class="fieldname">Header</td>
+                        <td><input type="text" value=""></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Video or Image?</td>
+                        <td>
+                            <div class="padding5"></div>
+                            <input type="radio" id="video_5" name="srcOption_5" value="video" checked>
+                            <label for="video_5">Video</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="image_5" name="srcOption_5" value="image">
+                            <label for="image_5">Image</label>
+                        </td>
+                    </tr>
+                    <tr class="videoField_5">
+                        <td class="fieldname">Youtube Link</td>
+                        <td><input type="text" value="https://www.youtube.com/embed/ui6qcXQHNeg"></td>
+                    </tr>
+                    <tr class="imgField_5">
+                        <td class="fieldname">Image <span class="importantNote">(width more than 1024px)</span></td>
+                        <td>
+                            <div class="upload">
+                                <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach_6" id="uploadAttach_6" />
+                                <label><input type="text" name="uploadFile_6" id="uploadFile_6" value="" placeholder="No file chosen"></label>
+                            </div>
+                            <div class="imgPreview"></div>
+                        </td>
+                    </tr>
+                    <tr class="imgField_5">
+                        <td class="fieldname">Image Alt Tag</td>
+                        <td><input type="text" value=""></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Caption</td>
+                        <td><input type="text" value=""></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname" colspan="2">Content</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><div class="ckeditor"><img src="images/editor-tempo05.jpg"></div></td>
+                    </tr>
+                </table>
+                <div class="padding10"></div>
+
+                <div class="floatRight"><input type="button" class="resetBtn" value="Add Template" data-toggle="modal" data-target="#selectTemplate"></div>
+                <div class="clear padding10"></div>
+                <div class="floatRight">
+                    <input type="button" class="submitBtn whiteBg" value="Preview">&nbsp;
+                    <input type="button" class="submitBtn whiteBg" value="Save Draft">&nbsp;
+                    <input type="submit" class="submitBtn whiteBg" value="Publish">&nbsp;
+                    <input type="button" class="resetBtn whiteBg" value="Back" onClick="location.href='viewTempo.html'">
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear padding10"></div>
+        </form>
+    </div>
+

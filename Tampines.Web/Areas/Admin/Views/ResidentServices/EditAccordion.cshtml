@@ -1,0 +1,174 @@
+﻿
+@{
+    ViewBag.Title = "Downloads";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model Accordion
+<div class="maincontents">
+    @using (Html.BeginForm("EditAccordion", "ResidentServices", FormMethod.Post, new { id = "EditAccordionForm" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.GUID)
+        <h1>Resident Services</h1>
+        <h2>Add Accodion</h2>
+        <div class="padding5"></div>
+        <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+            <tr>
+                <td class="fieldname">Accordion Title</td>
+                <td>
+                    @Html.TextBoxFor(m => m.Title)
+                    @Html.ValidationMessageFor(m => m.Title)
+                </td>
+            </tr>
+            <tr>
+                <td class="fieldname">Short Description</td>
+                <td>
+                    @Html.TextAreaFor(m => m.ShortDescription)
+                    @Html.ValidationMessageFor(m => m.ShortDescription)
+                </td>
+            </tr>
+        </table>
+        <div class="clear padding10"></div>
+        <div class="clear padding10"></div>
+        <div class="floatRight"><a href="#" data-toggle="modal" data-target="#add" class="editMetaBtn">Add PDF</a></div>
+        <div class="clear padding10"></div>
+        <table cellpadding="0" cellspacing="0" class="tblgrey">
+            <thead>
+                <tr>
+                    <th width="60">S/N</th>
+                    <th>PDF Title</th>
+                    <th width="200">Modified Date</th>
+                    <th width="120">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.AccordionPdfS != null && Model.AccordionPdfS.Count > 0)
+                {
+                    int SNo = 1;
+                    foreach (AccordionPdf A in Model.AccordionPdfS)
+                    {
+                        <tr>
+                            <td>@SNo</td>
+                            <td>@A.PdfTitle</td>
+                            <td>@((A.ModifiedOn != null && A.ModifiedOn != DateTime.MinValue) ? A.ModifiedOn.ToString("dd/MMM/yyyy hh:mm tt") : (A.CreatedOn != null && A.CreatedOn != DateTime.MinValue) ? A.CreatedOn.ToString("dd/MMM/yyyy hh:mm tt") : "")</td>
+                            <td><a href="javascript:void(0);" data-uniquecode="@A.GUID" data-uniquecode1="@Model.GUID" data-toggle="modal" data-target="#edit" class="EditAccordionPdfPopup">Edit</a> | <a href="javascipt:void(0)" data-toggle="modal" data-target="#delete" id="accordianPdfDeletePopup" data-uniquecode="@A.GUID">Delete</a></td>
+                        </tr>
+                        SNo++;
+                    }
+                }
+                else
+                {
+                    <tr>
+
+                        <td colspan="4" align="center">No Records Found </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="padding10"></div>
+        <div class="floatRight">
+            <input type="button" class="submitBtn whiteBg" value="Submit" id="EditAccordionSubmit">
+        </div>
+    }
+</div>
+@using (Html.BeginForm("", "", FormMethod.Post, new { id = "Form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("AccordionGuid", Model.GUID)
+    <div id="dynamic_container">
+
+    </div>
+}
+<!-- Popup (delete) -->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content deletealert">
+            <div class="modal-header">
+                <div class="title">Delete PDF File</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container" style="text-align:center;">
+                    <p><strong>Are you sure to delete this PDF file?</strong></p>
+                    <div class="padding10"></div>
+                    <input type="button" class="submitBtn" value="Delete" id="btnconfirm_delete">
+                    <div class="clear padding10"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Popup (edit) -->
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content editalert">
+            <div class="modal-header">
+                <div class="title">Edit PDF File</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    @using (Html.BeginForm("EditPDF", "ResidentServices", FormMethod.Post, new { enctype = "multipart/form-data", id = "EditPDFForm" }))
+                    {
+
+                    }
+                    <div class="padding10"></div>
+                    <input type="button" class="submitBtn floatRight" value="Publish" id="EditPdfSubmit">
+                    <div class="clear padding10"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Popup (add) -->
+<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content editalert">
+            <div class="modal-header">
+                <div class="title">Add PDF File</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    @using (Html.BeginForm("AddPDF", "ResidentServices", FormMethod.Post, new { id = "AddPDFForm", enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.Hidden("AccordionGuid", Model.GUID)
+                        <table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+                            <tr>
+                                <td class="fieldname">Title</td>
+                                <td>
+                                    <input type="text" value="" id="PdfTitle" name="PdfTitle">
+                                    @Html.ValidationMessage("PdfTitle")
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fieldname">Upload PDF File</td>
+                                <td>
+                                    <div class="upload">
+                                        <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="PdfFile" id="PdfFile" />
+                                        <label><input type="text" name="PdfFileValue" id="PdfFileValue" value="" placeholder="No file chosen"></label>
+                                    </div>
+                                    @Html.ValidationMessage("PdfFile")
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="padding10"></div>
+                        <input type="button" class="submitBtn floatRight" value="Publish" id="AddPdfSubmit">
+                        <div class="clear padding10"></div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.js"></script>
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.additional-methods.js"></script>
+    <script src="@appPath/Contents/Admin/js/Custom/admin-accordion-add.js"></script>
+}

@@ -1,0 +1,312 @@
+.mediamanager .btn {
+    margin: 0px;
+    outline: none;
+    padding: .78571429em 1.5em;/*
+    border-radius: 4px;*/
+    border: 0;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1em;
+    font-style: normal;
+    background: rgba(60, 60, 60, 0.82);
+        background-color: rgba(60, 60, 60, 0.82);
+    color: #fff;
+    cursor: pointer;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+.mediamanager .btn-info {
+    background-color: #146DB1;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+
+.mediamanager ul.tabs{
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+		}
+		.mediamanager ul.tabs li{
+			background: none;
+			color: #222;
+			display: inline-block;
+			padding: 10px 15px;
+			cursor: pointer;
+			float: none;
+		}
+
+		.mediamanager ul.tabs li.current{
+			background: #ededed;
+			color: #222;
+		}
+.form-group {
+  margin-top: 15px;text-align: left;
+}
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.input-control {
+  display: block;
+  line-height: 27px;
+  width: 100%;
+  padding: 0 6px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.input-control:focus {
+  outline: 1px solid rgba(20, 109, 177, 0.75);
+}
+
+
+/*SPinner*/
+.spinner {
+  position: relative;
+  height: 44px;
+  width: 44px;
+  margin: auto;
+}
+
+.spinner .animation {
+  -webkit-animation: spin 10s linear 0s infinite;
+  -moz-animation: spin 10s linear 0s infinite;
+  animation: spin 10s linear 0s infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  perspective: 1000;
+  opacity: 0;
+}
+
+.spinner .animation:nth-child(2) {
+  -webkit-animation-delay: 250ms;
+  -moz-animation-delay: 250ms;
+  animation-delay: 250ms;
+}
+
+.spinner .animation:nth-child(3) {
+  -webkit-animation-delay: 500ms;
+  -moz-animation-delay: 500ms;
+  animation-delay: 500ms;
+}
+
+.spinner .animation:nth-child(4) {
+  -webkit-animation-delay: 750ms;
+  -moz-animation-delay: 750ms;
+  animation-delay: 750ms;
+}
+
+.spinner .animation:nth-child(5) {
+  -webkit-animation-delay: 1000ms;
+  -moz-animation-delay: 1000ms;
+  animation-delay: 1000ms;
+}
+
+.spinner .circle {
+  background: none repeat scroll 0 0 #146DB1;
+  border-radius: 100% 100% 100% 100%;
+  height: 6px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 6px;
+}
+
+.spinner .circle.two {
+  background: rgba(20, 109, 177, 0.8);
+}
+
+.spinner .circle.three {
+  background: rgba(20, 109, 177, 0.6);
+}
+
+.spinner .circle.four {
+  background: rgba(20, 109, 177, 0.4);
+}
+
+.spinner .circle.five {
+  background: rgba(20, 109, 177, 0.2);
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 999;
+  display: flex;
+}
+.loader .loader-content {
+  margin: auto;
+  text-align: center;
+}
+.loader .loader-content span {
+  margin-top: 20px;
+  font-size: 19px;
+  display: block;
+}
+/*End Spinner*/
+
+		.mediamanager .tab-content{
+			display: none;
+			background: #ededed;
+			padding: 15px;
+		}
+
+		.tab-content.current{
+			display: inherit;
+		}
+.tab-upload {
+	width:100%;
+	height: 100%;
+}
+.tab-upload.overlay {
+  display: block !important;
+  position: fixed;
+  z-index: 998;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #146DB1;
+  color: #fff;
+}
+.tab-upload.overlay .borders {
+  top: 20px;
+}
+.tab-upload.overlay .borders .orSelect {
+  display: none;
+}
+.tab-upload .borders {
+  right: 20px;
+  left: 20px;
+  top: 60px;
+  bottom: 20px;
+  border: 8px dashed #ddd;
+  text-align: center;
+  display: flex;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+	height:460px;
+}
+.tab-upload .borders .upload-here {
+  margin: auto;
+}
+.tab-upload .borders .upload-here span {
+  display: block;
+  margin: 10px 0;
+}
+.tab-upload .borders .upload-here span.drop {
+  font-size: 30px;
+}
+.tab-upload .borders.active, .borders:hover {
+  border-color: #146DB1;
+}
+
+
+
+.tab-gallery .gallery-elements .gallery-element {
+  cursor: pointer;
+  background: whitesmoke;
+  width: 180px;
+  height: 180px;
+  float: left;
+  margin: 10px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+.tab-gallery .gallery-elements .gallery-element.active {
+  border: 4px solid #146DB1;
+}
+.tab-gallery .gallery-elements .gallery-element .element-content {
+  text-align: center;
+  height: 180px;
+  font-size: 16px;
+  padding: 10px;
+  padding-top: 30%;
+}
+.tab-gallery .gallery-elements .gallery-element .element-content.thumbnail {
+  padding: 0 !important;
+}
+.tab-gallery .gallery-elements .gallery-element .element-content * {
+  display: block;
+  margin: auto;
+}
+.tab-gallery .gallery-elements .gallery-element .element-content span {
+  margin-top: 15px;
+}
+.tab-gallery .gallery-elements .gallery-element .element-content i {
+  font-size: 30px;
+}
+.tab-gallery .gallery-elements .gallery-element .element-content img {
+  height: 100%;
+  width: auto;
+  display: inline-block;
+}
+
+.sidebar {
+  border-left: 1px solid #ddd;
+  background: whitesmoke;
+  padding: 20px 10px;
+  right: 0;
+  top: 40px;
+  bottom: 0;
+	width: 460px;
+	float: right;
+	
+}
+.sidebar .sidebar-head .head-preview {
+  float: left;
+  width: 35%;
+  text-align: center;
+  max-height: 180px;
+  overflow: hidden;
+}
+.sidebar .sidebar-head .head-preview img {
+  width: 100%;
+  height: auto;
+}
+.sidebar .sidebar-head .head-preview i {
+  font-size: 60px;
+  display: block;
+}
+.sidebar .sidebar-head .head-info {
+  float: right;
+  width: 60%;
+}
+.sidebar .sidebar-head .head-info * {
+  display: block;
+  margin-bottom: 5px;
+}
+.sidebar .sidebar-head .head-info .media-title {
+  margin-bottom: 10px;
+}
+.sidebar .sidebar-head .head-info .media-size, .sidebar .sidebar-head .head-info .media-type, .sidebar .sidebar-head .head-info .media-weight {
+  font-size: 14px;
+  color: #aaaaaa;
+}
+.sidebar .sidebar-head .head-info .delete-media {
+  color: #d01919;
+  text-decoration: none;
+  margin-top: 10px;
+}

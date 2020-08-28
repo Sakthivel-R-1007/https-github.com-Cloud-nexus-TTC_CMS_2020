@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "EditFunction";
+}
+
+<div class="maincontents">
+    <form action="editCommonArea.html">
+        <h1>Use of Common Area/Open Spaces</h1>
+        <h2>Edit Function</h2>
+        <div class="clear"></div>
+        <div class="homepage">
+            <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+                <tr>
+                    <td class="fieldname">Type of Function</td>
+                    <td>
+                        <select>
+                            <option disabled>Please Select</option>
+                            <option selected>Social</option>
+                            <option>Bereavement</option>
+                            <option>Religious</option>
+                            <option>Kenduri</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname">Short Description</td>
+                    <td><textarea>Wedding, Birthday Parties, etc.</textarea></td>
+                </tr>
+                <tr>
+                    <td class="fieldname">Charges (Per Day)</td>
+                    <td>
+                        <textarea>Rental: $50 per day
+Electricity: $12.00/point
+Water: $8/point</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname">MP's Support</td>
+                    <td><input type="text" value="No"></td>
+                </tr>
+                <tr>
+                    <td class="fieldname">JHD/MUIS Support</td>
+                    <td><input type="text" value="No"></td>
+                </tr>
+                <tr>
+                    <td class="fieldname">To Inform Police?</td>
+                    <td><input type="text" value="No"></td>
+                </tr>
+                <tr>
+                    <td class="fieldname" colspan="2">Remarks</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><div class="ckeditor"><img src="images/editor-commonArea02.jpg"></div></td>
+                </tr>
+            </table>
+            <div class="padding10"></div>
+            <div class="floatRight">
+                <input type="button" class="submitBtn whiteBg" value="Preview">&nbsp;
+                <input type="submit" class="submitBtn whiteBg" value="Publish">&nbsp;
+                <input type="button" class="resetBtn whiteBg" value="Back" onClick="location.href='editCommonArea.html'">
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear padding10"></div>
+    </form>
+</div>

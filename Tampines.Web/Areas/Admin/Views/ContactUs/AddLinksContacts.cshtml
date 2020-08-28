@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "AddLinksContacts";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+
+}
+@model LinksContacts
+<div class="maincontents">
+
+
+    @using (Html.BeginForm("AddLinksContacts", "ContactUs", FormMethod.Post, new { enctype = "multipart/form-data", id = "AddLinksContactForm" }))
+    {
+        @Html.AntiForgeryToken()
+        <h1>Useful Links &amp; Contacts</h1>
+        <h2>Add Links &amp; Contacts</h2>
+        <div class="clear"></div>
+        <div class="homepage">
+            <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+                <tr>
+                    <td class="fieldname">Organisation</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Organisation, new { placeholder = "" })
+                        @Html.ValidationMessageFor(m => m.Organisation)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname" colspan="2">Issue</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        @Html.TextAreaFor(m => m.Issue, new { @class = "ckeditor", @name = "Issue", placeholder = "" })
+                        @Html.ValidationMessageFor(m => m.Issue)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname" colspan="2">Contact Details</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        @Html.TextAreaFor(m => m.Contact, new { @class = "ckeditor", @name = "Contact", placeholder = "" })
+                        @Html.ValidationMessageFor(m => m.Contact)
+                    </td>
+                </tr>
+            </table>
+            <div class="padding10"></div>
+            <div class="floatRight">
+                <input type="button" class="submitBtn whiteBg" id="previewBtn" value="Preview">&nbsp;
+                <input type="button" class="submitBtn whiteBg" id="publishToLiveBtn" value="Publish">&nbsp;
+                <input type="button" class="resetBtn whiteBg BackBtn" value="Back">
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear padding10"></div>
+    }
+</div>
+
+
+@section scripts{
+
+
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.js"></script>
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.additional-methods.js"></script>
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.alphanum.js"></script>
+
+    <script src="@appPath/Contents/Admin/js/Custom/admin-linkcontacts-add.js"></script>
+    <script src="@appPath/Contents/ckeditor/ckeditor.js"></script>
+
+}

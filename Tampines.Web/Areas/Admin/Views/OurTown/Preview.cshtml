@@ -1,0 +1,47 @@
+﻿
+
+@{
+    ViewBag.Title = "Our Town | Tampines Town Council";
+    Layout = "~/Areas/Admin/Views/Shared/_FrontEndLayout.cshtml";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@section meta{
+    <meta property="og:url" content="https://www.tampines.org.sg/our-town.html" />
+    <meta property="og:title" content="Our Town | Tampines Town Council" />
+    <meta property="og:description" content="" />
+}
+@model OurTown
+<div class="mainContents">
+    <div class="ourTown">
+        <!--Page Banner-->
+        <div class="pageBanner">
+            @if (Model != null && Model.OurTownBanner != null)
+            {
+                <img src="@appPath/Resources/images/OurTownBanner/@Model.OurTownBanner.ImageGUID.@Model.OurTownBanner.ImageExtension" alt="">
+            }
+        </div>
+        <!--Breadcrumb-->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="javascript:void(0)">Home</a><span></span><a href="javascript:void(0)">Our Town</a><span></span>Introduction
+            </div>
+        </div>
+
+        <!--Our Town (Introduction)-->
+        <div class="pageContents introduction">
+            <h1>Tampines Town Past &amp; Present</h1>
+
+            <div class="imgContainer">
+                <span><img src="@appPath/Resources/images/OurTown/@Model.ImageGUID1.@Model.ImageExtension1" alt="@Model.ImageAltTag1"></span>
+                <span><img src="@appPath/Resources/images/OurTown/@Model.ImageGUID2.@Model.ImageExtension2" alt="@Model.ImageAltTag2"></span>
+                <span><img src="@appPath/Resources/images/OurTown/@Model.ImageGUID3.@Model.ImageExtension3" alt="@Model.ImageAltTag3"></span>
+            </div>
+            <div class="padding10"></div>
+
+            @Html.Raw(Model.Content)
+
+            <div class="padding30"></div>
+        </div>
+
+    </div><!--End Our Town-->
+</div><!-- End Main Contents -->

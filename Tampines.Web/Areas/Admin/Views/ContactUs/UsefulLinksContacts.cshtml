@@ -1,0 +1,170 @@
+﻿
+@{
+    ViewBag.Title = "UsefulLinksContacts";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model List<LinksContacts>
+    <div class="maincontents">
+
+        <h1>Contact Us</h1>
+        <h2 class="floatLeft">Useful Links &amp; Contacts</h2>
+        <div class="floatRight">
+            <a href="javascript:void(0)" id="LinksContactssortSequence"  class="editMetaBtn">Sort Sequence</a>&nbsp;&nbsp;
+            <a href="@appPath/Admin/ContactUs/AddLinksContacts" class="editMetaBtn">Add Links & Contacts</a>
+        </div>
+        <div class="clear padding5"></div>
+        <div class="homepage">
+            <table cellpadding="0" cellspacing="0" class="tblgrey" id="LinksContentsTbl">
+                <thead>
+                    <tr>
+                        <th width="60">S/N</th>
+                        <th>Organisation</th>
+                        <th width="200">Modified Date</th>
+                        <th width="120">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        int SNO = 1;
+                        foreach (LinksContacts LC in Model)
+                        {
+                            <tr>
+                                <td>@SNO</td>
+                                <td>@LC.Organisation</td>
+                                <td>@((LC.ModifiedOn != null && LC.ModifiedOn != DateTime.MinValue) ? LC.ModifiedOn.ToString("dd/MMM/yyyy hh:mm tt") : (LC.CreatedOn != null && LC.CreatedOn != DateTime.MinValue) ? LC.CreatedOn.ToString("dd/MMM/yyyy hh:mm tt") : "")</td>
+                                <td><a href="@appPath/Admin/ContactUs/EditLinksContacts/@LC.GUID">Edit</a> | <a href="javascipt:void(0)" data-toggle="modal" data-target="#delete" id="deletebtn" data-uniquecode="@LC.GUID">Delete</a></td>
+                            </tr>
+                            SNO++;
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4">
+                                No Records Found!
+
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+
+            <div class="padding10"></div>
+
+            @if (Model != null && Model.Count() > 0)
+            {
+                <div class="paginator pagination" data-pageindex="1" data-totalitems="@(((Model != null && Model.Count() > 0)) ? Model[0].TotalCount : 0)"></div>
+            }
+
+
+
+
+            <div class="clear padding10"></div>
+
+        </div>
+
+        <!-- Popup (delete) -->
+        <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content deletealert">
+                    <div class="modal-header">
+                        <div class="title">Delete Organisation</div>
+                        <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container" style="text-align:center;">
+                            <p><strong>Are you sure to delete this organisation?</strong></p>
+                            <div class="padding10"></div>
+                            @using (Html.BeginForm("DeleteLinksContact", "ContactUs", FormMethod.Post, new { enctype = "multipart/form-data", id = "DeleteLinksConatcsForm" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="EncryptedId" id="deleteeventId" />
+                                <input type="submit" class="submitBtn" id="confirm_deleteiconBtn" value="Delete">
+                            }
+                            <div class="clear padding10"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popup (sort Sequence) -->
+        <div class="modal fade" id="sortLinksContacts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content editalert">
+                    <div class="modal-header">
+                        <div class="title">Sort Sequence</div>
+                        <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            @using (Html.BeginForm("SortLinksContacts", "ContactUs", FormMethod.Post, new { enctype = "multipart/form-data", id = "SortLinksContactsForm" }))
+                            {
+
+                            }
+                            <div class="padding10"></div>
+                            @*<input type="button" class="submitBtn floatRight" value="Publish">*@
+                            <div class="clear padding10"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        @if (ViewBag.DataBaseStatus != null)
+        {
+            <div class="modal fade" id="ChangesUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+                <div class="modal-dialog">
+                    <div class="modal-content deletealert">
+                        <div class="modal-header">
+                            <div class="title">Status</div>
+                            <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container" style="text-align:center;">
+
+
+                                <div class="padding10"></div>
+
+                                <div class="field"></div>
+                                <div style="text-align: center;">
+                                    <p><strong>Changes Updated</strong></p>
+                                    <div class="padding10"></div>
+                                    &nbsp; &nbsp;
+                                    <a href="javascript:;" class="commonBtn close" data-dismiss="modal" aria-hidden="true">Ok</a>
+                                    <div class="clear padding10"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @section scripts{
+
+
+            <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.js"></script>
+            <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.additional-methods.js"></script>
+
+
+            <script src="@appPath/Contents/jqueryPagination/simplePagination.js"></script>
+            <script src="@appPath/Contents/Admin/js/Custom/admin-linkcontacts-index.js"></script>
+
+            <script>
+                $(function () {
+                    $("#sortable").sortable();
+                    $("#sortable").disableSelection();
+                });
+            </script>
+
+        }
+
+

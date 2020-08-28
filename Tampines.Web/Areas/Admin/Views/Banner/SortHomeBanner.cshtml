@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+}
+@model IList<HomeBanner>
+@if (Model != null && Model.Count > 0)
+{
+    int rowCount = 0;
+    <ul id="sortable">
+        @foreach (HomeBanner SB in Model)
+        {
+
+            <li id="@("Set_"+rowCount)" data-id="@SB.GUID" value="@SB.GUID" class="SortingContact">
+                <span>@SB.ImageName</span>
+
+            </li>
+            rowCount++;
+        }
+    </ul>
+    <div class="padding10"></div>
+    <a class="submitBtn floatRight" id="HomeBannerSortingsubmitBtn" href="javascript:void(0)">Save</a>
+    <div class="clear padding10"></div>
+    <div id="dynamicontent" class="cmxform">
+        <input id="0" type="hidden" name=sort[0].GUID value="0" />
+        <input id="0" type="hidden" name=sort[0].ReOrder value="0" />
+
+    </div>
+}
+

@@ -1,0 +1,130 @@
+﻿
+@{
+    ViewBag.Title = "EditMPs";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+@model OurMps
+    <div class="maincontents">
+
+        @using (Html.BeginForm("EditMPs", "AboutUs", FormMethod.Post, new { enctype = "multipart/form-data", id = "AddOurMpsForm" }))
+        {
+            @Html.AntiForgeryToken()
+            <h1>Our MPs</h1>
+            <h2>Edit MP</h2>
+            <div class="clear"></div>
+            <div class="homepage">
+                <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+                    <tr>
+                        <td class="fieldname">MP Name</td>
+                        <td>
+                            @Html.TextBoxFor(m => m.Name, new { placeholder = "" })
+                            @Html.ValidationMessageFor(m => m.Name)
+                            @Html.HiddenFor(m => m.GUID)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Photo <span class="importantNote">(384px by 368px)</span></td>
+                        <td>
+                            <div class="upload">
+                                <input type="button" class="uploadBtn" value="Choose File">
+
+                                <input type="file" id="Image" name="Image" data-imageWidth="" data-imageHeight="" />
+                                <label>
+                                    @Html.TextBox("ThumbnailImageFileName", (Model != null && !string.IsNullOrEmpty(Model.ImageGUID) ? Model.ImageName + "." + Model.ImageExtension.Trim('.') : ""), new { @type = "text", @placeholder = "No file chosen", @readonly = "true" })
+                                    @Html.HiddenFor(m => m.GUID)
+                                    @Html.HiddenFor(m => m.ImageGUID)
+                                    @Html.HiddenFor(m => m.ImageName)
+                                    @Html.HiddenFor(m => m.ImageExtension)
+                                </label>
+                            </div>
+                            @Html.ValidationMessageFor(m => m.Image)
+                            <div class="imgPreview"><img id="ThumbnailImageFilePath" src="@appPath/Resources/Images/OurMps/@(Model.ImageGUID!=null? Model.ImageGUID:"").@(Model.ImageExtension!=null ? Model.ImageExtension:"" )"></div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Photo Alt Tag</td>
+                        <td>
+                            @Html.TextBoxFor(m => m.ImageAltTag, new { placeholder = "" })
+                            @Html.ValidationMessageFor(m => m.ImageAltTag)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Facebook Link</td>
+                        <td>
+                            @Html.TextBoxFor(m => m.FacebookLink, new { placeholder = "" })
+                            @Html.ValidationMessageFor(m => m.FacebookLink)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Instagram Link</td>
+                        <td>
+                            @Html.TextBoxFor(m => m.InstagramLink, new { placeholder = "" })
+                            @Html.ValidationMessageFor(m => m.InstagramLink)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Division</td>
+                        <td>
+                            @Html.DropDownList("Division", new List<SelectListItem>
+                            {
+                          new SelectListItem{Text="Tampines Central", Value="Tampines Central"},
+                            new SelectListItem{Text="Tampines West", Value="Tampines West"},
+                            new SelectListItem{Text="Tampines East", Value="Tampines East"},
+                           new SelectListItem{Text="Tampines Changkat", Value="Tampines Changkat"},
+                             new SelectListItem{Text="Tampines North", Value="Tampines North"}
+                        }, "Please Select")
+                            @Html.ValidationMessage("Division")
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname" colspan="2">Designation</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            @Html.TextAreaFor(m => m.Designation, new { @class = "ckeditor", placeholder = "" })
+                            @Html.ValidationMessageFor(m => m.Designation)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname" colspan="2">Meet-The-People Session at</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            @Html.TextAreaFor(m => m.MeetThePeople, new { @class = "ckeditor", placeholder = "" })
+                            @Html.ValidationMessageFor(m => m.MeetThePeople)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Community Club</td>
+                        <td><input type="text" value="Tampines West Community Club"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            @Html.TextAreaFor(m => m.CommunityClub, new { @class = "ckeditor", placeholder = "" })
+                            @Html.ValidationMessageFor(m => m.CommunityClub)
+                        </td>
+                    </tr>
+                </table>
+                <div class="padding10"></div>
+                <div class="floatRight">
+                    <input type="button" class="submitBtn whiteBg" value="Preview" id="previewBtn">&nbsp;
+                    <input type="submit" class="submitBtn whiteBg" id="publishToLiveBtn" value="Publish">&nbsp;
+                    <input type="button" class="resetBtn whiteBg BackBtn" value="Back">
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear padding10"></div>
+        }
+        </div>
+
+
+@section scripts{
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.js"></script>
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.additional-methods.js"></script>
+    <script src="@appPath/Contents/Admin/js/Custom/admin-OurMps-Edit.js"></script>
+    <script src="@appPath/Contents/ckeditor/ckeditor.js"></script>
+
+}

@@ -1,0 +1,58 @@
+﻿@{
+    Layout = null;
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+<header>
+    <img class="logo" src="@appPath/Contents/Admin/images/logo-img.png" alt="Tampines Town Council" />
+    <nav>
+        <ul>
+            <li><a href="@appPath/ViewBanners">Banners</a></li>
+            <li>
+                <a class="dropdown" href="#">About Us</a>
+                <ul>
+                    <li><a href="@appPath/Admin/AboutUs/Introduction">Introduction</a></li>
+                    <li><a href="@appPath/Admin/AboutUs/OurMPs">Our MPs</a></li>
+                    <li><a href="@appPath/Admin/AboutUs/OrganisationChart">Organisation Chart</a></li>
+                    <li><a href="@appPath/Admin/AboutUs/ViewPublications">Our Publications</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="dropdown" href="#">Our Town</a>
+                <ul>
+                    <li><a href="@appPath/Admin/OurTown/Introduction">Introduction</a></li>
+                    <li><a href="@appPath/Admin/OurTown/TownMap">Town Map</a></li>
+                </ul>
+            </li>
+            <li><a href="@appPath/Admin/MasterPlan/Index">Master Plan</a></li>
+            <li>
+                <a class="dropdown" href="#">Resident Services</a>
+                <ul>
+                    <li><a href="@appPath/Admin/ResidentServices/UseOfCommoAreaOpenSpaces">Use of Common Area/Open Spaces</a></li>
+                    <li><a href="@appPath/Admin/ResidentServices/BulkyItemRemovalServices">Bulky Item Removal Services</a></li>
+                    <li><a href="@appPath/Admin/ResidentServices/ServiceConservancyCharges">Service &amp; Conservancy Charges</a></li>
+                    <li><a href="@appPath/Admin/ResidentServices/Downloads">Downloads</a></li>
+                </ul>
+            </li>
+            <li><a href="@appPath/Admin/TEMPO/ViewTempo">TEMPO</a></li>
+            <li><a href="@appPath/Admin/Newsletter/ViewNewsletters">Newsletters</a></li>
+            <li><a href="@appPath/Admin/Event/Index">Events</a></li>
+            <li>
+                <a class="dropdown" href="#">Contact Us</a>
+                <ul>
+                    <li><a href="@appPath/Admin/ContactUs/UsefulLinksContacts">Useful Links &amp; Contacts</a></li>
+                    <li><a href="@appPath/Admin/ContactUs/PDPAPublicPolicy">PDPA Public Policy</a></li>
+                    <li><a href="@appPath/Admin/ContactUs/WhistleBlowingPolicy">Whistleblowing Policy</a></li>
+                    <li><a href="@appPath/Admin/ContactUs/ViewFAQ">FAQs</a></li>
+                    <li><a href="@appPath/Admin/ContactUs/Subscription">Newsletter Subscription</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="rightdetails">
+            <div class="logout"><a href="login.html">Logout</a></div>
+            <!--div class="logout" style="padding-right:5px;"><a href="#">Help</a></div-->
+            <div class="setting"><a href="changePassword.html">Profile Settings</a></div>
+            <div class="profile">Welcome, Administrator</div>
+        </div>
+        <div class="clear"></div>
+    </nav>
+</header>

@@ -1,0 +1,65 @@
+﻿
+@{
+    Layout = null;
+    string appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model AnnualReports
+
+@Html.AntiForgeryToken()
+<table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+    <tr>
+        <td class="fieldname">Year</td>
+        <td>
+            @Html.TextBoxFor(g => g.Year, new { @class = "Numeric" })
+            @Html.ValidationMessageFor(g => g.Year)
+            @Html.HiddenFor(m=>m.GUID)
+        </td>
+    </tr>
+    <tr>
+        <td class="fieldname">Title</td>
+        <td>
+            @Html.TextBoxFor(g => g.Title)
+            @Html.ValidationMessageFor(g => g.Title)
+        </td>
+    </tr>
+    <tr>
+        <td class="fieldname">Upload Cover Image <span class="importantNote">(800px by 1132px)</span></td>
+        <td>
+            <div class="upload">
+                <input type="button" class="uploadBtn" value="Choose File"><input type="file" id="LargeImage" multiple name="LargeImage" data-imageWidth="" data-imageHeight="" />
+                <label><input type="text" name="LargeImage" id="LargeImage" value="@((Model !=null && Model.ImageName!=null && Model.ImageExtension!=null) ? Model.ImageName+"."+Model.ImageExtension : "")" placeholder="No file chosen"></label>
+                <ul id="output"></ul>
+            </div>
+            @if (Model != null)
+            {
+                <div class="imgPreview"><img id="ImageFilePath1" src="@appPath/Resources/Images/AboutUs/@Model.ImageGUID.@Model.ImageExtension"></div>
+            }
+            else
+            {
+                <div class="imgPreview"><img id="ImageFilePath1" src="@appPath/Contents/images/no-image.jpg" /></div>
+            }
+            @Html.ValidationMessage("LargeImage")
+            @Html.HiddenFor(a => a.ImageGUID)
+            @Html.HiddenFor(a => a.ImageName)
+            @Html.HiddenFor(a => a.ImageExtension)
+        </td>
+    </tr>
+    <tr>
+        <td class="fieldname">Upload PDF File</td>
+        <td>
+            <div class="upload">
+                <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="FileName" />
+                <label>
+                    @Html.TextBox("PdfFileName", (Model != null && !string.IsNullOrEmpty(Model.PDFName) ? Model.PDFName + "." + (Model != null ? Model.PDFExtension.Trim('.') : "") : ""), new { @type = "text", @placeholder = "No file chosen", @readonly = "true" })
+                </label>
+            </div>
+            @Html.ValidationMessage("FileName")
+            @Html.HiddenFor(a => a.PDFGUID)
+            @Html.HiddenFor(a => a.PDFName)
+            @Html.HiddenFor(a => a.PDFExtension)
+        </td>
+    </tr>
+</table>
+<div class="padding10"></div>
+<input type="button" id="editreportsubmitBtn" class="submitBtn floatRight" value="Publish">
+<div class="clear padding10"></div>

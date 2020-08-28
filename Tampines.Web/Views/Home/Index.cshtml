@@ -1,0 +1,363 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    ViewBag.BodyClass = "HOME";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+
+}
+@model HomeViewModel
+<div class="mainContents">
+    <div class="homepage">
+        <!--Banner Slider-->
+        <div class="bannerSlider">
+
+            @if (Model != null && Model.HomeBanners != null && Model.HomeBanners.Count > 0)
+            {
+                foreach (HomeBanner HB in Model.HomeBanners)
+                {
+
+                    <div>
+                        <div class="bannerText">
+                            <div class="container">
+                                <h1>@HB.Header1</h1>
+                                <h2>@HB.Header2</h2>
+                                <p>@HB.Header3</p>
+                                <a href="@HB.ReadMore" target="@(HB.LinkTarget!=null&& HB.LinkTarget!="None"?"_blank":"")" class="readMoreBtn">Read More</a>
+                            </div>
+                        </div>
+                        <div class="foreBG"><img src="@appPath/Contents/images/homepage/sliderBannerForeBG.png"></div>
+                        <img src="@appPath/Resources/images/HomeBanner/@HB.ImageGUID.@HB.ImageExtension" alt="">
+                    </div>
+                }
+            }
+
+
+        </div>
+        <!--Shortcut Links-->
+        <div class="shortcutLinks">
+            <ul>
+                <li>
+                    <a href="@appPath/ResidentServices/BulkyItemRemovalServices">
+                        <div class="content">
+                            <p class="icon"><img src="@appPath/Contents/images/homepage/bulky-services-icon.png" alt=""></p>
+                            <h3>Bulky Item<br />Removal Services</h3>
+
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.hdb.gov.sg/cs/infoweb/residential/living-in-an-hdb-flat/home-maintenance/professional-help-and-contractors/minor-repairs" target="_blank">
+                        <div class="content">
+                            <p class="icon"><img src="@appPath/Contents/images/homepage/handyman-services-icon.png" alt=""></p>
+                            <h3>Handyman<br />Services</h3>
+
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="@appPath/ResidentServices/CommonAreaSpaces">
+                        <div class="content">
+                            <p class="icon"><img src="@appPath/Contents/images/homepage/common-area-icon.png" alt=""></p>
+                            <h3>Use of Common Areas /<br />Open Spaces</h3>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="@appPath/ResidentServices/ServiceConservancyCharges">
+                        <div class="content">
+                            <p class="icon"><img src="@appPath/Contents/images/homepage/scc-icon.png" alt=""></p>
+                            <h3>Service and Conservancy<br />Charges (S&amp;CC)</h3>
+
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--Operation Hr & Quick Links-->
+        <div class="operHrQuickLinks">
+            <ul>
+                <li class="operationHr">
+                    <div class="content">
+                        <h3>Operating Hours</h3>
+                        <p><strong>Our Office</strong></p>
+                        <span>
+                            <p>Monday to Friday</p>
+                        </span>
+                        <span>
+                            <p>8.00am to 5.00pm</p>
+                        </span>
+                        <span>
+                            <p>Saturday, Sunday & PH</p>
+                        </span>
+                        <span>
+                            <p>Closed</p>
+                        </span>
+                        <div class="padding10"></div>
+
+                        <p><strong>Payment & Fees</strong></p>
+                        <span>
+                            <p>Monday to Friday</p>
+                        </span>
+                        <span>
+                            <p>8.00am to 4.30pm</p>
+                        </span>
+                        <span>
+                            <p>Saturday, Sunday & PH</p>
+                        </span>
+                        <span>
+                            <p>Closed</p>
+                        </span>
+                    </div>
+                </li>
+                <li class="quickLinks">
+                    <div class="content">
+                        <h3>Quick Links</h3>
+                        <span>
+                            <ul>
+                                <li><a href="@appPath/Resources/Documents/OurTown/@(Model!=null&& Model.mapPDF!=null&&Model.mapPDF.PDFFileGUID!=null?Model.mapPDF.PDFFileGUID+'.'+Model.mapPDF.PDFFileExtension:"")" target="_blank">Town Map</a></li>
+                                <li><a href="@appPath/OurTown/CyclingTown">Cycling Town</a></li>
+                                <li><a href="@appPath/OurTown/EcoTown">Eco Town</a></li>
+                                <li><a href="@appPath/ResidentServices/TownCouncilServices">Town Council Services</a></li>
+                                <li><a href="@appPath/AboutUs/OurPublications">Annual Reports</a></li>
+                            </ul>
+                        </span>
+                        <span>
+                            <ul>
+                                <li><a href="@appPath/ContactUs/GettingHere">Getting Here</a></li>
+                                <li><a href="@appPath/ContactUs/UsefulLinksContacts">Useful Links &amp; Contacts</a></li>
+                                <li><a href="@appPath/ContactUs/Feedback">Feedback</a></li>
+                                <li><a href="@appPath/ContactUs/FAQs">FAQs</a></li>
+                                <li><a href="@appPath/ResidentServices/Downloads">Download Forms</a></li>
+                            </ul>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--Our MPs-->
+        <div class="homeMPs">
+            <h3>Meet Our MPs</h3>
+            <div class="mpsSlider">
+
+                @if (Model != null && Model.Mps != null && Model.Mps.Count > 0)
+                {
+                    foreach (OurMps OM in Model.Mps)
+                    {
+
+                        <div>
+                            <div class="photo">
+                                <a href="@appPath/AboutUs/OurMPs">
+                                    <span class="imgMouseOver"></span>
+                                    <img src="@appPath/Resources/Images/OurMps/@(OM.ImageGUID != null ? OM.ImageGUID : "").@(OM.ImageExtension != null ? OM.ImageExtension : "" )" alt="">
+                                </a>
+                            </div>
+                            <div class="details">
+                                <h4>@OM.Name</h4>
+
+                                @Html.Raw(OM.Designation)
+                                <div class="padding5"></div>
+                                <a href="@OM.FacebookLink" target="_blank"><img src="@appPath/Contents/images/homepage/fb-icon.png"></a>
+                                <a href="@OM.InstagramLink" target="_blank"><img src="@appPath/Contents/images/homepage/instagram-icon.png"></a>
+                                <a href="@("mailto:"+OM.Email)"><img src="@appPath/Contents/images/homepage/email-icon.png"></a>
+                            </div>
+                        </div>
+                    }
+                }
+               
+            </div>
+            <div class="padding10"></div>
+        </div>
+        <!--Latest News-->
+        <div class="homeNewsEvents">
+            <h3>Latest News & Events</h3>
+            <div class="newsEventsSlider">
+                <div class="news">
+                    <a href="tempo-2020-06-15.html">
+                        <div class="image"><img src="@appPath/Contents/images/tempo/2020/Jun-15/thumbnail-img.jpg" alt=""></div>
+                        <div class="details">
+                            <div class="date"><span>15 Jun 2020</span></div>
+                            <h4>Tampines Together, #Tampines United Drawing Competition</h4>
+                            <p>Read on to find out more about the competition.</p>
+                        </div>
+                    </a>
+                </div>
+
+                @if (Model != null && Model.Events != null && Model.Events.Count > 0)
+                {
+                    foreach (Events E in Model.Events)
+                    {
+                        <div class="events">
+                            <div class="eventsContainer">
+                                <div class="image">
+                                    <img src="@appPath/Resources/Images/Events/@E.ImageGUID.@E.ImageExtension " alt="@E.Title">
+                                    <div class="mouseover">
+                                        <a href="@E.FacebookLink" target="_blank"><img src="@appPath/Contents/images/common/fb-icon-white.png"></a>
+                                        <a href="@E.InstagramLink" target="_blank"><img src="@appPath/Contents/images/common/instagram-icon-white.png"></a>
+                                    </div>
+                                </div>
+                                <div class="details">
+                                    <div class="date"><span>@E.EventDate.ToLongDateString() , @E.EventDate.ToString("dddd") </span></div>
+                                    <h4>@E.Title</h4>
+
+                                    @if (E.EventSection != null && E.EventSection.Count > 0)
+                                    {
+                                        foreach (EventSection ES in E.EventSection)
+                                        {
+                                            <p>
+                                                Venue: @(ES.Venue!=null? ES.Venue:"")<br />
+                                                Time: @(ES.Time!=null? ES.Time : "")
+                                            </p>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+            </div>
+            <div class="padding20"></div>
+        </div>
+        <!--Newsletters Subscribe-->
+        <div class="subscribe">
+            <div class="container">
+                <form action="" id="SubscribeForm" method="POST">
+                    <span class="fieldName">
+                        <h3>Stay Connected</h3>
+                        <p>Subscribe to our newsletter</p>
+                    </span>
+
+                    <span>
+                        <input type="text" id="txtfullName" runat="server" name="fullName" placeholder="Full Name" />
+                        <label id="fullName-error" class="error" for="txtfullName"></label>
+
+                    </span>
+                    <span>
+                        <input type="text" id="txtEmail" runat="server" name="emailAddress" placeholder="Email Address" />
+                        <label id="emailAddress-error" class="error" for="txtEmail"></label>
+                    </span>
+                    <span class="btn"><input type="button" class="subscribeBtn" value="Subscribe" onclick="SaveSubscribe()"></span>
+                </form>
+            </div>
+        </div>
+    </div><!--End Homepage-->
+</div><!-- End Main Contents -->
+
+
+@section scripts
+{
+
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/scripts/slick/slick-theme.css" />
+    <script type="text/javascript" src="@appPath/Contents/scripts/slick/slick.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+
+            $('body').css('overflow', 'hidden');
+
+
+        });
+
+        jQuery(document).ready(function () {
+
+
+
+            $('.bannerSlider').slick({
+                dots: true,
+                infinite: true,
+                fade: true,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                speed: 1500,
+                slidesToShow: 1,
+                adaptiveHeight: true
+            });
+
+            $('.mpsSlider').slick({
+                dots: true,
+                infinite: true,
+                autoplay: false,
+                autoplaySpeed: 3000,
+                speed: 1500,
+                slidesToShow: 5,
+                slidesToScroll: 5,
+                adaptiveHeight: true,
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 4
+                        }
+                    },
+                    {
+                        breakpoint: 900,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 460,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            adaptiveHeight: false
+                        }
+                    }
+                ]
+            });
+
+            $('.newsEventsSlider').slick({
+                dots: true,
+                infinite: true,
+                autoplay: false,
+                autoplaySpeed: 3000,
+                speed: 1500,
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                adaptiveHeight: true,
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3
+                        }
+                    },
+                    {
+                        breakpoint: 900,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 500,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            adaptiveHeight: false
+                        }
+                    }
+                ]
+            });
+        });
+
+
+        function autoPopup_close() {
+            $('.popup-wrapper').delay(100).fadeOut("200");
+            $('body').css('overflow', 'auto');
+        }
+        function popup_open() {
+            $('body').css('overflow', 'hidden');
+        }
+
+    </script>
+
+}

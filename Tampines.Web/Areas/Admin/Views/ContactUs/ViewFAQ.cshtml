@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewBag.Title = "ViewFAQ";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model IList<FAQ>
+<div class="maincontents">
+    <form>
+        <h1>Contact Us</h1>
+        <h2 class="floatLeft">FAQs</h2>
+        <div class="floatRight">
+            <a href="#" data-toggle="modal" data-target="#sortSeq" class="editMetaBtn">Sort Sequence</a>&nbsp;&nbsp;
+            <a href="@appPath/Admin/ContactUs/AddQuestion" class="editMetaBtn">Add Question</a>
+        </div>
+        <div class="clear padding5"></div>
+        <div class="homepage">
+            <table cellpadding="0" cellspacing="0" class="tblgrey">
+                <thead>
+                    <tr>
+                        <th width="60">S/N</th>
+                        <th>Question</th>
+                        <th width="200">Modified Date</th>
+                        <th width="120">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        int SNo = 1;
+                        foreach (FAQ F in Model)
+                        {
+                            <tr>
+                                <td>@SNo</td>
+                                <td>@F.Question</td>
+                                <td>@((F.ModifiedOn != null && F.ModifiedOn != DateTime.MinValue) ? F.ModifiedOn.ToString("dd/MMM/yyyy hh:mm tt") : (F.CreatedOn != null && F.CreatedOn != DateTime.MinValue) ? F.CreatedOn.ToString("dd/MMM/yyyy hh:mm tt") : "")</td>
+                                <td><a href="@appPath/Admin/ContactUs/EditQuestion/@F.GUID">Edit</a> | <a href="javascript:void(0)" data-id="@F.GUID" >Delete</a></td>
+                            </tr>
+                            SNo++;
+                        }
+                    }
+                </tbody>
+
+            </table>
+
+         
+        </div>
+        <div class="clear padding10"></div>
+    </form>
+</div>
+
+<!-- Popup (delete) -->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content deletealert">
+            <div class="modal-header">
+                <div class="title">Delete Question</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container" style="text-align:center;">
+                    <p><strong>Are you sure to delete this question?</strong></p>
+                    <div class="padding10"></div>
+                    <input type="button" class="submitBtn" value="Delete">
+                    <div class="clear padding10"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popup (sort Sequence) -->
+<div class="modal fade" id="sortSeq" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content editalert">
+            <div class="modal-header">
+                <div class="title">Sort Sequence</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <ul id="sortable">
+                        <li><span>How much is the monthly S&CC charges?</span></li>
+                        <li><span>When is S&CC payment due and payable?</span></li>
+                        <li><span>What are the methods of Payment?</span></li>
+                        <li><span>Can residents check their payment status online?</span></li>
+                        <li><span>What is the procedure for resale/transfer flat and what is the S&CC charges payable?</span></li>
+                        <li><span>What is my Town Council Reference Number?</span></li>
+                        <li><span>I have submitted my GIRO form sometimes ago. Why do I still receive notices that my S&CC...</span></li>
+                        <li><span>How is the S&CC charges for (DBSS) Design, Build & Sell Scheme Flats being determine?</span></li>
+                        <li><span>How do I apply my GIRO/RCCS (RECURRING CREDIT CARD SCHEME) application form?</span></li>
+                        <li><span>Why have I been sent a reminder notice?</span></li>
+                        <li><span>I have a dispute with my neighbour. Who can I approach?</span></li>
+                        <li><span>What kind of disputes between neighbours does CMC accept for mediation?</span></li>
+                    </ul>
+                    <div class="padding10"></div>
+                    <input type="button" class="submitBtn floatRight" value="Publish">
+                    <div class="clear padding10"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $("#sortable").sortable();
+        $("#sortable").disableSelection();
+    });
+</script>

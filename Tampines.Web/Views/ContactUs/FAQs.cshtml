@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "FAQs  | Tampines Town Council";
+    ViewBag.BodyClass = "CONTACTUS";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model FAQViewModel
+@section meta{
+    <meta property="og:url" content="https://www.tampines.org.sg/faqs.html" />
+    <meta property="og:title" content="FAQs | Tampines Town Council" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="https://www.tampines.org.sg/images/contactus/banner-img-faqs.jpg" />
+}
+
+<div class="mainContents">
+    <div class="contactUs">
+        <!--Page Banner-->
+        <div class="pageBanner">
+            @if (Model != null && Model.ContactUsBanner != null)
+            {
+                <img src="@appPath/Resources/images/ContactUsBanner/@Model.ContactUsBanner.ImageGUID.@Model.ContactUsBanner.ImageExtension" alt="">
+            }
+        </div>
+        <!--Breadcrumb-->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">Home</a><span></span><a href="#">Contact Us</a><span></span>FAQs
+            </div>
+        </div>
+
+        <!--Contact Us (FAQs)-->
+        <div class="pageContents faqs">
+            <h1>FAQs</h1>
+
+            <div class="qna">
+
+                @if (Model != null && Model.FAQs != null && Model.FAQs.Count > 0)
+                {
+                    foreach (FAQ F in Model.FAQs)
+                    {
+                        <div class="question">@F.Question</div>
+                        <div class="answer">
+                            @Html.Raw(F.Content)
+                        </div>
+                    }
+                }
+
+
+
+            </div>
+            <div class="padding20"></div>
+        </div>
+
+    </div><!--End Contact Us-->
+</div><!-- End Main Contents -->
+
+<script>
+    $(document).ready(function () {
+        //$(".answer.active").show();
+
+        $(".question").click(function () {
+            if ($(this).hasClass("active")) {
+                $(this).removeClass("active");
+                $(this).next(".answer").slideUp(200);
+            } else {
+                $(this).addClass("active");
+                $(this).next(".answer").slideDown(200);
+            }
+        });
+    });
+</script>

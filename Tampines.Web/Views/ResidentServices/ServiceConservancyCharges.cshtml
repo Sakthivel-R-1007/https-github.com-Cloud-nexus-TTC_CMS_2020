@@ -1,0 +1,313 @@
+﻿
+@{
+    ViewBag.Title = "Service & Conservancy Charges | Tampines Town Council";
+    ViewBag.BodyClass = "SERVICES";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@section meta{
+    <meta property="og:url" content="@appPath/ResidentServices/ServiceConservancyCharges" />
+    <meta property="og:title" content="Service & Conservancy Charges | Tampines Town Council" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="https://www.tampines.org.sg/images/residentservices/banner-img-scc.jpg" />
+}
+
+<div class="mainContents">
+    <div class="residentServices">
+        <!--Page Banner-->
+        <div class="pageBanner">
+            <img src="@appPath/Contents/images/residentservices/banner-img-scc.jpg" alt="">
+        </div>
+        <!--Breadcrumb-->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="@appPath/">Home</a><span></span><a href="#">Resident Services</a><span></span>Service &amp; Conservancy Charges
+            </div>
+        </div>
+
+        <!--Resident Services (Service & Conservancy Charges)-->
+        <div class="pageContents scCharges">
+            <h1>Service &amp; Conservancy Charges</h1>
+
+            <div class="commonSubMenu">
+                <ul>
+                    <li><a href="#" class="active btn01" rel="scc01" onclick="return false;">Residential</a></li>
+                    <li><a href="#" class="btn02" rel="scc02" onclick="return false;">Commercial</a></li>
+                    <li><a href="#" class="btn03" rel="scc03" onclick="return false;">Payment</a></li>
+                </ul>
+            </div>
+            <div class="commonSubMenuMobile">
+                <div class="btnStatus">Residential</div>
+                <ul>
+                    <li><a href="#" rel="scc01" onclick="return false;">Residential</a></li>
+                    <li><a href="#" rel="scc02" onclick="return false;">Commercial Space</a></li>
+                    <li><a href="#" rel="scc03" onclick="return false;">Payment</a></li>
+                </ul>
+            </div>
+
+            <div class="scChargesContent" id="scc01">
+                <div class="normalTable">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Normal Rates*</th>
+                                <th>Reduced Rates</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Room Type"><span>1-room Flat</span></td>
+                                <td data-label="Normal Rates*"><span>$58.00</span></td>
+                                <td data-label="Reduced Rates"><span>$20.50</span></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Room Type"><span>2-room Flat</span></td>
+                                <td data-label="Normal Rates*"><span>$62.00</span></td>
+                                <td data-label="Reduced Rates"><span>$31.00</span></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Room Type"><span>3-room Flat</span></td>
+                                <td data-label="Normal Rates*"><span>$68.50</span></td>
+                                <td data-label="Reduced Rates"><span>$46.50</span></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Room Type"><span>4-room Flat</span></td>
+                                <td data-label="Normal Rates*"><span>$75.50</span></td>
+                                <td data-label="Reduced Rates"><span>$63.50</span></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Room Type"><span>5-room Flat</span></td>
+                                <td data-label="Normal Rates*"><span>$86.40</span></td>
+                                <td data-label="Reduced Rates"><span>$79.50</span></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Room Type"><span>5-room (3-Gen) Flat</span></td>
+                                <td data-label="Normal Rates*"><span>$90.00</span></td>
+                                <td data-label="Reduced Rates"><span>$81.00</span></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Room Type"><span>Executive apartment/masionette</span></td>
+                                <td data-label="Normal Rates*"><span>$102.00</span></td>
+                                <td data-label="Reduced Rates"><span>$102.00</span></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Room Type"><span>Multi-Generation (models 07)</span></td>
+                                <td data-label="Normal Rates*"><span>$113.50</span></td>
+                                <td data-label="Reduced Rates"><span>$113.50</span></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Room Type"><span>Multi-Generation (models 08 and 09)</span></td>
+                                <td data-label="Normal Rates*"><span>$107.50</span></td>
+                                <td data-label="Reduced Rates"><span>$107.50</span></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr class="tdHeader">
+                                <td colspan="3"><strong>Design, Build &amp; Sell Scheme Flats</strong></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Room Type"><span>2-room Flat</span></td>
+                                <td data-label="Normal Rates*"><span>$68.00</span></td>
+                                <td data-label="Reduced Rates"><span>$35.50</span></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Room Type"><span>3-room Flat</span></td>
+                                <td data-label="Normal Rates*"><span>$75.00</span></td>
+                                <td data-label="Reduced Rates"><span>$61.30</span></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Room Type"><span>4-room Flat</span></td>
+                                <td data-label="Normal Rates*"><span>$84.50</span></td>
+                                <td data-label="Reduced Rates"><span>$73.00</span></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Room Type"><span>5-room Flat</span></td>
+                                <td data-label="Normal Rates*"><span>$99.50</span></td>
+                                <td data-label="Reduced Rates"><span>$99.50</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="padding10"></div>
+
+                <p>* Normal rate applies to a flat under items 1 to 4:</p>
+
+                <ol>
+                    <li>Where none of the owners, tenants and none of the authorised occupiers are citizens of Singapore;</li>
+                    <li>
+                        Where
+                        <ul>
+                            <li>in the case of a flat sold by the Board — any owner or essential occupier of the flat; or</li>
+                            <li>in the case of a flat let out by the Board — any tenant or authorised occupier of the flat,</li>
+                        </ul>
+                        has an interest in any residential property not owned by or vested in the Board, or in any industrial or commercial property, whether or not owned by or vested in the Board;
+                    </li>
+                    <li>Which is owned or let to any body corporate; or</li>
+                    <li>Which is vacant.</li>
+                </ol>
+
+            </div>
+
+            <div class="scChargesContent" id="scc02">
+                <div class="normalTable">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Rates (Per month)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Shops</td>
+                                <td>2.20/m<sup>2</sup> (min $70.50)</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr class="tdHeader">
+                                <td colspan="2"><strong>Additional Accommodation</strong></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td>1 Room</td>
+                                <td>$62.06</td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td>2 Room</td>
+                                <td>$66.34</td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td>3 Room</td>
+                                <td>$73.30</td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td>4 Room</td>
+                                <td>$80.79</td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td>5 Room</td>
+                                <td>$92.45</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr class="tdHeader">
+                                <td colspan="2"><strong>Other Commercial</strong></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td>Cooked Food Stall</td>
+                                <td>$184.10</td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td>Piece and Sundry</td>
+                                <td>$110.50</td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td>Fruits, preserved & dried goods, fresh fish & seafood, meat or poultry</td>
+                                <td>$95.80</td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td>Vegetables, beancurd and noodle eggs, ground assorted spices or misc stall</td>
+                                <td>$58.90</td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td>Market Centre</td>
+                                <td>$2,030.86</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="padding10"></div>
+
+                <p>To apply for Temporary Occupational License (TOL), please click <a href="downloads.html">here</a> for the relevant forms.</p>
+            </div>
+
+            <div class="scChargesContent" id="scc03">
+                <h2>Methods of Payment</h2>
+                <p>S&amp;CC is payable on the 1st of every month without demand (i.e. no invoice will be sent for residential units). You can pay your S&CC by:</p>
+                <p><img src="images/residentservices/giro-img.jpg" alt=""></p>
+                <ul>
+                    <li>To download GIRO Form, please click <a href="downloads.html">here</a>. To terminate GIRO, please visit your bank as banks require submission at their branches.</li>
+                    <li>
+                        Credit Card Recurring Payment. To download Application Form, please click <a href="downloads.html">here</a>.
+                        <div class="padding5"></div>
+                        For GIRO and RCCS (RECURRING CREDIT CARD SCHEME) payment, an annual statement of account will be issued to reflect on the payment made for the year.
+                        <div class="padding5"></div>
+                        <ul>
+                            <li>Cash, Credit Card or NETS at the Tampines Town Council Office.</li>
+                            <li>Cash/NETS payment for the current month S&amp;CC and up to 12 months in advance could also be made at any HDB Branch Offices. (Residents are advised to bring along their S&amp;CC booklet.)</li>
+                            <li>Cheque or money order (made payable to "Tampines Town Council" with account number, address you are paying for and contact number on the reverse side of the cheque or money order).</li>
+                            <li>
+                                Internet Banking, at <a href="http://www.dbs.com.sg/" target="_blank">www.dbs.com.sg</a>; <a href="http://www.ocbc.com.sg/" target="_blank">www.ocbc.com.sg</a>; <a href="http://www.uobgroup.com.sg/" target="_blank">www.uobgroup.com.sg</a>; <a href="http://www.standardchartered.com.sg/" target="_blank">www.standardchartered.com.sg</a> or <a href="http://www.maybank2u.com.sg/" target="_blank">www.maybank2u.com.sg</a>. Please call the respective bank for more information on these services.
+                                <ul>
+                                    <li>1800-111 1111 (DBS)</li>
+                                    <li>1800-438 3333 (OCBC)</li>
+                                    <li>1800-222 2121 (UOB)</li>
+                                    <li>1800-747 7000 (STDCHD)</li>
+                                    <li>1800-629 2265 (Maybank)</li>
+                                </ul>
+                            </li>
+                            <li>AXS Machine</li>
+                            <li>SAM Machine/Post Office/vPOST at <a href="http://www.singpost.com/" target="_blank">www.singpost.com</a></li>
+                            <li>Impose late payment penalty fee of 2% per month of outstanding S&amp;CC for residential units and 5% per month of outstanding S&CC for commercial units.</li>
+                            <li>Disallow use of common facilities except on compassionate grounds such as funeral wake.</li>
+                            <li>Take private summons to recover arrears.</li>
+                            <li>Recover all legal and administrative costs incurred.</li>
+                            <li>Work with HDB to tag the sale of season parking tickets.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h2>Late Payment Penalty</h2>
+            </div>
+
+            <div class="padding20"></div>
+        </div>
+
+    </div><!--End Resident Services-->
+</div><!-- End Main Contents -->
+
+<script>
+    $(".scChargesContent").hide();
+    $(".scChargesContent:first").show();
+    $(".commonSubMenu a").click(function () {
+        $(".scChargesContent").hide();
+        var currentTab = $(this).attr("rel");
+        $("#" + currentTab).fadeIn();
+        $(".commonSubMenu a").removeClass("active");
+        $(this).addClass("active");
+
+        if (currentTab == "scc01") {
+            $(".commonSubMenuMobile .btnStatus").text("Residential");
+        }
+        else if (currentTab == "scc02") {
+            $(".commonSubMenuMobile .btnStatus").text("Commercial Space");
+        }
+        else if (currentTab == "scc03") {
+            $(".commonSubMenuMobile .btnStatus").text("Payment");
+        }
+    });
+
+    $(".commonSubMenuMobile .btnStatus").click(function () {
+        $(".commonSubMenuMobile ul").slideToggle(200);
+    });
+
+    $(".commonSubMenuMobile a").click(function () {
+        $(".scChargesContent").hide();
+        var currentTab = $(this).attr("rel");
+        $("#" + currentTab).fadeIn();
+        $(".commonSubMenuMobile ul").hide(0);
+        $(".commonSubMenu a").removeClass("active");
+
+        if (currentTab == "scc01") {
+            $(".commonSubMenuMobile .btnStatus").text("Residential");
+            $(".commonSubMenu .btn01").addClass("active");
+        }
+        else if (currentTab == "scc02") {
+            $(".commonSubMenuMobile .btnStatus").text("Commercial Space");
+            $(".commonSubMenu .btn02").addClass("active");
+        }
+        else if (currentTab == "scc03") {
+            $(".commonSubMenuMobile .btnStatus").text("Payment");
+            $(".commonSubMenu .btn03").addClass("active");
+        }
+    });
+</script>

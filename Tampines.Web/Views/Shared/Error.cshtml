@@ -1,0 +1,48 @@
+﻿
+@{ 
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml"; ;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+    <style>
+        .whiteBoxerror {
+            min-height: 75vh;
+            background: #FFFFFF;
+            border-radius: 15px;
+            -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+            -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+            width: 50%;
+            margin-left: 25%;
+            height: 200px !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="whiteBoxerror">
+        <div class="bodyCol" style="text-align:center">
+            <div class="forScroll">
+                <div class="pgName">
+                    <h1>Error.</h1>
+                </div>
+                <h2 style="margin-top:100px">An error occurred while processing your request.</h2>
+                @if (ViewData["Error"] != null)
+                {
+                    <div id="ErrorMsgDiv">
+                        <!--@{
+                        <text> Message : </text> @(((Exception)ViewData["Error"]).Message + "\n")
+                        <text> Source : </text> @(((Exception)ViewData["Error"]).Source + "\n")
+                        <text> Data : </text> @(((Exception)ViewData["Error"]).Data + "\n")
+                        <text> TargetSite : </text> @(((Exception)ViewData["Error"]).TargetSite + "\n")
+                        <text> StackTrace : </text> @(((Exception)ViewData["Error"]).StackTrace + "\n")
+                    }-->
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

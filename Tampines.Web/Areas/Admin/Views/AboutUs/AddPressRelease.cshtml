@@ -1,0 +1,42 @@
+﻿
+
+@{
+    Layout = null;
+    string appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model PressRelease
+
+@Html.AntiForgeryToken()
+<table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+    <tr>
+        <td class="fieldname">Date</td>
+        <td>
+            @Html.TextBoxFor(g => g.Date,new {@class= "calendar" })
+            @Html.ValidationMessageFor(g => g.Date)
+        </td>
+    </tr>
+    <tr>
+        <td class="fieldname">Title</td>
+        <td>
+            @Html.TextBoxFor(g => g.Title)
+            @Html.ValidationMessageFor(g => g.Title)
+        </td>
+    </tr>
+    <tr>
+        <td class="fieldname">Upload PDF File</td>
+        <td>
+            <div class="upload">
+                <input type="button" class="uploadBtn" value="Choose File">
+                <input type="file" name="FileName" id="FileName" />
+                <label>
+                    @Html.TextBox("PdfFileName", (Model != null && !string.IsNullOrEmpty(Model.PDFName) ? Model.PDFName + "." + (Model != null ? Model.PDFExtension.Trim('.') : "") : ""), new { @type = "text", @placeholder = "No file chosen", @readonly = "true" })
+
+                </label>
+            </div>
+            @Html.ValidationMessage("FileName")
+        </td>
+    </tr>
+</table>
+<div class="padding10"></div>
+<input type="button" id="addpressubmitBtn" class="submitBtn floatRight" value="Publish">
+<div class="clear padding10"></div>

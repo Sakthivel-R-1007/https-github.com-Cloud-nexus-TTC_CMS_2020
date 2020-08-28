@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "AddQuestion";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model FAQ
+<div class="maincontents">
+    @using (Html.BeginForm("AddQuestion", "ContactUs", FormMethod.Post, new { enctype = "multipart/form-data", id = "AddQuestionForm" }))
+    {
+        @Html.AntiForgeryToken()
+        <h1>FAQs</h1>
+        <h2>Add Question</h2>
+        <div class="clear"></div>
+        <div class="homepage">
+            <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+                <tr>
+                    <td class="fieldname">Question</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Question, new { placeholder = "" })
+                        @Html.ValidationMessageFor(m => m.Question)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname" colspan="2">Answer</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        @Html.TextAreaFor(m => m.Content, new { @class = "ckeditor", @name = "Contact", placeholder = "" })
+                        @Html.ValidationMessageFor(m => m.Content)
+                    </td>
+                </tr>
+            </table>
+            <div class="padding10"></div>
+            <div class="floatRight">
+                <input type="button" id="previewBtn" class="submitBtn whiteBg" value="Preview">&nbsp;
+                <input type="button"  id="publishToLiveBtn" class="submitBtn whiteBg" value="Publish">&nbsp;
+                @*<input type="button" id="BackBtn" class="resetBtn whiteBg" value="Back">*@
+                <a href="@appPath/Admin/ContactUs/ViewFAQ" id="BackBtn" class="resetBtn whiteBg">Back</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear padding10"></div>
+    }
+</div>
+
+@section scripts{
+
+
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.js"></script>
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.additional-methods.js"></script>
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.alphanum.js"></script>
+
+    <script src="@appPath/Contents/Admin/js/Custom/admin-contactus-faq-add.js"></script>
+    <script src="@appPath/Contents/ckeditor/ckeditor.js"></script>
+
+}
+
+

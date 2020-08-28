@@ -1,0 +1,157 @@
+﻿
+@{
+    ViewBag.Title = "OurMPs";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model List<OurMps>
+    <div class="maincontents">
+
+        <h1>About Us</h1>
+        <h2 class="floatLeft">Our MPs</h2>
+        <div class="floatRight">
+            <a href="javascript:void(0)" id="OurMpssortSequence" data-toggle="modal" data-target="#sortSeq" class="editMetaBtn">Sort Sequence</a>
+            @* <a href="javascript:void(0)" id="LinksContactssortSequence" class="editMetaBtn">Sort Sequence</a>&nbsp;&nbsp;*@
+            <!--&nbsp;&nbsp;
+        <a href="addMP.html" class="editMetaBtn">Add MP</a-->
+        </div>
+        <div class="clear"></div>
+        <div class="homepage">
+            <table cellpadding="0" cellspacing="0" class="tblgrey">
+                <thead>
+                    <tr>
+                        <th width="60">S/N</th>
+                        <th>MP</th>
+                        <th>Division</th>
+                        <th width="200">Modified Date</th>
+                        <th width="120">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        int SNO = 1;
+                        foreach (OurMps OM in Model)
+                        {
+                            <tr>
+                                <td>@SNO</td>
+                                <td>@OM.Name</td>
+                                <td>@OM.Division</td>
+                                <td>@((OM.ModifiedOn != null && OM.ModifiedOn != DateTime.MinValue) ? OM.ModifiedOn.ToString("dd/MMM/yyyy hh:mm tt") : (OM.CreatedOn != null && OM.CreatedOn != DateTime.MinValue) ? OM.CreatedOn.ToString("dd/MMM/yyyy hh:mm tt") : "")</td>
+                                <td><a href="@appPath/Admin/EditMPs/@OM.GUID">Edit</a> | <a href="javascipt:void(0)" data-toggle="modal" data-target="#delete" id="deletebtn" data-uniquecode="@OM.GUID">Delete</a></td>
+
+                            </tr>
+                            SNO++;
+                        }
+
+                    }
+
+
+                </tbody>
+
+            </table>
+        </div>
+        <div class="clear padding10"></div>
+
+
+
+
+
+
+        <!-- Popup (delete) -->
+        <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content deletealert">
+                    <div class="modal-header">
+                        <div class="title">Delete Organisation</div>
+                        <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container" style="text-align:center;">
+                            <p><strong>Are you sure to delete this organisation?</strong></p>
+                            <div class="padding10"></div>
+                            @using (Html.BeginForm("DeleteOurMps", "AboutUs", FormMethod.Post, new { enctype = "multipart/form-data", id = "DeleteOurMpsForm" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="EncryptedId" id="deleteeventId" />
+                                <input type="submit" class="submitBtn" id="confirm_deleteiconBtn" value="Delete">
+                            }
+                            <div class="clear padding10"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Popup (sort Sequence) -->
+        <div class="modal fade" id="sortLinksContacts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content editalert">
+                    <div class="modal-header">
+                        <div class="title">Sort Sequence</div>
+                        <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            @using (Html.BeginForm("SortOurMps", "AboutUs", FormMethod.Post, new { enctype = "multipart/form-data", id = "SortOurMpsForm" }))
+                            {
+
+                            }
+                            <div class="padding10"></div>
+                            @*<input type="button" class="submitBtn floatRight" value="Publish">*@
+                            <div class="clear padding10"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        @if (ViewBag.DataBaseStatus != null)
+        {
+            <div class="modal fade" id="ChangesUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+                <div class="modal-dialog">
+                    <div class="modal-content deletealert">
+                        <div class="modal-header">
+                            <div class="title">Status</div>
+                            <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container" style="text-align:center;">
+
+
+                                <div class="padding10"></div>
+
+                                <div class="field"></div>
+                                <div style="text-align: center;">
+                                    <p><strong>Changes Updated</strong></p>
+                                    <div class="padding10"></div>
+                                    &nbsp; &nbsp;
+                                    <a href="javascript:;" class="commonBtn close" data-dismiss="modal" aria-hidden="true">Ok</a>
+                                    <div class="clear padding10"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+
+
+
+        @section scripts{
+
+            <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.js"></script>
+            <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.additional-methods.js"></script>
+            <script src="@appPath/Contents/Admin/js/Custom/admin-OurMps-Edit.js"></script>
+
+
+
+        }
+    </div>
+

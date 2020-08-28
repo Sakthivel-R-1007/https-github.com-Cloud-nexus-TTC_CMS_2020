@@ -1,0 +1,36 @@
+﻿
+@{
+
+    Layout = null;
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+
+@model List<LinksContacts>
+
+@if (Model != null && Model.Count > 0)
+{
+    int SNO = 1;
+    foreach (LinksContacts LC in Model)
+    {
+        <tr>
+            @*<td>@LC.RowNum</td>*@
+            <td>@SNO</td>
+            <td>@LC.Organisation</td>
+            <td>@((LC.ModifiedOn != null && LC.ModifiedOn != DateTime.MinValue) ? LC.ModifiedOn.ToString("dd/MMM/yyyy hh:mm tt") : (LC.CreatedOn != null && LC.CreatedOn != DateTime.MinValue) ? LC.CreatedOn.ToString("dd/MMM/yyyy hh:mm tt") : "")</td>
+            <td><a href="@appPath/Admin/EditLinksContacts/@LC.GUID">Edit</a> | <a href="javascipt:void(0)" data-toggle="modal" data-target="#delete" id="deletebtn" data-uniquecode="@LC.GUID">Delete</a></td>
+        </tr>
+        SNO++;
+    }
+}
+else
+{
+    <tr>
+        <td colspan="4">
+            No Records Found!
+
+        </td>
+
+    </tr>
+}
+

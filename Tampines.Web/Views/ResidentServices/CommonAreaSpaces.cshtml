@@ -1,0 +1,721 @@
+﻿
+@{
+    ViewBag.Title = "Use of Common Areas / Open Spaces | Tampines Town Council";
+    ViewBag.BodyClass = "SERVICES";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@section meta{
+    <meta property="og:url" content="@appPath/ResidentServices/CommonAreaSpaces" />
+    <meta property="og:title" content="Use of Common Areas / Open Spaces | Tampines Town Council" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="https://www.tampines.org.sg/images/residentservices/banner-img.jpg" />
+}
+
+<div class="mainContents">
+    <div class="residentServices">
+        <!--Page Banner-->
+        <div class="pageBanner">
+            <img src="@appPath/Contents/images/residentservices/banner-img.jpg" alt="">
+        </div>
+        <!--Breadcrumb-->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="@appPath">Home</a><span></span><a href="javascript:void(0)">Resident Services</a><span></span>Use of Common Areas / Open Spaces
+            </div>
+        </div>
+
+        <!--Resident Services (Common Areas Spaces)-->
+        <div class="pageContents commonArea">
+            <h1>Use of Common Areas / Open Spaces</h1>
+            <p>As a courtesy, please be reminded that for all funeral wakes, bookings must be made in person before initiation of any proceedings. This is to prevent occupation of the public space which other residents might have booked beforehand.</p>
+
+            <p>For any enquiries, please call our Customer Service Officers at 6781 2222.</p>
+
+            <div class="commonSubMenu">
+                <ul>
+                    <li><a href="#" class="active btn01" rel="ca01" onclick="return false;">Void Decks / Link Building</a></li>
+                    <li><a href="#" class="btn02" rel="ca02" onclick="return false;">Open Space</a></li>
+                    <li><a href="#" class="btn03" rel="ca03" onclick="return false;">Parks</a></li>
+                    <li><a href="#" class="btn04" rel="ca04" onclick="return false;">Mini-Fairs</a></li>
+                    <li><a href="#" class="btn05" rel="ca05" onclick="return false;">Grassroots Activities</a></li>
+                    <li><a href="#" class="btn06" rel="ca06" onclick="return false;">Community Hall</a></li>
+                    <li><a href="#" class="btn07" rel="ca07" onclick="return false;">Others</a></li>
+                </ul>
+            </div>
+            <div class="commonSubMenuMobile">
+                <div class="btnStatus">Void Decks / Link Building</div>
+                <ul>
+                    <li><a href="#" rel="ca01" onclick="return false;">Void Decks / Link Building</a></li>
+                    <li><a href="#" rel="ca02" onclick="return false;">Open Space</a></li>
+                    <li><a href="#" rel="ca03" onclick="return false;">Parks</a></li>
+                    <li><a href="#" rel="ca04" onclick="return false;">Mini-Fairs</a></li>
+                    <li><a href="#" rel="ca05" onclick="return false;">Grassroots Activities</a></li>
+                    <li><a href="#" rel="ca06" onclick="return false;">Community Hall</a></li>
+                    <li><a href="#" rel="ca07" onclick="return false;">Others</a></li>
+                </ul>
+            </div>
+
+            <div class="commonAreaContent" id="ca01">
+                <div class="commonTable">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th>Functions allowed</th>
+                                <th>Charges (Per Day)</th>
+                                <th>MP's<br />Support</th>
+                                <th>JHD/MUIS<br />Support</th>
+                                <th>To Inform<br />Police?</th>
+                                <th>Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tdHeader">
+                                <td colspan="6"><strong>Social</strong></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Functions allowed"><span>Wedding, Birthday Parties, etc.</span></td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: $50 per day<br />
+                                        Electricity: $12.00/point<br />
+                                        Water: $8/point
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>No</span></td>
+                                <td data-label="JHD/MUIS Support"><span>No</span></td>
+                                <td data-label="To Inform Police?"><span>No</span></td>
+                                <td data-label="Remarks"><span>$12.00/point for each fan used in the link building.</span></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr class="tdHeader">
+                                <td colspan="6"><strong>Bereavement</strong></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Functions allowed"><span>Funeral Wakes</span></td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: NIL<br />
+                                        Electricity: $12.00 X 2<br />
+                                        Water: $8/point
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>No</span></td>
+                                <td data-label="JHD/MUIS Support"><span>No</span></td>
+                                <td data-label="To Inform Police?"><span>Yes</span></td>
+                                <td data-label="Remarks"><span>Funeral charges are waived by resident's respective Member of Parliament</span></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Functions allowed"><span>Memorial Rites (Kong Teck)</span></td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: $50.00<br />
+                                        Electricity: $12.00/point<br />
+                                        Water: $8/point
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>Yes</span></td>
+                                <td data-label="JHD/MUIS Support"><span>No</span></td>
+                                <td data-label="To Inform Police?"><span>No</span></td>
+                                <td data-label="Remarks"><span>No gambling and burning of paper houses at housing estates</span></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr class="tdHeader">
+                                <td colspan="6"><strong>Religious</strong></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Functions allowed"><span>7th Moon Festival Dinners/Prayers</span></td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: $50.00<br />
+                                        Electricity: $12.00/point<br />
+                                        Water: $8/point
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>Yes</span></td>
+                                <td data-label="JHD/MUIS Support"><span>No</span></td>
+                                <td data-label="To Inform Police?"><span>No</span></td>
+                                <td data-label="Remarks"><span>No wayangs, no cooking, no singing/music/puppet shows at void deck. To fill in forms & sign undertaking required by NEA for burning of joss sticks & candles.</span></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Functions allowed"><span>Chinese celebration of God's birthday/ceremony, etc.</span></td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: $50.00<br />
+                                        Electricity: $12.00/point<br />
+                                        Water: $8/point
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>Yes</span></td>
+                                <td data-label="JHD/MUIS Support"><span>No</span></td>
+                                <td data-label="To Inform Police?"><span>No</span></td>
+                                <td data-label="Remarks"><span>No wayangs, no cooking, no singing/music/puppet shows at void deck. To fill in forms & sign undertaking required by NEA for burning of joss sticks & candles.</span></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr class="tdHeader">
+                                <td colspan="6"><strong>Kenduri</strong></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Functions allowed"><span>- More than 3 hours</span></td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: $50.00<br />
+                                        Electricity: $12.00/point<br />
+                                        Water: $8/point
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>No</span></td>
+                                <td data-label="JHD/MUIS Support"><span>No</span></td>
+                                <td data-label="To Inform Police?"><span>No</span></td>
+                                <td data-label="Remarks"><span>To specify time of use on permit. e.g. 1900hr to 2100hr</span></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Functions allowed"><span>- Less than 3 hours</span></td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: NIL<br />
+                                        Electricity: $12.00/point<br />
+                                        Water: $8/point
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>No</span></td>
+                                <td data-label="JHD/MUIS Support"><span>No</span></td>
+                                <td data-label="To Inform Police?"><span>No</span></td>
+                                <td data-label="Remarks"><span>To specify time of use on permit. e.g. 1900hr to 2100hr</span></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Functions allowed"><span>Prophet Muhammad Birthday (Maulid Nabi)</span></td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: $20.00<br />
+                                        Electricity: $12.00/point<br />
+                                        Water: $8/point
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>Yes</span></td>
+                                <td data-label="JHD/MUIS Support"><span>Yes</span></td>
+                                <td data-label="To Inform Police?"><span>No</span></td>
+                                <td data-label="Remarks"><span>-</span></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Functions allowed"><span>Nightly Tarawikh Prayers</span></td>
+                                <td data-label="Charges (Per Day)"><span>Flat monthly utility rate of $300/- per month</span></td>
+                                <td data-label="MP's Support"><span>Yes</span></td>
+                                <td data-label="JHD/MUIS Support"><span>Yes</span></td>
+                                <td data-label="To Inform Police?"><span>No</span></td>
+                                <td data-label="Remarks"><span>-</span></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Functions allowed"><span>Hari Raya Puasa/Haji Prayers</span></td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: $20.00<br />
+                                        Electricity: $12.00/point<br />
+                                        Water: $8/point
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>Yes</span></td>
+                                <td data-label="JHD/MUIS Support"><span>Yes</span></td>
+                                <td data-label="To Inform Police?"><span>No</span></td>
+                                <td data-label="Remarks"><span>-</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="commonAreaContent" id="ca02">
+                <div class="commonTable">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th>Functions allowed</th>
+                                <th>Charges (Per Day)</th>
+                                <th>MP's<br />Support</th>
+                                <th>JHD/MUIS<br />Support</th>
+                                <th>To Inform<br />Police?</th>
+                                <th>Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tdHeader">
+                                <td colspan="6"><strong>Apron / Turf Area</strong></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Functions allowed"><span>Social & Religious function except funeral wake</span></td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: $20 per day plus $300 deposit<br />
+                                        Electricity: Use own generator<br />
+                                        Water: $8/point
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>Yes, except wedding</span></td>
+                                <td data-label="JHD/MUIS Support"><span>No</span></td>
+                                <td data-label="To Inform Police?"><span>No</span></td>
+                                <td data-label="Remarks"><span>Subject to approval by PM* in-charge of the area. $20 will also be charged one day before & one day after the actual day of the function.</span></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr class="tdHeader">
+                                <td colspan="6"><strong>Big Sized Courts</strong></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Functions allowed">
+                                    <span>
+                                        Social & Religious function except funeral wake<br /><br />
+                                        Eg: Basketball Courts
+                                    </span>
+                                </td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: $100 per day plus $300 deposit<br />
+                                        Electricity: Use own generator<br />
+                                        Water: $8/point
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>Yes, except wedding</span></td>
+                                <td data-label="JHD/MUIS Support"><span>No</span></td>
+                                <td data-label="To Inform Police?"><span>No</span></td>
+                                <td data-label="Remarks"><span>Subject to approval by PM* in-charge of the area. $100 will also be charged one day before & one day after the actual day of the function.</span></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr class="tdHeader">
+                                <td colspan="6"><strong>Small Sized Courts</strong></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Functions allowed">
+                                    <span>
+                                        Social & Religious function except funeral wake<br /><br />
+                                        Eg: Sepak Takraw & Badminton Court
+                                    </span>
+                                </td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: $50 per day plus $300 deposit<br />
+                                        Electricity: Use own generator<br />
+                                        Water: $8/point
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>Yes, except wedding</span></td>
+                                <td data-label="JHD/MUIS Support"><span>No</span></td>
+                                <td data-label="To Inform Police?"><span>No</span></td>
+                                <td data-label="Remarks"><span>Subject to approval by PM* in-charge of the area. $20 will also be charged one day before & one day after the actual day of the function.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="commonAreaContent" id="ca03">
+                <div class="commonTable">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th>Functions allowed</th>
+                                <th>Charges (Per Day)</th>
+                                <th>MP's<br />Support</th>
+                                <th>JHD/MUIS<br />Support</th>
+                                <th>To Inform<br />Police?</th>
+                                <th>Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Functions allowed"><span>Only Social Functions</span></td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: $300.00 per day plus $1000.00 deposit per occassion<br />
+                                        Electricity: Use own generator<br />
+                                        Water: $8/point
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>Yes</span></td>
+                                <td data-label="JHD/MUIS Support"><span>No</span></td>
+                                <td data-label="To Inform Police?"><span>No</span></td>
+                                <td data-label="Remarks"><span>Clearance required from respective RC Zone & Constituency Office or PM in-charge before issue of permit.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="commonAreaContent" id="ca04">
+                <div class="commonTable">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th>Functions allowed</th>
+                                <th>Charges (Per Day)</th>
+                                <th>MP's<br />Support</th>
+                                <th>JHD/MUIS<br />Support</th>
+                                <th>To Inform<br />Police?</th>
+                                <th>Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Functions allowed"><span>At Void Deck</span></td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: $50.00 per day<br />
+                                        Electricity: Use own generator<br />
+                                        Water: $8/point
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>Yes</span></td>
+                                <td data-label="JHD/MUIS Support"><span>No</span></td>
+                                <td data-label="To Inform Police?"><span>No</span></td>
+                                <td data-label="Remarks">
+                                    <span>
+                                        <ul>
+                                            <li>Require letter of request from Constituency Office.</li>
+                                            <li>Check any application made in the last 6 months.</li>
+                                            <li>Fill up referral form to MP for endorsement.</li>
+                                            <li>Permit will only be issued after MP's endorsement has been received.</li>
+                                            <li>Deposit of $1000.00 is required for each mini-fair event</li>
+                                        </ul>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-label="Functions allowed"><span>At Open Space</span></td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: $20.00 per day<br />
+                                        Electricity: Use own generator<br />
+                                        Water: $8.00/point
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>No</span></td>
+                                <td data-label="JHD/MUIS Support"><span>No</span></td>
+                                <td data-label="To Inform Police?"><span>No</span></td>
+                                <td data-label="Remarks">
+                                    <span>
+                                        <ul>
+                                            <li>Require letter of request from Constituency Office.</li>
+                                            <li>Check any application made in the last 6 months.</li>
+                                            <li>Fill up referral form to MP for endorsement.</li>
+                                            <li>Permit will only be issued after MP's endorsement has been received.</li>
+                                            <li>Deposit of $1000.00 is required for each mini-fair event</li>
+                                        </ul>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="commonAreaContent" id="ca05">
+                <div class="commonTable">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th>Functions allowed</th>
+                                <th>Charges (Per Day)</th>
+                                <th>MP's<br />Support</th>
+                                <th>JHD/MUIS<br />Support</th>
+                                <th>To Inform<br />Police?</th>
+                                <th>Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tdHeader">
+                                <td colspan="6"><strong>For all Open Spaces & Void Decks</strong></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Functions allowed"><span>For residents' participation (e.g. block party etc.) for all facilities</span></td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: FOC<br />
+                                        Electricity: FOC<br />
+                                        Water: FOC
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>No</span></td>
+                                <td data-label="JHD/MUIS Support"><span>No</span></td>
+                                <td data-label="To Inform Police?"><span>No</span></td>
+                                <td data-label="Remarks"><span>Get letter of request from Constituency Office.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="commonAreaContent" id="ca06">
+                <div class="commonTable">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th>Functions allowed</th>
+                                <th>Charges (Per Day)</th>
+                                <th>MP's<br />Support</th>
+                                <th>JHD/MUIS<br />Support</th>
+                                <th>To Inform<br />Police?</th>
+                                <th>Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tdHeader">
+                                <td colspan="6"><strong>Badminton Session</strong></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Functions allowed"><span>Badminton Session (Residents)</span></td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: (Residents) $10.00 per 2-hr session<br />
+                                        Electricity: -<br />
+                                        Water: -
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>-</span></td>
+                                <td data-label="JHD/MUIS Support"><span>-</span></td>
+                                <td data-label="To Inform Police?"><span>-</span></td>
+                                <td data-label="Remarks">
+                                    <span>
+                                        <ul>
+                                            <li>Advanced booking (Not more than 7days).</li>
+                                            <li>Weekly booking starts on every Friday morning at 8.00am for the following Mon to Sun.</li>
+                                        </ul>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Functions allowed"><span>Badminton Session (Staff/Grassroots/Councillors)</span></td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: (Residents) $10.00 per 2-hr session<br />
+                                        Electricity: -<br />
+                                        Water: -
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>-</span></td>
+                                <td data-label="JHD/MUIS Support"><span>-</span></td>
+                                <td data-label="To Inform Police?"><span>-</span></td>
+                                <td data-label="Remarks">
+                                    <span>
+                                        <ul>
+                                            <li>Advanced booking (Not more than 7days).</li>
+                                            <li>Weekly booking starts on every Friday morning at 8.00am for the following Mon to Sun.</li>
+                                        </ul>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr class="tdHeader">
+                                <td colspan="6"><strong>Social Events / Gatherings</strong></td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Functions allowed"><span>For Residents (weekdays)</span></td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: $250.00 rental per day plus $200.00 deposit.<br />
+                                        Electricity: -<br />
+                                        Water: -
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>-</span></td>
+                                <td data-label="JHD/MUIS Support"><span>-</span></td>
+                                <td data-label="To Inform Police?"><span>-</span></td>
+                                <td data-label="Remarks">
+                                    <span>
+                                        <ul>
+                                            <li>Advance booking (Not more than 3 months prior to event)</li>
+                                            <li>Approval required from PM* in-charge before issuing permit.</li>
+                                        </ul>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Functions allowed"><span>For Residents (weekends)</span></td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: $400.00 rental per day plus $200.00 deposit.<br />
+                                        Electricity: -<br />
+                                        Water: -
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>-</span></td>
+                                <td data-label="JHD/MUIS Support"><span>-</span></td>
+                                <td data-label="To Inform Police?"><span>-</span></td>
+                                <td data-label="Remarks">
+                                    <span>
+                                        <ul>
+                                            <li>Advance booking (Not more than 3 months prior to event)</li>
+                                            <li>Approval required from PM* in-charge before issuing permit.</li>
+                                        </ul>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Functions allowed"><span>For Grassroots (weekdays)</span></td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: $150.00 rental per day plus $200.00 deposit.<br />
+                                        Electricity: -<br />
+                                        Water: -
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>-</span></td>
+                                <td data-label="JHD/MUIS Support"><span>-</span></td>
+                                <td data-label="To Inform Police?"><span>-</span></td>
+                                <td data-label="Remarks">
+                                    <span>
+                                        <ul>
+                                            <li>Advance booking (Not more than 3 months prior to event)</li>
+                                            <li>Approval required from PM* in-charge before issuing permit.</li>
+                                        </ul>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="tdContent">
+                                <td data-label="Functions allowed"><span>For Grassroots (weekends)</span></td>
+                                <td data-label="Charges (Per Day)">
+                                    <span>
+                                        Rental: $200.00 rental per day plus $200.00 deposit.<br />
+                                        Electricity: -<br />
+                                        Water: -
+                                    </span>
+                                </td>
+                                <td data-label="MP's Support"><span>-</span></td>
+                                <td data-label="JHD/MUIS Support"><span>-</span></td>
+                                <td data-label="To Inform Police?"><span>-</span></td>
+                                <td data-label="Remarks">
+                                    <span>
+                                        <ul>
+                                            <li>Advance booking (Not more than 3 months prior to event)</li>
+                                            <li>Approval required from PM* in-charge before issuing permit.</li>
+                                        </ul>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="commonAreaContent" id="ca07">
+                <p><strong>Open Space/Land ("RS" - Reserved Site under HDB's management)</strong></p>
+                <ul>
+                    <li>All applications for use of "RS", applicant needs to get permit from HDB(HQ), Lands Management Unit.</li>
+                    <li>If applicant needs to use power & water point at void deck, issue permit for use of void deck & rental of void deck will be charged.</li>
+                </ul>
+
+                <p><strong>Parking Lots</strong></p>
+                <ul>
+                    <li>All functions, refer applicants to Branch Office to apply for permit for use of parking lots.</li>
+                    <li>If applicants need to use power & water point at void deck, issue permit for use of void deck & rental of void deck will be charged.</li>
+                </ul>
+
+                <p><strong>Cash Card for Wash Bays at Blk 279, 295 & 261 Only </strong></p>
+                <p>A refundable deposit of $20.00 is chargeable for use of water at void decks of Blks 279,295 & 261 only to operate the water point using cash card. All charges for water at void deck are still applicable.</p>
+
+                <p><strong>Usage of Water/Electricity by Contractor(for building works etc.)</strong></p>
+
+                <div class="normalTable">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td>Water</td>
+                                <td>$10.00 per water point</td>
+                                <td>Prior approval from Town Council is required</td>
+                            </tr>
+                            <tr>
+                                <td>Electricity</td>
+                                <td>$15.00 per water point</td>
+                                <td>Prior approval from Town Council is required</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <p>If you wish to organize any social or religious activities, our void decks and open spaces or Communal Halls are readily available just for you. You may visit our friendly counter staffs to make your bookings.</p>
+
+            <p>We would also like to advise residents who are holding events at any of the common areas or open spaces to be considerate by containing their noise level. This is to prevent any inconvenience caused to other residents so as to create a comfortable environment for everyone. We thank you in advance for your co-operation.</p>
+
+            <div class="padding20"></div>
+        </div>
+
+    </div><!--End Resident Services-->
+</div><!-- End Main Contents -->
+
+<script>
+    $(".commonAreaContent").hide();
+    $(".commonAreaContent:first").show();
+    $(".commonSubMenu a").click(function () {
+        $(".commonAreaContent").hide();
+        var currentTab = $(this).attr("rel");
+        $("#" + currentTab).fadeIn();
+        $(".commonSubMenu a").removeClass("active");
+        $(this).addClass("active");
+
+        if (currentTab == "ca01") {
+            $(".commonSubMenuMobile .btnStatus").text("Void Decks / Link Building");
+        }
+        else if (currentTab == "ca02") {
+            $(".commonSubMenuMobile .btnStatus").text("Open Space");
+        }
+        else if (currentTab == "ca03") {
+            $(".commonSubMenuMobile .btnStatus").text("Parks");
+        }
+        else if (currentTab == "ca04") {
+            $(".commonSubMenuMobile .btnStatus").text("Mini-Fairs");
+        }
+        else if (currentTab == "ca05") {
+            $(".commonSubMenuMobile .btnStatus").text("Grassroots Activities");
+        }
+        else if (currentTab == "ca06") {
+            $(".commonSubMenuMobile .btnStatus").text("Community Hall");
+        }
+        else if (currentTab == "ca07") {
+            $(".commonSubMenuMobile .btnStatus").text("Others");
+        }
+    });
+
+    $(".commonSubMenuMobile .btnStatus").click(function () {
+        $(".commonSubMenuMobile ul").slideToggle(200);
+    });
+
+    $(".commonSubMenuMobile a").click(function () {
+        $(".commonAreaContent").hide();
+        var currentTab = $(this).attr("rel");
+        $("#" + currentTab).fadeIn();
+        $(".commonSubMenuMobile ul").hide(0);
+        $(".commonSubMenu a").removeClass("active");
+
+        if (currentTab == "ca01") {
+            $(".commonSubMenuMobile .btnStatus").text("Void Decks / Link Building");
+            $(".commonSubMenu .btn01").addClass("active");
+        }
+        else if (currentTab == "ca02") {
+            $(".commonSubMenuMobile .btnStatus").text("Open Space");
+            $(".commonSubMenu .btn02").addClass("active");
+        }
+        else if (currentTab == "ca03") {
+            $(".commonSubMenuMobile .btnStatus").text("Parks");
+            $(".commonSubMenu .btn03").addClass("active");
+        }
+        else if (currentTab == "ca04") {
+            $(".commonSubMenuMobile .btnStatus").text("Mini-Fairs");
+            $(".commonSubMenu .btn04").addClass("active");
+        }
+        else if (currentTab == "ca05") {
+            $(".commonSubMenuMobile .btnStatus").text("Grassroots Activities");
+            $(".commonSubMenu .btn05").addClass("active");
+        }
+        else if (currentTab == "ca06") {
+            $(".commonSubMenuMobile .btnStatus").text("Community Hall");
+            $(".commonSubMenu .btn06").addClass("active");
+        }
+        else if (currentTab == "ca07") {
+            $(".commonSubMenuMobile .btnStatus").text("Others");
+            $(".commonSubMenu .btn07").addClass("active");
+        }
+    });
+</script>

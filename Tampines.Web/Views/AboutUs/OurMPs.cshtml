@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "Our MPs | Tampines Town Council";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model  OurMpsContents
+@section meta{
+    <meta property="og:url" content="@appPath/AboutUs/OurMPs" />
+    <meta property="og:title" content=">Our MPs | Tampines Town Council" />
+    <meta property="og:description" content="" />
+    @if (Model != null && Model.AboutUsBanner != null)
+    {
+        <meta property="og:image" content="@appPath/Resources/images/AboutUsBanner/@Model.AboutUsBanner.ImageGUID.@Model.AboutUsBanner.ImageExtension" />
+    }
+}
+
+
+<div class="mainContents">
+    <div class="aboutUs">
+        <!--Page Banner-->
+        <div class="pageBanner">
+            @if (Model != null && Model.AboutUsBanner != null)
+            {
+                <img src="@appPath/Resources/images/AboutUsBanner/@Model.AboutUsBanner.ImageGUID.@Model.AboutUsBanner.ImageExtension" alt="">
+            }
+        </div>
+        <!--Breadcrumb-->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="@appPath/">Home</a><span></span><a href="javascript:void(0)">About Us</a><span></span>Our MPs
+            </div>
+        </div>
+
+        <!--About Us (Our MPs)-->
+        <div class="pageContents ourMps">
+            <h1>Our MPs</h1>
+            <p>Enter your postal code to find your MP and view their Meet-the-People details.</p>
+
+            <div class="searchMps">
+                <span><input type="text" name="searchMPs" id="searchpostcode" placeholder="Enter Postal Code here..."></span>
+                <span class="mpSearchBtn"><input type="button" class="searchBtnMp" value="Search"></span>
+            </div>
+            <span id="Errormsg" style="color:orangered;"></span>
+            <div class="mpsDetails">
+
+                <ul>
+
+                    @if (Model != null && Model.OurMpList != null && Model.OurMpList.Count > 0)
+                    {
+                        foreach (OurMps OM in Model.OurMpList)
+                        {
+                            <li id="masagos-zulkifli" class="allusers @OM.ModelClass">
+                                <span class="col_left">
+                                    <div class="container">
+                                        <div class="mpPhoto"><img src="@appPath/Resources/Images/OurMps/@(OM.ImageGUID!=null? OM.ImageGUID:"").@(OM.ImageExtension!=null ? OM.ImageExtension:"" )" alt=""></div>
+                                        <div class="mpDetail">
+                                            <h2>@OM.Name</h2>
+                                            @Html.Raw(OM.Designation)
+
+                                            <div class="padding10"></div>
+                                            <p>
+                                                <a href="@OM.FacebookLink" target="_blank"><img src="@appPath/Contents/images/homepage/fb-icon.png"></a>&nbsp;&nbsp;&nbsp;
+                                                <a href="@OM.InstagramLink" target="_blank"><img src="@appPath/Contents/images/homepage/instagram-icon.png"></a>&nbsp;&nbsp;&nbsp;
+                                                <a href="@("mailto:"+OM.Email)"><img src="@appPath/Contents/images/homepage/email-icon.png"></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </span>
+                                <span class="col_rgt">
+                                    <div class="container">
+                                        <h2>@OM.Division</h2>
+                                        <div class="mpContact">
+                                            <p><strong>Meet-The-People Session at:</strong></p>
+                                            <p>@Html.Raw(OM.MeetThePeople)</p>
+
+                                        </div>
+                                        <div class="mpClub">
+                                            <p><strong>Tampines West Community Club</strong></p>
+                                            <p>@Html.Raw(OM.CommunityClub)</p>
+
+                                        </div>
+                                    </div>
+                                </span>
+                            </li>
+                        }
+
+                    }
+
+                </ul>
+
+
+            </div>
+
+            <div class="padding30"></div>
+        </div>
+
+    </div><!--End About Us-->
+</div>
+
+
+
+@section scripts{
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.js"></script>
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.additional-methods.js"></script>
+    <script src="@appPath/Contents/scripts/PostalCode.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var hashtag = window.location.hash;
+            if (hashtag == "#masagos-zulkifli") {
+                var offset = $('.ourMps .mpsDetails ul li').offset();
+                var scrollto = offset.top - 150; // minus fixed header height
+                $('html, body').animate({ scrollTop: scrollto }, 0);
+            }
+
+            $('.searchBtnMp').click(function () {
+                $('.ourMps .mpsDetails').css("margin-top", 0);
+                $('.ourMps .mpsDetails ul li').css("margin-top", 0);
+                $('.ourMps .mpsDetails ul li').css("padding-top", 0);
+            });
+        });
+    </script>
+
+}
+
+

@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Downloads | Tampines Town Council";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+    Layout = "~/Areas/Admin/Views/Shared/_FrontEndLayout.cshtml";
+}
+@section meta{
+    <meta property="og:url" content="https://www.tampines.org.sg/downloads.html" />
+    <meta property="og:title" content="Downloads | Tampines Town Council" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="https://www.tampines.org.sg/images/residentservices/banner-img-download.jpg" />
+}
+@model IList<Accordion>
+<div class="mainContents">
+    <div class="residentServices">
+        <!--Page Banner-->
+        <div class="pageBanner">
+            <img src="@appPath/Contents/images/residentservices/banner-img-download.jpg" alt="">
+        </div>
+        <!--Breadcrumb-->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="@appPath/">Home</a><span></span><a href="javascript:void(0)">Resident Services</a><span></span>Downloads
+            </div>
+        </div>
+
+        <!--Resident Services (Downloads)-->
+        <div class="pageContents downloads">
+            <h1>Downloads</h1>
+
+            <div class="qna">
+                @if (Model != null && Model.Count > 0)
+                {
+                    foreach (Accordion A in Model)
+                    {
+                        <div class="question">@A.Title</div>
+                        <div class="answer">
+                            <ul>
+                                @if (Model != null && Model.Count > 0)
+                                {
+                                    foreach (AccordionPdf AP in A.AccordionPdfS)
+                                    {
+                                        <li><a href="@appPath/Resources/Documents/ResidentServices/@AP.FileGUID.@AP.Extension" class="pdf" target="_blank">@AP.PdfTitle</a></li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    }
+                }
+                <div class="padding30"></div>
+            </div>
+
+        </div><!--End Resident Services-->
+    </div><!-- End Main Contents -->
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        //$(".answer.active").show();
+
+        $(".question").click(function () {
+            if ($(this).hasClass("active")) {
+                $(this).removeClass("active");
+                $(this).next(".answer").slideUp(200);
+            } else {
+                $(this).addClass("active");
+                $(this).next(".answer").slideDown(200);
+            }
+        });
+    });
+</script>

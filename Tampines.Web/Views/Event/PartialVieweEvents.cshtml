@@ -1,0 +1,52 @@
+﻿
+
+@{
+
+    Layout = null;
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+
+@model IList<Events>
+@if (Model != null)
+{
+    int SNO = 1;
+    foreach (Events E in Model)
+    {
+        <li>
+            <div class="image">
+                <img src="@appPath/Resources/Images/Events/@E.ImageGUID.@E.ImageExtension " alt="@E.Title">
+                <div class="mouseover">
+                    <a href="@E.FacebookLink" target="_blank"><img src="@appPath/Contents/images/common/fb-icon-white.png"></a>
+                    <a href="@E.InstagramLink" target="_blank"><img src="@appPath/Contents/images/common/instagram-icon-white.png"></a>
+                </div>
+            </div>
+            <div class="details">
+                <div class="date"><span>@E.EventDate.ToLongDateString() , @E.EventDate.ToString("dddd") </span></div>
+                <h4>@E.Title</h4>
+
+                @if (E.EventSection != null && E.EventSection.Count > 0)
+                {
+                    foreach (EventSection ES in E.EventSection)
+                    {
+                        <p>
+                            Venue: @(ES.Venue!=null? ES.Venue:"")<br />
+                            Time: @(ES.Time!=null? ES.Time : "")
+                        </p>
+                    }
+                }
+            </div>
+        </li>
+        SNO++;
+
+    }
+}
+else
+{
+    <li> No Records Found!</li>
+
+
+
+
+}
+

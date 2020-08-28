@@ -1,0 +1,153 @@
+﻿
+@{ 
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="Tampines Town Council - set up in 1990, manages HDB residential units in Tampines GRC. Email:feedback@ttc.org.sg; Tel: 67812222; EMSU hotline: 1800 325 8888" />
+    <meta name="keywords" content="" />
+    @RenderSection("meta", false)
+    <title>Tampines Town Council</title>
+    <!--For FB share-->
+    <meta property="og:url" content="https://www.tampines.org.sg/index.html" />
+    <meta property="og:title" content="Tampines Town Council" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="https://www.tampines.org.sg/images/homepage/banner-img-01.jpg" />
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/css/reset.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/css/layout.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/css/common.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/css/styles.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/css/responsive.css" media="all" />
+    <!--[if lt IE 9]>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <![endif]-->
+    <!--[if !(IE)|(gte IE 9)]><!-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!--<![endif]-->
+    <script src="@appPath/Contents/scripts/jquery-ui.min.js"></script>
+    <script src="@appPath/Contents/scripts/vendor/modernizr-2.7.1.min.js"></script>
+    @*<script src="@appPath/Contents/scripts/common.js"></script>*@
+    <script src="@appPath/Contents/scripts/classie.min.js"></script>
+    <script src="@appPath/Contents/scripts/jquery.parallax-1.1.3.js" type="text/javascript"></script>
+    <script src="@appPath/Contents/scripts/jquery.scrollTo-1.4.3.1-min.js" type="text/javascript"></script>
+    <script src="@appPath/Contents/scripts/jquery.localscroll-1.2.7-min.js" type="text/javascript"></script>
+    <script src="@appPath/Contents/scripts/bootstrap/bootstrap.min.js"></script>
+    <style>
+
+        .subscribe label.error {
+            color: #c63c3c;
+            font-size: 12px;
+            line-height: 14px;
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 0 !important;
+            width: 100% !important;
+        }
+    </style>
+    @RenderSection("style", false)
+</head>
+<body class="@(ViewBag.BodyClass!=null?ViewBag.BodyClass:"")">
+    <header>
+       
+        @{Html.RenderAction("Header", "Home");}
+        @*@Html.Partial("_Header", Header)*@
+    </header><!--End Header-->
+
+
+    <div class="wrapper">
+        <div class="backtop"><a onClick="backToTop();" class="backTopBtn"></a></div>
+        @RenderBody()
+
+    </div>
+    <!--End Wrapper-->
+    <div class="footer">
+        @Html.Partial("_Footer", null)
+    </div>
+
+    @if (ViewBag.BodyClass !=null && ViewBag.BodyClass == "HOME")
+    {
+    <!-- Auto popup -->
+    <div class="popup-wrapper" id="popup">
+        <div class="autoPopup">
+            <div class="container">
+                <div class="close" onClick="autoPopup_close()"><img src="@appPath/Contents/images/common/close_btn.png" border="0"></div>
+                <img src="@appPath/Contents/images/homepage/TTC_Phase-2_Reopening_Poster.jpg" border="0">
+            </div>
+        </div>
+    </div>
+    <!-- end Auto popup -->
+    }
+
+  
+<script type="text/javascript">
+       var apppath = '@ApplicationInstance.Application["ApplicationPath"]';
+        function SaveSubscribe() {
+
+
+
+            var obj = {};
+            obj.name = $.trim($("[id*=txtfullName]").val());
+            obj.email = $.trim($("[id*=txtEmail]").val());
+            if ($("#SubscribeForm").valid()) {
+                $.ajax({
+                    type: "POST",
+                    url: "feedback.aspx/SaveSubscribe",
+                    //data: '{name: "' + $("#txtName").val() + '" }',
+                    // data: "{name: \"bob\" }",
+                    data: JSON.stringify(obj),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: OnSuccess,
+                    failure: function (response) {
+                        alert(response.d);
+                    }
+                });
+            }
+            else {
+                // $("#fullName-error").html("fullName-error");
+            }
+        }
+        function OnSuccess(response) {
+
+            $("#txtfullName").val('');
+            $("#txtEmail").val('');
+            alert(response.d);
+        }
+
+      //  IntializeValidation();
+        function IntializeValidation() {
+
+
+
+            $("#SubscribeForm").validate({
+                errorPlacement: function (error, element) {
+                    $("span[data-valmsg-for='" + $(element).attr("name") + "']").html($(error));
+                },
+                rules: {
+
+                    fullName: {
+                        required: true,
+
+                    },
+                    emailAddress: {
+                        required: true,
+                        email: true
+                    }
+
+
+                }
+            });
+        }
+
+
+</script>
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

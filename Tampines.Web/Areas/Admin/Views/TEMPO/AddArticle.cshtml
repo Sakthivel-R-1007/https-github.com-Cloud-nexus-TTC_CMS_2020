@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "AddArticle";
+}
+
+    <div class="maincontents">
+        <form action="viewTempo.html">
+            <h1>TEMPO</h1>
+            <h2>Add Article</h2>
+            <div class="clear"></div>
+
+            <div class="draftBox">
+                Draft created by Vincent on 06/05/2020, 12:00PM
+                <a href="#" class="floatRight">[ Delete Draft ]</a>
+                <a href="#" class="floatRight">[ Open Draft ]</a>
+                <div class="clear"></div>
+            </div>
+
+            <div class="homepage">
+                <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+                    <tr>
+                        <td class="fieldname">Title</td>
+                        <td><input type="text" value=""></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Date</td>
+                        <td><input type="text" value="" class="calendar"></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Banner Image <span class="importantNote">(1920px by 600px)</span></td>
+                        <td>
+                            <div class="upload">
+                                <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach_1" id="uploadAttach_1" />
+                                <label><input type="text" name="uploadFile_1" id="uploadFile_1" value="" placeholder="No file chosen"></label>
+                            </div>
+                            <div class="imgPreview"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Banner Image Alt Tag</td>
+                        <td><input type="text" value=""></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Thumbnail Image <span class="importantNote">(680px by 366px)</span></td>
+                        <td>
+                            <div class="upload">
+                                <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach_2" id="uploadAttach_2" />
+                                <label><input type="text" name="uploadFile_2" id="uploadFile_2" value="" placeholder="No file chosen"></label>
+                            </div>
+                            <div class="imgPreview"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Thumbnail Image Alt Tag</td>
+                        <td><input type="text" value=""></td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Short Description <span class="importantNote">(Only display in TEMPO landing page)</span></td>
+                        <td><textarea></textarea></td>
+                    </tr>
+                </table>
+                <div class="padding10"></div>
+
+
+                <div class="floatRight"><input type="button" class="resetBtn" value="Add Template" data-toggle="modal" data-target="#selectTemplate"></div>
+                <div class="clear padding10"></div>
+                <div class="floatRight">
+                    <input type="button" class="submitBtn whiteBg" value="Preview">&nbsp;
+                    <input type="button" class="submitBtn whiteBg" value="Save Draft">&nbsp;
+                    <input type="submit" class="submitBtn whiteBg" value="Publish">&nbsp;
+                    <input type="button" class="resetBtn whiteBg" value="Back" onClick="location.href='viewTempo.html'">
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear padding10"></div>
+        </form>
+    </div>
+

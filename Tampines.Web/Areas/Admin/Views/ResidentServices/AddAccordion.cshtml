@@ -1,0 +1,154 @@
+﻿
+@{
+    ViewBag.Title = "Downloads";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model Accordion
+<div class="maincontents">
+    @using (Html.BeginForm("AddAccordion", "ResidentServices", FormMethod.Post, new { id = "AddAccordionForm" }))
+    {
+        @Html.AntiForgeryToken()
+        <h1>Resident Services</h1>
+        <h2>Add Accodion</h2>
+        <div class="padding5"></div>
+        <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+            <tr>
+                <td class="fieldname">Accordion Title</td>
+                <td>
+                    @Html.TextBoxFor(m => m.Title)
+                    @Html.ValidationMessageFor(m => m.Title)
+                </td>
+            </tr>
+            <tr>
+                <td class="fieldname">Short Description</td>
+                <td>
+                    @Html.TextAreaFor(m => m.ShortDescription)
+                    @Html.ValidationMessageFor(m => m.ShortDescription)
+                </td>
+            </tr>
+        </table>
+        <div class="clear padding10"></div>
+        <div class="clear padding10"></div>
+        @*<div class="floatRight"><a href="#" data-toggle="modal" data-target="#add" class="editMetaBtn">Add PDF</a></div>
+            <div class="clear padding10"></div>
+            <table cellpadding="0" cellspacing="0" class="tblgrey">
+                <tr>
+                    <th width="60">S/N</th>
+                    <th>PDF Title</th>
+                    <th width="200">Modified Date</th>
+                    <th width="120">Action</th>
+                </tr>
+                <tr>
+                    <td>01</td>
+                    <td>Adopt A Bench Application Form</td>
+                    <td>06/05/2020 12:00:00 PM</td>
+                    <td><a href="#" data-toggle="modal" data-target="#edit">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>Adopt A Bench Terms and Conditions</td>
+                    <td>06/05/2020 12:00:00 PM</td>
+                    <td><a href="#" data-toggle="modal" data-target="#edit">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                </tr>
+            </table>*@
+
+        <div class="padding10"></div>
+        <div class="floatRight">
+            <input type="button" class="submitBtn whiteBg" value="Submit" id="AddAccordionSubmit">
+        </div>
+    }
+</div>
+<!-- Popup (delete) -->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content deletealert">
+            <div class="modal-header">
+                <div class="title">Delete PDF File</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container" style="text-align:center;">
+                    <p><strong>Are you sure to delete this PDF file?</strong></p>
+                    <div class="padding10"></div>
+                    <input type="button" class="submitBtn" value="Delete" id="btnconfirm_delete">
+                    <div class="clear padding10"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Popup (edit) -->
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content editalert">
+            <div class="modal-header">
+                <div class="title">Edit PDF File</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+                        <tr>
+                            <td class="fieldname">Title</td>
+                            <td><input type="text" value="GIRO Application Form"></td>
+                        </tr>
+                        <tr>
+                            <td class="fieldname">Upload PDF File</td>
+                            <td>
+                                <div class="upload">
+                                    <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach_1" id="uploadAttach_1" />
+                                    <label><input type="text" name="uploadFile_1" id="uploadFile_1" value="TTC-Giro-Form-2019.pdf" placeholder="No file chosen"></label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="padding10"></div>
+                    <input type="button" class="submitBtn floatRight" value="Publish">
+                    <div class="clear padding10"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Popup (add) -->
+<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content editalert">
+            <div class="modal-header">
+                <div class="title">Add PDF File</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+                        <tr>
+                            <td class="fieldname">Title</td>
+                            <td><input type="text" value=""></td>
+                        </tr>
+                        <tr>
+                            <td class="fieldname">Upload PDF File</td>
+                            <td>
+                                <div class="upload">
+                                    <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach_2" id="uploadAttach_2" />
+                                    <label><input type="text" name="uploadFile_2" id="uploadFile_2" value="" placeholder="No file chosen"></label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="padding10"></div>
+                    <input type="button" class="submitBtn floatRight" value="Publish">
+                    <div class="clear padding10"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.js"></script>
+    <script type="text/javascript" src="@appPath/Contents/scripts/jqueryValidate/jquery.validate.additional-methods.js"></script>
+    <script src="@appPath/Contents/Admin/js/Custom/admin-accordion-add.js"></script>
+}

@@ -1,0 +1,411 @@
+﻿
+
+@{
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+<div class="header">
+    <div class="topLogo">
+        <span class="headContact">
+            <div class="contactIcon">
+                <p>
+                    Main Line:<br />
+                    6781 2222
+                </p>
+            </div>
+            <div>
+                <p>
+                    EMSU 24-hrs Hotline:<br />
+                    1800 325 8888
+                </p>
+            </div>
+        </span>
+        <span class="headLogo"><a href="@appPath/"><img src="@appPath/Contents/images/common/tptc-logo.png"></a></span>
+        <span class="headSocial">
+            <ul>
+                <li><span>Follow Us</span></li>
+                <li><a href="https://www.facebook.com/tampinestowncouncil/" target="_blank"><img src="@appPath/Contents/images/common/fb-icon.png"></a></li>
+                <li><a href="https://www.youtube.com/channel/UCl0EyJWZ4K2Nx0JMwOf80Pg/featured" target="_blank"><img src="@appPath/Contents/images/common/youtube-icon.png"></a></li>
+                <li><a href="https://www.instagram.com/tampinestowncouncil/?hl=en" target="_blank"><img src="@appPath/Contents/images/common/instagram-icon.png"></a></li>
+                <li class="oneService"><a href="https://www.oneservice.sg/" target="_blank"><img src="@appPath/Contents/images/common/one-service-icon.png"></a></li>
+            </ul>
+        </span>
+    </div>
+    <div class="mainMenu">
+        <div class="container">
+            <div class="logoIcon"><a href="javascript:void(0)"><img src="@appPath/Contents/images/common/tptc-logo-icon.png"></a></div>
+            <ul class="menu">
+                <li class="aboutUsNav dd">
+                    <a href="javascript:void(0)">About Us</a>
+                    <div class="subMenu">
+                        <ul>
+                            <li><a href="javascript:void(0)">Introduction</a></li>
+                            <li><a href="javascript:void(0)">Our MPs</a></li>
+                            <li><a href="javascript:void(0)" target="_blank">Organisation Chart</a></li>
+                            <li><a href="javascript:void(0)">Our Publications</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="ourTownNav dd">
+                    <a href="javascript:void(0)">Our Town</a>
+                    <div class="subMenu">
+                        <ul>
+                            <li><a href="javascript:void(0)">Introduction</a></li>
+                            <li><a href="javascript:void(0)" target="_blank">Town Map</a></li>
+                            <li><a href="javascript:void(0)">Cycling Town</a></li>
+                            <li><a href="javascript:void(0)">Eco Town</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="javascript:void(0)" target="_blank">Master Plan</a></li>
+                <li class="ServicesNav dd">
+                    <a href="javascript:void(0)">Resident Services</a>
+                    <div class="subMenu">
+                        <ul>
+                            <li><a href="javascript:void(0)">Use of Common Area/Open Spaces</a></li>
+                            <li><a href="javascript:void(0)">Bulky Item Removal Services</a></li>
+                            <li>
+                                <a href="javascript:void(0)" target="_blank">Handyman Services</a>
+                            </li>
+                            <li><a href="javascript:void(0)">Service &amp; Conservancy Charges</a></li>
+                            <li><a href="javascript:void(0)">Town Council Services</a></li>
+                            <li><a href="javascript:void(0)">Mediate Disputes Between Neighbours</a></li>
+                            <li><a href="javascript:void(0)">Downloads</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="TempoNav"><a href="javascript:void(0)">TEMPO</a></li>
+                <!--li class="facilitiesNav dd"><a href="javascript:void(0)">Our Facilities</a>
+                  <div class="subMenu">
+                    <ul>
+                      <li><a href="#">Calendar</a></li>
+                      <li><a href="#">Booking Form</a></li>
+                      <li><a href="#">Void Decks</a></li>
+                      <li><a href="#">Multi Purpose Hall</a></li>
+                      <li><a href="#">BBQ Pit</a></li>
+                    </ul>
+                  </div>
+                </li-->
+                <li class="eventsNav"><a href="javascript:void(0)">Events</a></li>
+                <li class="contactUsNav dd">
+                    <a href="javascript:void(0)">Contact Us</a>
+                    <div class="subMenu">
+                        <ul>
+                            <li><a href="javascript:void(0)">Getting Here</a></li>
+                            <li><a href="javascript:void(0)">Useful Links &amp; Contacts</a></li>
+                            <li><a href="javascript:void(0)">Feedback</a></li>
+                            <li><a href="javascript:void(0)" target="_blank">PDPA Public Policy</a></li>
+                            <li><a href="javascript:void(0)" target="_blank">Whistleblowing Policy</a></li>
+                            <li><a href="javascript:void(0)">FAQs</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <ul class="search">
+                <li><a href="javascript:void(0)" class="searchTrigger"><img src="@appPath/Contents/images/common/search-icon.png"></a></li>
+                <li> <a href="javascript:increaseFontSize();" class="increaseFont">A</a> <a href="javascript:resetFontSize();" class="normalFont">A</a> <a href="javascript:decreaseFontSize();" class="decreaseFont">A</a> </li>
+            </ul>
+            <div class="searchField">
+                <div class="searchInputBox">
+                    <input type="text" name="search" id="search" placeholder="Search...">
+                    <a href="javascript:void(0);" class="searchBtn"><img src="@appPath/Contents/images/common/search-icon.png"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobileMenuMain">
+        <div class="mobileMenuBtnPos">
+            <div class="mobileMenuBtn"><span></span><span></span><span></span></div>
+        </div>
+        <div class="mobileLogo"><a href="@appPath/"><img src="@appPath/Contents/images/common/tptc-logo.png"></a></div>
+        <div class="mobileRgtNav">
+            <ul>
+                <li><a href="#" class="mobileSearchTrigger"><img src="@appPath/Contents/images/common/search-icon.png"></a></li>
+                <li><a href="#" class="contactTrigger"><img src="@appPath/Contents/images/common/mobile-contact-btn.png"></a></li>
+            </ul>
+        </div>
+        <div class="mobileMenu">
+            <ul>
+                <li>
+                    <a href="javascript:void(0)" class="dd">About Us</a>
+                    <ul class="mobileSub">
+                        <li><a href="javascript:void(0)">Introduction</a></li>
+                        <li><a href="javascript:void(0)">Our MPs</a></li>
+                        <li><a href="javascript:void(0)" target="_blank">Organisation Chart</a></li>
+                        <li><a href="javascript:void(0)">Our Publications</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="dd">Our Town</a>
+                    <ul class="mobileSub">
+                        <li><a href="javascript:void(0)">Introduction</a></li>
+                        <li><a href="javascript:void(0)" target="_blank">Town Map</a></li>
+                        <li><a href="javascript:void(0)">Cycling Town</a></li>
+                        <li><a href="javascript:void(0)">Eco Town</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0)" target="_blank">Master Plan</a></li>
+                <li>
+                    <a href="javascript:void(0)" class="dd">Resident Services</a>
+                    <ul class="mobileSub">
+                        <li><a href="javascript:void(0)">Use of Common Area/Open Spaces</a></li>
+                        <li><a href="javascript:void(0)">Bulky Item Removal Services</a></li>
+                        <li>
+                            <a href="javascript:void(0)" target="_blank">Handyman Services</a>
+                        </li>
+                        <li><a href="javascript:void(0)">Service &amp; Conservancy Charges</a></li>
+                        <li><a href="javascript:void(0)">Town Council Services</a></li>
+                        <li><a href="javascript:void(0)">Mediate Disputes Between Neighbours</a></li>
+                        <li><a href="javascript:void(0)">Downloads</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0)">TEMPO</a></li>
+                <!--li><a href="javascript:void(0)" class="dd">Our Facilities</a>
+                  <ul class="mobileSub">
+                    <li><a href="#">Calendar</a></li>
+                    <li><a href="#">Booking Form</a></li>
+                    <li><a href="#">Void Decks</a></li>
+                    <li><a href="#">Multi Purpose Hall</a></li>
+                    <li><a href="#">BBQ Pit</a></li>
+                  </ul>
+                </li-->
+                <li><a href="javascript:void(0)">Events</a></li>
+                <li>
+                    <a href="javascript:void(0)" class="dd">Contact Us</a>
+                    <ul class="mobileSub">
+                        <li><a href="javascript:void(0)">Getting Here</a></li>
+                        <li><a href="javascript:void(0)">Useful Links &amp; Contacts</a></li>
+                        <li><a href="javascript:void(0)">Feedback</a></li>
+                        <li><a href="javascript:void(0)" target="_blank">PDPA Public Policy</a></li>
+                        <li><a href="javascript:void(0)" target="_blank">Whistleblowing Policy</a></li>
+                        <li><a href="javascript:void(0)">FAQs</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="padding5"></div>
+            <ul class="socialMedia">
+                <li><span>Follow Us:</span></li>
+                <li><a href="https://www.facebook.com/tampinestowncouncil/" target="_blank"><img src="@appPath/Contents/images/common/fb-icon.png"></a></li>
+                <li><a href="https://www.youtube.com/channel/UCl0EyJWZ4K2Nx0JMwOf80Pg/featured" target="_blank"><img src="@appPath/Contents/images/common/youtube-icon.png"></a></li>
+                <li><a href="https://www.instagram.com/tampinestowncouncil/?hl=en" target="_blank"><img src="@appPath/Contents/images/common/instagram-icon.png"></a></li>
+                <li class="oneService"><a href="https://www.oneservice.sg/" target="_blank"><img src="@appPath/Contents/images/common/one-service-icon.png"></a></li>
+            </ul>
+            <div class="padding10"></div>
+        </div>
+        <div class="searchField">
+            <div class="searchInputBox">
+                <input type="text" name="search" id="search" placeholder="Search...">
+                <a href="javascript:void(0);" class="searchBtn"><img src="@appPath/Contents/images/common/search-icon.png"></a>
+            </div>
+        </div>
+        <div class="headContact">
+            <div class="container">
+                <span class="contactIcon">
+                    <p>
+                        Main Line:<br />
+                        6781 2222
+                    </p>
+                </span> <span>
+                    <p>
+                        EMSU 24-hrs Hotline:<br />
+                        1800 325 8888
+                    </p>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    jQuery(document).ready(function () {
+        $('.searchTrigger').click(function () {
+            $('.mainMenu .container .searchField').slideToggle(200);
+        });
+        $('.mobileMenuMain .mobileMenuBtn').click(function () {
+            $(this).toggleClass('open');
+            $('.mobileMenu').slideToggle(200);
+            $('.mobileMenuMain .mobileMenu ul li').removeClass('active');
+            $('.mobileMenuMain .mobileMenu ul li .mobileSub').hide();
+            $('.mobileMenuMain .searchField').hide();
+            $('.mobileMenuMain .headContact').hide();
+        });
+        $('.mobileMenuMain .mobileMenu ul li').click(function () {
+            $('.mobileMenuMain .mobileMenu ul li').removeClass('active');
+            $(this).addClass('active');
+            $('.mobileMenuMain .mobileMenu ul li .mobileSub').hide();
+            $(this).find('.mobileSub').slideDown(200);
+        });
+        $('.mobileSearchTrigger').click(function () {
+            $('.mobileMenuMain .mobileMenu ul li').removeClass('active');
+            $('.mobileMenuMain .mobileMenu ul li .mobileSub').hide();
+            $('.mobileMenu').hide();
+            $('.mobileMenuMain .headContact').hide();
+            $('.mobileMenuMain .searchField').slideToggle(200);
+        });
+        $('.contactTrigger').click(function () {
+            $('.mobileMenuMain .mobileMenu ul li').removeClass('active');
+            $('.mobileMenuMain .mobileMenu ul li .mobileSub').hide();
+            $('.mobileMenu').hide();
+            $('.mobileMenuMain .headContact').slideToggle(200);
+        });
+
+        $(".searchBtn").on("click", function () {
+            var q = $(this).siblings('input').val();
+            $(".searchTextField").val(q);
+            window.location.href = getCurrentDomain() + "/Search.aspx?q=" + encodeURIComponent(q);
+            //console.log(getCurrentDomain() + "/search.aspx?q=" + encodeURIComponent(q));
+        });
+    });
+
+    function getCurrentDomain() {
+        return location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '');
+    }
+
+    var font_14_Min = 12;
+    var font_14_Max = 16;
+
+    var font_13_Min = 11;
+    var font_13_Max = 15;
+
+    var font_12_Min = 10;
+    var font_12_Max = 14;
+
+    function increaseFontSize() {
+        var fontSizeIncrease_14 = document.querySelectorAll('.homepage .operHrQuickLinks ul li .content p, .homepage .operHrQuickLinks ul li.quickLinks ul li a, .homepage .homeNewsEvents .newsEventsSlider div.news .details h4, .homepage .homeNewsEvents .newsEventsSlider div.news .details p, .homepage .homeNewsEvents .newsEventsSlider div.events .details h4, .pageContents p, .pageContents li, .commonTable table, .normalTable table, .commonForm span, .qna .question, .annualReports h3, .pressRelease p.date, .ourTown .introduction ul li, .ourTown .ecoTown ul li, .tempoPg .tempo .tempoList li .details h4, .tempoPg .tempo .tempoList li .details p, .tempoArchives h3, .eventsPg .events ul li .details h4, .sitemapContents ul li, .sitemapContents ul li ul li a');
+
+        for (i = 0; i < fontSizeIncrease_14.length; i++) {
+            if (fontSizeIncrease_14[i].style.fontSize) {
+                var font_size = parseInt(fontSizeIncrease_14[i].style.fontSize.replace("px", ""));
+                var line_height = parseInt(fontSizeIncrease_14[i].style.lineHeight.replace("px", ""));
+            } else {
+                var font_size = 14;
+                var line_height = 18;
+            }
+            if (font_size != font_14_Max) {
+                font_size += 1;
+                line_height += 2;
+            }
+            fontSizeIncrease_14[i].style.fontSize = font_size + "px";
+            fontSizeIncrease_14[i].style.lineHeight = line_height + "px";
+        }
+
+        var fontSizeIncrease_13 = document.querySelectorAll('.homepage .homeNewsEvents .newsEventsSlider div.news .details .date, .homepage .homeNewsEvents .newsEventsSlider div.events .details .date, .homepage .homeNewsEvents .newsEventsSlider div.events .details p, .eventsPg .events ul li .details .date, .tempoPg .tempo .tempoList li .details .date');
+        for (i = 0; i < fontSizeIncrease_13.length; i++) {
+            if (fontSizeIncrease_13[i].style.fontSize) {
+                var font_size = parseInt(fontSizeIncrease_13[i].style.fontSize.replace("px", ""));
+                var line_height = parseInt(fontSizeIncrease_13[i].style.lineHeight.replace("px", ""));
+            } else {
+                var font_size = 13;
+                var line_height = 18;
+            }
+            if (font_size != font_13_Max) {
+                font_size += 1;
+                line_height += 2;
+            }
+            fontSizeIncrease_13[i].style.fontSize = font_size + "px";
+            fontSizeIncrease_13[i].style.lineHeight = line_height + "px";
+        }
+
+        var fontSizeIncrease_12 = document.querySelectorAll('.homepage .shortcutLinks ul li .content p, .homepage .homeMPs .mpsSlider div .details p');
+        for (i = 0; i < fontSizeIncrease_12.length; i++) {
+            if (fontSizeIncrease_12[i].style.fontSize) {
+                var font_size = parseInt(fontSizeIncrease_12[i].style.fontSize.replace("px", ""));
+                var line_height = parseInt(fontSizeIncrease_12[i].style.lineHeight.replace("px", ""));
+            } else {
+                var font_size = 12;
+                var line_height = 14;
+            }
+            if (font_size != font_12_Max) {
+                font_size += 1;
+                line_height += 2;
+            }
+            fontSizeIncrease_12[i].style.fontSize = font_size + "px";
+            fontSizeIncrease_12[i].style.lineHeight = line_height + "px";
+        }
+    }
+
+    function resetFontSize() {
+        var fontSizeReset_14 = document.querySelectorAll('.homepage .operHrQuickLinks ul li .content p, .homepage .operHrQuickLinks ul li.quickLinks ul li a, .homepage .homeNewsEvents .newsEventsSlider div.news .details h4, .homepage .homeNewsEvents .newsEventsSlider div.news .details p, .homepage .homeNewsEvents .newsEventsSlider div.events .details h4, .pageContents p, .pageContents li, .commonTable table, .normalTable table, .commonForm span, .qna .question, .annualReports h3, .pressRelease p.date, .ourTown .introduction ul li, .ourTown .ecoTown ul li, .tempoPg .tempo .tempoList li .details h4, .tempoPg .tempo .tempoList li .details p, .tempoArchives h3, .eventsPg .events ul li .details h4, .sitemapContents ul li, .sitemapContents ul li ul li a');
+        for (i = 0; i < fontSizeReset_14.length; i++) {
+            if (fontSizeReset_14[i].style.fontSize) {
+                var font_size = 14;
+                var line_height = 18;
+            }
+            fontSizeReset_14[i].style.fontSize = font_size + "px";
+            fontSizeReset_14[i].style.lineHeight = line_height + "px";
+        }
+
+        var fontSizeReset_13 = document.querySelectorAll('.homepage .homeNewsEvents .newsEventsSlider div.news .details .date, .homepage .homeNewsEvents .newsEventsSlider div.events .details .date, .homepage .homeNewsEvents .newsEventsSlider div.events .details p, .eventsPg .events ul li .details .date, .tempoPg .tempo .tempoList li .details .date');
+        for (i = 0; i < fontSizeReset_13.length; i++) {
+            if (fontSizeReset_13[i].style.fontSize) {
+                var font_size = 13;
+                var line_height = 18;
+            }
+            fontSizeReset_13[i].style.fontSize = font_size + "px";
+            fontSizeReset_13[i].style.lineHeight = line_height + "px";
+        }
+
+        var fontSizeReset_12 = document.querySelectorAll('.homepage .shortcutLinks ul li .content p, .homepage .homeMPs .mpsSlider div .details p, .homepage .homeNewsEvents .newsEventsSlider div.news .details .date, .commonForm span p, .importantNote p, .commonTermsLayout p, .commonTermsLayout ul li, .commonTermsLayout ol li, .tempoPg .tempo .tempoList li .details .date, .tempoArticle .latestArticle ul li p.date, .eventsDetail .imgLeft span');
+        for (i = 0; i < fontSizeReset_12.length; i++) {
+            if (fontSizeReset_12[i].style.fontSize) {
+                var font_size = 12;
+                var line_height = 14;
+            }
+            fontSizeReset_12[i].style.fontSize = font_size + "px";
+            fontSizeReset_12[i].style.lineHeight = line_height + "px";
+        }
+    }
+
+    function decreaseFontSize() {
+        var fontSizeDecrease_14 = document.querySelectorAll('.homepage .operHrQuickLinks ul li .content p, .homepage .operHrQuickLinks ul li.quickLinks ul li a, .homepage .homeNewsEvents .newsEventsSlider div.news .details h4, .homepage .homeNewsEvents .newsEventsSlider div.news .details p, .homepage .homeNewsEvents .newsEventsSlider div.events .details h4, .pageContents p, .pageContents li, .commonTable table, .normalTable table, .commonForm span, .qna .question, .annualReports h3, .pressRelease p.date, .ourTown .introduction ul li, .ourTown .ecoTown ul li, .tempoPg .tempo .tempoList li .details h4, .tempoPg .tempo .tempoList li .details p, .tempoArchives h3, .eventsPg .events ul li .details h4, .sitemapContents ul li, .sitemapContents ul li ul li a');
+        for (i = 0; i < fontSizeDecrease_14.length; i++) {
+            if (fontSizeDecrease_14[i].style.fontSize) {
+                var font_size = parseInt(fontSizeDecrease_14[i].style.fontSize.replace("px", ""));
+                var line_height = parseInt(fontSizeDecrease_14[i].style.lineHeight.replace("px", ""));
+            } else {
+                var font_size = 14;
+                var line_height = 18;
+            }
+            if (font_size != font_14_Min) {
+                font_size -= 1;
+                line_height -= 2;
+            }
+            fontSizeDecrease_14[i].style.fontSize = font_size + "px";
+            fontSizeDecrease_14[i].style.lineHeight = line_height + "px";
+        }
+
+        var fontSizeDecrease_13 = document.querySelectorAll('.homepage .homeNewsEvents .newsEventsSlider div.news .details .date, .homepage .homeNewsEvents .newsEventsSlider div.events .details .date, .homepage .homeNewsEvents .newsEventsSlider div.events .details p, .eventsPg .events ul li .details .date, .tempoPg .tempo .tempoList li .details .date');
+        for (i = 0; i < fontSizeDecrease_13.length; i++) {
+            if (fontSizeDecrease_13[i].style.fontSize) {
+                var font_size = parseInt(fontSizeDecrease_13[i].style.fontSize.replace("px", ""));
+                var line_height = parseInt(fontSizeDecrease_13[i].style.lineHeight.replace("px", ""));
+            } else {
+                var font_size = 13;
+                var line_height = 18;
+            }
+            if (font_size != font_13_Min) {
+                font_size -= 1;
+                line_height -= 2;
+            }
+            fontSizeDecrease_13[i].style.fontSize = font_size + "px";
+            fontSizeDecrease_13[i].style.lineHeight = line_height + "px";
+        }
+
+        var fontSizeDecrease_12 = document.querySelectorAll('.homepage .shortcutLinks ul li .content p, .homepage .homeMPs .mpsSlider div .details p');
+        for (i = 0; i < fontSizeDecrease_12.length; i++) {
+            if (fontSizeDecrease_12[i].style.fontSize) {
+                var font_size = parseInt(fontSizeDecrease_12[i].style.fontSize.replace("px", ""));
+                var line_height = parseInt(fontSizeDecrease_12[i].style.lineHeight.replace("px", ""));
+            } else {
+                var font_size = 12;
+                var line_height = 14;
+            }
+            if (font_size != font_12_Min) {
+                font_size -= 1;
+                line_height -= 2;
+            }
+            fontSizeDecrease_12[i].style.fontSize = font_size + "px";
+            fontSizeDecrease_12[i].style.lineHeight = line_height + "px";
+        }
+    }
+</script>
+

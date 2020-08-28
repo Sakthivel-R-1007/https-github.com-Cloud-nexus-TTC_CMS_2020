@@ -1,0 +1,179 @@
+@media screen and (max-width:1500px){
+	.header .topLogo{width:90%;}
+	.header .mainMenu .container{width:90%;}
+	.mainMenu .container .menu li{padding:0 20px;}
+	.footer .container{width:90%;}
+	.homepage .bannerSlider .bannerText{width:90%;}
+	.homepage .shortcutLinks ul li .content{padding:50px 0;}
+	.homepage .operHrQuickLinks ul li .content{padding:50px 0;}
+	.homepage .homeNewsEvents .newsEventsSlider{width:90%;}
+	.homepage .subscribe .container{width:90%;}
+	.breadcrumb .container{width:90%;}
+	.aboutUs .introduction{width:90%;}
+	.aboutUs .ourMps{width:90%;}
+	.aboutUs .ourPublications{width:90%;}
+	.ourTown .introduction{width:90%;}
+	.ourTown .cyclingTown{width:90%;}
+	.ourTown .ecoTown{width:90%;}
+	.residentServices .commonArea{width:90%;}
+	.residentServices .bulkyRemovalServ{width:90%;}
+	.residentServices .townCouncilServ{width:90%;}
+	.residentServices .scCharges{width:90%;}
+	.residentServices .mediateDisputes{width:90%;}
+	.residentServices .downloads{width:90%;}
+	.tempoPg .tempo{width:90%;}
+	.eventsPg .events{width:90%;}
+	.contactUs .feedbackForm{width:90%;}
+	.contactUs .faqs{width:90%;}
+	.contactUs .gettingHere{width:90%;}
+	.contactUs .usefulLinks{width:90%;}
+	.sitemap .sitemapContents{width:90%;}
+	.search .searchContents{width:90%;}
+}
+@media screen and (max-width:1220px){
+	.header .topLogo{display:none;}
+	.header .mainMenu{display:none;}
+	.header .mobileMenuMain{display:block;}
+	.homepage .shortcutLinks ul li .content{padding:30px 0;}
+	.homepage .operHrQuickLinks ul li .content{padding:30px 0;}
+	.sitemapContents ul li ul li{width:22%;}
+	.announcementUpdates li .imgContainer{width:250px;margin-right:20px;}
+	.announcementUpdates li .texts{width:calc(100% - 295px);padding-top:10px;margin-right:20px;}
+	.ourMps .mpsDetails{margin-top:0;}
+	.ourMps .mpsDetails ul li{padding-top:0; margin-top:0;}
+}
+@media screen and (max-width:1199px){
+	.homepage .operHrQuickLinks ul li.operationHr{background-size:cover;}
+	.homepage .operHrQuickLinks ul li.quickLinks{background-size:cover;}
+	.homepage .operHrQuickLinks ul li .content{width:80%;}
+	.homepage .bannerSlider .bannerText .container h1{font-size:68px;line-height:74px;margin-bottom:10px;}
+	.homepage .bannerSlider .bannerText .container h2{font-size:26px;line-height:32px;margin-bottom:10px;padding-left:60px;}
+	.homepage .bannerSlider .bannerText .container h2:before{width:50px;}
+	.homepage .bannerSlider .bannerText .container p{font-size:18px;line-height:24px;margin-bottom:20px;}
+	.commonSubMenu{display:none;}
+	.commonSubMenuMobile{display:block;}
+	.annualReports ul li{width:calc(25% - 20px);}
+	.tempoPg .tempo .tempoList li{width:calc(33.3333% - 20px);}
+	.eventsPg .events ul li{width:calc(33.3333% - 20px);}
+	.tempoArchives ul li{width:calc(25% - 20px) !important;}
+}
+@media screen and (max-width:1023px){
+	.homepage .shortcutLinks ul li{width:50%;}	
+	.googleMap{width:100%;height:400px;float:none;margin-bottom:30px;}
+	.gettingHere .gettingHereDetail{width:100%;float:none;margin-right:0;}
+}
+@media screen and (max-width:960px){
+	.homepage .subscribe .container span{display:block;margin-right:0;width:100%;margin-bottom:10px;}
+	.homepage .subscribe .container .fieldName{width:100%;}
+	.homepage .subscribe .container .btn{width:144px;}
+	.footer .container .leftAlign{display:block;width:100%;text-align:center;margin-bottom:5px;}
+	.footer .container .rgtAlign{display:block;width:100%;text-align:center;}	
+	.homepage .operHrQuickLinks ul li{width:100%;display:block;}
+	.homepage .operHrQuickLinks ul li .content{width:90%;}
+	.homepage .operHrQuickLinks ul li .content h3{text-align:center}
+	.homepage .operHrQuickLinks ul li .content p{text-align:center;}
+	.homepage .operHrQuickLinks ul li.quickLinks ul li a{text-align:center;}	
+	.backTopBtn{display:none;}
+	.ourMps .searchMps{width:100%;}
+	.ourMps .mpsDetails ul li .col_left{width:100%;display:block;}
+	.ourMps .mpsDetails ul li .col_rgt{width:100%;display:block;}
+	.ourMps .mpsDetails ul li .col_rgt .container{padding-bottom:0;}
+	.commonTable table{margin:0;border-collapse:collapse;overflow:auto;border:0;}
+	.commonTable table thead{display:none;}
+	.commonTable table tr{display:table;width:100%;margin-bottom:20px;background:#ffffff;border:1px solid #f1f1f1;}
+	.commonTable table tr td{display:table-row;width:100%;vertical-align:middle;background:#ffffff;}
+	.commonTable table tbody tr.tdHeader{border:none;}
+	.commonTable table tbody tr.tdHeader td:before{content:"";display:none;}
+	.commonTable table tbody tr.tdHeader td strong{margin-top:10px;color:#005628;/*font-size:18px;line-height:22px;*/}
+	.commonTable table tr td::before{content:attr(data-label);display:table-cell;font-weight:700;color:#ffffff;background:#57ab40;width:50%;padding:10px;vertical-align:middle;text-align:center !important;}
+	.commonTable table tr td span{display:table-cell;width:50%;padding:10px;vertical-align:middle;}
+	.commonTable table tr:nth-of-type(odd) td span{background:#ffffff;}
+	.commonTable table tr:nth-of-type(even) td span{background:#f1f1f1;}
+	.commonTable table tr.tdContent:nth-of-type(odd) td span{background:#f1f1f1;}
+	.commonTable table tr.tdContent:nth-of-type(even) td span{background:#ffffff;}
+	.annualReports ul li{width:calc(33.3333% - 20px);}
+	.pressRelease ul li{width:33.3333%;}
+	.tempoArticle .article{width:calc(100% - 230px);}
+	.tempoArticle .article .imgRight{width:calc(50% - 20px);}
+	.tempoArticle .article .imgLeft{width:calc(50% - 20px);}
+	.tempoArticle .latestArticle{width:200px;margin-left:30px;}
+	.tempoArchives ul li{width:calc(33.3333% - 20px) !important;}
+	.sitemapContents ul li ul li{width:30.3333%;}
+	.sitemapContents ul li ul{margin:10px 0 0 10px;width:calc(100% - 10px);}
+}
+@media screen and (max-width:800px){
+	.homepage .bannerSlider{height:400px;overflow:hidden;position:relative;}
+	.homepage .bannerSlider div{}
+	.homepage .bannerSlider img{height:400px;width:800px;}
+	.homepage .bannerSlider .bannerText .container h1{font-size:58px;line-height:64px;margin-bottom:5px;}
+	.homepage .bannerSlider .bannerText .container h2{font-size:24px;line-height:30px;margin-bottom:10px;padding-left:0;}
+	.homepage .bannerSlider .bannerText .container h2:before{content: '';position:absolute;left:0;top:0;transform:translateY(-50%);height:0;width:0;background-color:none;}
+	.homepage .bannerSlider .bannerText .container p{font-size:16px;line-height:22px;margin-bottom:20px;}
+	.tempoPg .tempo .tempoList li{width:calc(50% - 20px);}
+	.eventsPg .events ul li{width:calc(50% - 20px);}
+	.tempoArchives ul li{width:calc(50% - 20px) !important;}
+}
+@media screen and (max-width:700px){
+	.commonForm span{width:100%;margin-bottom:15px;}
+	.commonForm .fieldName{width:100%;margin-right:0;}
+	.commonForm .blkNum,.commonForm .postalCode{width:100%;}
+	.commonForm .UnitNo{width:100%;}
+	.commonForm .nameInNric ul li{width:100%;}
+	.commonForm .nameInNric ul li:nth-child(even){width:100%;margin-left:0;margin-top:10px;}
+	.footer .container .leftAlign span{display:block;}
+	.commonSubMenuMobile{width:100%;padding-bottom:0;}
+	.annualReports ul li{width:calc(50% - 20px);}
+	.pressRelease ul li{width:50%;}
+	.eventsDetail .imgLeft{float:none;width:100%;margin-right:0;}
+	.eventsDetail ol,.eventsDetail ul{padding-left:0;display:block;}
+	.tempoArticle .article{width:100%;margin-bottom:20px;}
+	.tempoArticle .article .imgRight{width:100%;margin-left:0;float:none;}
+	.tempoArticle .article .imgLeft{width:100%;margin-right:0;float:none;}
+	.tempoArticle .article .layout.left ol{display:block;padding-left:0;}
+	.tempoArticle .article .layout.left ul{display:block;padding-left:0;}
+	.tempoArticle .latestArticle{width:100%;margin-left:0;}
+	.sitemapContents ul li ul li{width:47%;}
+	.ourTown .ecoTown .imgContainer{float:none;margin-left:0;width:100%;}
+}
+@media screen and (max-width:599px){
+	.homepage .shortcutLinks ul li{width:100%;}
+	.homepage .bannerSlider .bannerText .container{width:100%;top:35%;transform: translateY(-35%);}
+	.homepage .bannerSlider img{height:auto;width:960px;position:relative;left:-50%;}
+	.homepage .bannerSlider .foreBG img{width:960px;height:auto;}
+	.homepage .bannerSlider .bannerText .container h1{font-size:48px;line-height:54px;margin-bottom:5px;}
+	.homepage .bannerSlider .bannerText .container h2{font-size:24px;line-height:28px;margin-bottom:5px;padding-left:0;}
+	.homepage .bannerSlider .bannerText .container p{font-size:14px;line-height:18px;margin-bottom:10px;}
+	.announcementUpdates li .imgContainer{display:block;width:100%;margin-right:0;margin-bottom:10px;}
+	.announcementUpdates li .texts{display:block;width:calc(100% - 20px);padding:0 0 10px 0;margin:0 10px;}
+	.tempoArticle .article .layout table{font-size:12px !important;line-height:14px !important;}
+	.tempoArticle .article .layout table p{font-size:12px !important;line-height:14px !important;}
+	.tempoArticle .article .layout table li{font-size:12px !important;line-height:14px !important;}
+}
+@media screen and (max-width:499px){
+	.ourMps .mpsDetails ul li .col_left .container .mpPhoto{width:300px;display:block;margin-right:0;margin-bottom:20px;}
+	.ourMps .mpsDetails ul li .col_left .container .mpPhoto img{width:100%;}
+	.ourMps .mpsDetails ul li .col_left .container .mpDetail{width:100%;display:block;}
+	.ourMps .mpsDetails ul li .col_rgt .container .mpContact{width:100%;display:block;margin-right:0;margin-bottom:20px;}
+	.ourMps .mpsDetails ul li .col_rgt .container .mpClub{width:100%;display:block;margin-left:0;}
+	.tempoPg .tempo .tempoList li{width:100%;margin:10px 0;}
+	.eventsPg .events ul li{width:100%;margin:10px 0;}
+	.tempoArchives ul li{width:calc(50% - 20px) !important;margin:10px !important;}
+	.sitemapContents ul li ul li{width:100%;padding-left:0;padding-right:0;}
+}
+@media screen and (max-width:420px){
+	.homepage .operHrQuickLinks ul li .content span{display:block;width:100%;}
+	.homepage .operHrQuickLinks ul li .content h3{text-align:left}
+	.homepage .operHrQuickLinks ul li .content p{text-align:left;}
+	.homepage .operHrQuickLinks ul li.quickLinks ul li a{text-align:left;}
+	.homepage .shortcutLinks ul li .content{width:90%;}
+	.mobileMenuMain .searchField{width:100%;}
+	.mobileMenuMain .mobileMenu{width:100%;overflow-x:hidden;}
+	.mobileMenuMain .headContact{width:100%;}
+	.ourMps .mpsDetails ul li .col_left .container .mpPhoto{width:100%;}
+	.annualReports ul li{width:100%;margin:10px 0 0 0;}
+	.pressRelease ul li{width:100%;}
+	.tempoArchives ul li{width:100% !important;margin:10px 0 0 0 !important;}
+}
+@media screen and (max-height:600px){
+	.footer{position:relative;}
+}
