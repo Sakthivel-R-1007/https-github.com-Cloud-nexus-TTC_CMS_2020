@@ -1,0 +1,6 @@
+G:\Projects\Tampines_CMS\Tampines_CMS.Service\bin\Debug\Tampines_CMS.Service.dll
+G:\Projects\Tampines_CMS\Tampines_CMS.Service\bin\Debug\Tampines_CMS.Service.pdb
+G:\Projects\Tampines_CMS\Tampines_CMS.Service\obj\Debug\Tampines_CMS.Service.csprojAssemblyReference.cache
+G:\Projects\Tampines_CMS\Tampines_CMS.Service\obj\Debug\Tampines_CMS.Service.csproj.CoreCompileInputs.cache
+G:\Projects\Tampines_CMS\Tampines_CMS.Service\obj\Debug\Tampines_CMS.Service.dll
+G:\Projects\Tampines_CMS\Tampines_CMS.Service\obj\Debug\Tampines_CMS.Service.pdb

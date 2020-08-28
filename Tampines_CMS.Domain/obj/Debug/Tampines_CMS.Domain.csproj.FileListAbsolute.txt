@@ -1,0 +1,5 @@
+G:\Projects\Tampines_CMS\Tampines_CMS.Domain\bin\Debug\Tampines_CMS.Domain.dll
+G:\Projects\Tampines_CMS\Tampines_CMS.Domain\bin\Debug\Tampines_CMS.Domain.pdb
+G:\Projects\Tampines_CMS\Tampines_CMS.Domain\obj\Debug\Tampines_CMS.Domain.csproj.CoreCompileInputs.cache
+G:\Projects\Tampines_CMS\Tampines_CMS.Domain\obj\Debug\Tampines_CMS.Domain.dll
+G:\Projects\Tampines_CMS\Tampines_CMS.Domain\obj\Debug\Tampines_CMS.Domain.pdb

@@ -1,0 +1,11 @@
+G:\Projects\Tampines_CMS\Tampines_CMS.Persistence\bin\Debug\Tampines_CMS.Persistence.dll
+G:\Projects\Tampines_CMS\Tampines_CMS.Persistence\bin\Debug\Tampines_CMS.Persistence.pdb
+G:\Projects\Tampines_CMS\Tampines_CMS.Persistence\bin\Debug\Dapper.dll
+G:\Projects\Tampines_CMS\Tampines_CMS.Persistence\bin\Debug\Tampines_CMS.Domain.dll
+G:\Projects\Tampines_CMS\Tampines_CMS.Persistence\bin\Debug\Tampines_CMS.Domain.pdb
+G:\Projects\Tampines_CMS\Tampines_CMS.Persistence\bin\Debug\Dapper.xml
+G:\Projects\Tampines_CMS\Tampines_CMS.Persistence\obj\Debug\Tampines_CMS.Persistence.csprojAssemblyReference.cache
+G:\Projects\Tampines_CMS\Tampines_CMS.Persistence\obj\Debug\Tampines_CMS.Persistence.csproj.CoreCompileInputs.cache
+G:\Projects\Tampines_CMS\Tampines_CMS.Persistence\obj\Debug\Tampines_CMS.Persistence.csproj.CopyComplete
+G:\Projects\Tampines_CMS\Tampines_CMS.Persistence\obj\Debug\Tampines_CMS.Persistence.dll
+G:\Projects\Tampines_CMS\Tampines_CMS.Persistence\obj\Debug\Tampines_CMS.Persistence.pdb
